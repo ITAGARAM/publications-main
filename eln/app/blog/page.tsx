@@ -387,7 +387,7 @@ const Blog = () => {
 
   return (
     <div>
- 
+
       {/* Optional Protocolmenu */}
       {/* <div className={`protocolmenu ${isFixed ? 'fixed' : ''}`}>Sticky Content</div> */}
 
@@ -525,7 +525,7 @@ const Blog = () => {
                     {categories
                       .filter(category => category !== 'Categorized')
                       .map((category) => {
-                        const displayLabel = category === 'Product' ? 'Industry' : category;
+                        const displayLabel = category === 'Product' ? 'Product' : category;
                         return (
                           <li
                             key={category}
@@ -620,7 +620,7 @@ const Blog = () => {
                     <div className='recent'>
                       <h2 className="recent-post-heading">
                         <span className="highlight-bg">
-                          {activeCategory === "Product" ? "Industry" : activeCategory}
+                          {activeCategory === "Product" ? "Product" : activeCategory}
                         </span>
                       </h2>
                     </div>
@@ -725,7 +725,11 @@ const Blog = () => {
                                     <div className='recent'>
                                       <h2 className="recent-post-heading d-inline-block">
                                         <span className="highlight-bg">
-                                          {cat === "product" || categoryTitles[cat] === "Product" ? "Industry" : (categoryTitles[cat] || cat)}
+                                          {cat === "product"
+                                            ? "Product"
+                                            : (categoryTitles[cat] || cat)
+                                          }
+
                                         </span>
                                       </h2>
                                     </div>

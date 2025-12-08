@@ -27,13 +27,13 @@ export default function BannerCard(props: BannerCardProps) {
                 />
             </Link>
 
-            <label>{props.label}</label>
+            <label>{props.label?.toLowerCase() === "product" ? "Product" : props.label}</label>
             <Link href={`/blog/${props.slug}`}><h4>
-  {props.title
-    ? props.title.split(" ").slice(0, 15).join(" ") +
-      (props.title.split(" ").length > 15 ? "..." : "")
-    : ""}
-</h4>
+                {props.title
+                    ? props.title.split(" ").slice(0, 15).join(" ") +
+                    (props.title.split(" ").length > 15 ? "..." : "")
+                    : ""}
+            </h4>
 
             </Link>
             <p>
@@ -47,7 +47,7 @@ export default function BannerCard(props: BannerCardProps) {
             <div className="tag-btn-mt">
                 {props.usernameTags?.map((tag, idx) => {
                     // Cycle through the colors
-                    const colorClass =`tag-btn-${tagColors[idx % tagColors.length]}`;
+                    const colorClass = `tag-btn-${tagColors[idx % tagColors.length]}`;
                     return (
                         <Link key={idx} href={`/blog/tag/${tag}`}>
                             <button
