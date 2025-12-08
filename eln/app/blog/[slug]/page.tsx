@@ -234,7 +234,7 @@ authorUrl,
 
     return (
         <>
-            <Header whiteHeader />
+           
             <div className="publication-banner publication-banner-body">
                 <Image
                     src={dotted_line}
