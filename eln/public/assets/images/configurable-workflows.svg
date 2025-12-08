@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="77.352" height="59.456" viewBox="0 0 77.352 59.456">
+  <g id="Group_13531" data-name="Group 13531" transform="translate(-462 -290)">
+    <g id="Group_13523" data-name="Group 13523" transform="translate(-564 -2077)">
+      <path id="Path_21154" data-name="Path 21154" d="M42,0H73.352a2,2,0,0,1,2,2V55.268a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V31.777" transform="translate(1102.352 2425.268) rotate(180)" fill="none" stroke="#273b5e" stroke-linecap="round" stroke-width="2"/>
+      <path id="Path_21172" data-name="Path 21172" d="M27.726,7.457l-5.19,5.189L17.819,7.928l5.189-5.189a8.674,8.674,0,0,0-11.32,11.323L3.314,22.435a1.333,1.333,0,0,0,0,1.887l2.831,2.831a1.333,1.333,0,0,0,1.887,0L16.4,18.779A8.672,8.672,0,0,0,27.726,7.457Z" transform="translate(1071.901 2398.912)" fill="#638dfa"/>
+      <g id="Rectangle_1815" data-name="Rectangle 1815" transform="translate(1038.823 2396)" fill="none" stroke="#273b5e" stroke-width="2">
+        <rect width="8" height="8" stroke="none"/>
+        <rect x="1" y="1" width="6" height="6" fill="none"/>
+      </g>
+      <g id="Rectangle_1816" data-name="Rectangle 1816" transform="translate(1053.823 2377)" fill="none" stroke="#273b5e" stroke-width="2">
+        <rect width="8" height="8" stroke="none"/>
+        <rect x="1" y="1" width="6" height="6" fill="none"/>
+      </g>
+      <g id="Rectangle_1817" data-name="Rectangle 1817" transform="translate(1067.823 2396)" fill="none" stroke="#273b5e" stroke-width="2">
+        <rect width="8" height="8" stroke="none"/>
+        <rect x="1" y="1" width="6" height="6" fill="none"/>
+      </g>
+      <g id="Rectangle_1818" data-name="Rectangle 1818" transform="translate(1053.823 2396)" fill="none" stroke="#273b5e" stroke-width="2">
+        <rect width="8" height="8" stroke="none"/>
+        <rect x="1" y="1" width="6" height="6" fill="none"/>
+      </g>
+      <path id="Path_21173" data-name="Path 21173" d="M1057.823,2385v4.984H1042.7v3.046" transform="translate(0.12 1)" fill="none" stroke="#273b5e" stroke-width="1"/>
+      <path id="Path_21174" data-name="Path 21174" d="M1072.031,2392.979v-3.057h-14.208v3.327" transform="translate(0.12 1)" fill="none" stroke="#273b5e" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

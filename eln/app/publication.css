@@ -1,0 +1,270 @@
+.publication-banner{
+    background-image: url('../public/assets/images/publication/blog-banner-bg.svg');
+    background-position-y: -125px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 10rem 0 4rem;
+    border-radius: 140px 0 0 0;
+}
+
+.publication-banner h6{
+    color: #fff;
+    margin: 0;
+    font-family: 'Urbanist-Bold', sans-serif;   
+    font-size: 23px;
+}
+
+.publication-banner .line{
+    border-bottom: 1px solid #fff;
+    width: 100%;
+}
+
+.publication-banner h1{
+    color: #fff;
+    line-height: 46px;
+    margin: 1.2rem 0 1rem;
+    font-family: 'Urbanist-Bold', sans-serif;
+}
+
+.publication-banner .placeholder1{
+    height: 340px;
+}
+
+.publication-banner p{
+    color: #fff;
+    font-family: 'Urbanist-Regular', sans-serif;
+}
+
+.publication-banner a button{
+    margin-top: 8px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #1163EA;
+    border: none;
+    font-family: 'SFPRO-BOLD', sans-serif;
+}
+.publication-banner .whitepaper{
+    position: absolute;
+    top: -100px;
+    right: -30px;
+}
+
+.search_bar{
+    margin: 8rem 0 0rem;
+    background-color: #FFFFFF6B;
+    display: flex;
+    align-items: center;
+    padding: .2rem 1rem .2rem .3rem;
+    border-radius: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    transition: all 0.3s ease-in-out;
+}
+.search_bar.fixed{
+    position: fixed;
+    top: 20px;
+    margin: 0rem;
+    background-color: #f5f5f5;
+    width: 50% !important;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.search_bar input{
+    width:100%;
+    border: none;
+    margin-left: 15px;
+    background-color: transparent;
+}
+.search_bar input::placeholder{
+    font-size: 13px;
+    font-weight: 600;
+    color: #888888;
+}
+
+.search_bar .search-icon{
+    background-color: #fff;
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.recent{
+    margin-bottom: 5.5rem;
+}
+
+.recent label{
+    border: 1px solid #000;
+    border-radius: 50px;
+    padding: 5px 15px;
+    margin-bottom: 1rem;
+    font-family: 'SFPRO-REGULAR', sans-serif;
+    color: #000;
+}
+
+.recent h2{
+    font-family: 'Urbanist-Regular', sans-serif;
+    color: #000;
+}
+
+.recent h2 span{
+    /* color: #1163EA; */
+    font-size: 2rem;
+    font-family: 'Urbanist-ExtraBold', sans-serif;
+}
+
+.recent p{
+    font-family: 'SFPRO-THINITALIC';
+    color: #727272;
+    font-size: 15px;
+}
+
+.bannercard label{
+    color: #1163EA;
+    margin: .5rem 0;
+    font-family: 'Urbanist-SemiBold';
+}
+
+.bannercard h3{
+    color: #000;
+    margin: 0 0 .35rem;
+    font-family: 'SFPRO-BOLD', sans-serif;
+    font-size: 20px;
+}
+
+.bannercard p{
+    color: #949494;
+    font-family: 'SFPRO-REGULAR', sans-serif;
+    font-size: 15px;
+    margin: .35rem 0;
+    line-height: 24px;
+}
+
+.download-btn{
+    /* padding: 10px 20px; */
+    height: 40px;
+    width: 110px;
+    border-radius: 50px;
+    border: none;
+    background-color: #1163EA;
+    color: #fff;
+    transition: .3s;
+    font-family: 'Urbanist-Medium', sans-serif;
+}
+
+.download-btn:hover{
+    background-color: #0040ff;
+    font-family: 'Urbanist-ExtraBold', sans-serif;
+}
+
+.helpCenter{
+    background-image: url('../public/assets/images/publication/publication_bg_1.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 8rem 0;
+    margin-top: 5rem;
+}
+
+.helpCenter .helpCenter-card{
+    background-color: #fff;
+    border-radius: 16px;
+    /* padding: 2rem; */
+    position: relative;
+    height: 100%;
+}
+
+.helpCenter-card img{
+    position: absolute;
+    top: 20px;
+    right: -75px;
+}
+
+.helpCenter-card .papers{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 16px 16px 0;
+}
+
+.helpCenter .help-btn-container{
+    background-image: url('../public/assets/images/publication/help-center-bg.svg');
+    background-size: 100%;
+    padding: 0 3rem;
+    height: 188px;
+    border-radius: 0 0 16px 16px;
+    display: flex;
+    align-items: center;
+}
+
+.helpCenter a button{
+    border: none;
+    border-radius: 50px;
+    padding: 10px 30px;
+    color: #1163EA;
+    font-family: 'Urbanist-Bold', sans-serif; 
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    margin: 2rem 0 0;
+}
+
+.helpCenter-card h4{
+    font-family: 'Urbanist-Regular', sans-serif;
+    color: #000;
+    font-size: 30px;
+    margin: 0;
+    line-height: .9rem;
+}
+
+.helpCenter-card h2{
+    font-family: 'Urbanist-bold', sans-serif;
+    color: #000;
+    font-size: 45px;
+    margin: 0 0 1rem;
+}
+
+.helpCenter-card p{
+    color: #323232;
+    font-family: 'SFPRO-REGULAR', sans-serif;
+}
+
+.ad_big{
+    height: 1061px;
+}
+.back-arrow-btn {
+ position: absolute;
+top: -68px;
+left: 0px;
+background:#fff;
+border-radius: 50%;
+width: 50px;
+height: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: none;
+backdrop-filter: blur(8px);
+z-index: 10;
+cursor: pointer;
+}
+.back-arrow-btn-body{
+top: 200px;
+left: 263px;
+}
+
+.back-arrow-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+.blog-body {
+  position: relative;
+  z-index: 0;
+}
+.dotted-line {
+  position: absolute;
+  top: -185px; /* adjust based on where you want it */
+  left: 0;
+  width: 100%; /* or set specific width like 500px */
+  z-index: 1;
+  pointer-events: none; /* ensures it doesn't interfere with clicks */
+}
