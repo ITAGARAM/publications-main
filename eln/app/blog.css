@@ -781,3 +781,28 @@ h6 {
     }
 
 }
+/* Minimal: make list text & markers match paragraph color */
+.blog-content ul,
+.blog-content ol {
+  /* no color here so nested inline colors (from Sanity) are preserved if they set color directly */
+}
+
+.blog-content li,
+.blog-content ul li,
+.blog-content ol li {
+  color: #677294;            /* <- match your paragraph color */
+  font-family: 'SFPRO-REGULAR';
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Force the bullet/number color to match the li text */
+.blog-content li::marker {
+  color: #677294;
+}
+
+/* If Sanity renders <p> inside <li> (some blocks do), avoid extra spacing */
+.blog-content li > p {
+  margin: 0;
+}
