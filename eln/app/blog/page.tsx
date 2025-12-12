@@ -322,23 +322,26 @@ const Blog = () => {
   });
 
 
-  // ✅ Apply pagination only for specific categories
   const paginatedBlogs = (() => {
-    let perPage = blogsPerPage; // default = 4
+  let perPage = blogsPerPage; // default = 4
 
-    if (activeCategory === "General") {
-      perPage = 6; // ✅ special rule only for General
-    }
+  //  Custom per-category rules
+  if (activeCategory === "General") {
+    perPage = 6; // General = 6 posts
+  } else if (activeCategory === "Product") {
+    perPage = 6; // Product = 4 posts (change if needed)
+  } else if (activeCategory === "News & Event") {
+    perPage = 6; // News & Event = 4 posts (change if needed)
+  }
 
-    if (["General", "Product", "News & Event"].includes(activeCategory)) {
-      const start = (currentPage - 1) * perPage;
-      const end = start + perPage;
-      return filteredBlogs.slice(start, end);
-    }
+  if (["General", "Product", "News & Event"].includes(activeCategory)) {
+    const start = (currentPage - 1) * perPage;
+    const end = start + perPage;
+    return filteredBlogs.slice(start, end);
+  }
 
-    return filteredBlogs;
-  })();
-
+  return filteredBlogs;
+})();
 
 
   // Group blogs by category
