@@ -324,11 +324,18 @@ const Blog = () => {
 
   // ✅ Apply pagination only for specific categories
   const paginatedBlogs = (() => {
+    let perPage = blogsPerPage; // default = 4
+
+    if (activeCategory === "General") {
+      perPage = 6; // ✅ special rule only for General
+    }
+
     if (["General", "Product", "News & Event"].includes(activeCategory)) {
-      const start = (currentPage - 1) * blogsPerPage;
-      const end = start + blogsPerPage;
+      const start = (currentPage - 1) * perPage;
+      const end = start + perPage;
       return filteredBlogs.slice(start, end);
     }
+
     return filteredBlogs;
   })();
 
