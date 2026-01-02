@@ -25,6 +25,7 @@ import Pagination from "@/components/Pagination";
 import { FaAngleRight } from "react-icons/fa";
 import BannerCard from "../../publication/banner-card/banner-card";
 import { useRouter } from "next/navigation";
+import Footer from "@/app/footer";
 
 
 const categories = [
@@ -220,10 +221,6 @@ authorUrl,
 
 
 
-
-
-
-
     const handleSelect = (option: string) => {
         setSelected(option);
     };
@@ -234,7 +231,7 @@ authorUrl,
 
     return (
         <>
-           
+            <Header whiteHeader />
             <div className="publication-banner publication-banner-body">
                 <Image
                     src={dotted_line}
@@ -244,7 +241,7 @@ authorUrl,
                 <div className="container">
                     <button
                         className="back-arrow-btn back-arrow-btn-body"
-                        onClick={() => router.back()}
+                        onClick={() => router.push("/blog")}   // redirect to main page
                     >
                         <Image src={back_arrow} alt="Back" width={20} height={20} />
                     </button>
@@ -482,7 +479,21 @@ authorUrl,
                                     },
                                 }}
                             />
-
+                            <div className="my-4 d-block d-md-none text-center">
+                                <iframe
+                                    id="JotFormIFrame-241490785757470"
+                                    src="https://form.jotform.com/241490785757470"
+                                    frameBorder="0"
+                                    style={{
+                                        width: "80%",
+                                        height: "300px",
+                                        border: "none",
+                                    }}
+                                    scrolling="no"
+                                    title="Download Form"
+                                    className="m-auto"
+                                ></iframe>
+                            </div>
 
                         </div>
                         {/* <div className="review-box">
@@ -642,16 +653,16 @@ authorUrl,
                                 </div>
                             </div>
                         </div> */}
-                     
+
                         <div className="related-article">
-                            
+
                             <div className=" w-100 mx-auto">
                                 <div className='recent'>
-                        <h2 className="recent-post-heading">
-                          <span className="highlight-bg">Related Post</span>
-                      </h2>
-                    </div>
-                               
+                                    <h2 className="recent-post-heading">
+                                        <span className="highlight-bg">Related Post</span>
+                                    </h2>
+                                </div>
+
                             </div>
                             <div className="container mt-2">
                                 <div className="row">
@@ -668,6 +679,7 @@ authorUrl,
                                                     usernameTags={blog.usernameTags}
                                                     publishedAt={blog.publishedAt}
                                                     slug={blog.slug.current}
+                                                    pageName={'blog'}
                                                 />
                                             </div>
                                         ))
@@ -684,27 +696,28 @@ authorUrl,
                         </div>
                     </div>
                     <div className="hero-section container">
-                            <div className="d-flex justify-content-between  align-items-center text-white px-4  hero-text">
-                              <div className="d-flex flex-column ">
+                        <div className="d-flex justify-content-between  align-items-center text-white px-4  hero-text">
+                            <div className="d-flex flex-column ">
                                 <h1 className="text-white">
-                                  Digitize <span className="text-white">.</span> Simplify <span className="text-white">.</span> Organize <span className="text-white">.</span>
+                                    Digitize <span className="text-white">.</span> Simplify <span className="text-white">.</span> Organize <span className="text-white">.</span>
                                 </h1>
                                 <p className="lead text-white mt-2">
-                                  Kickstart your paperless lab with Logilab ELN
+                                    Kickstart your paperless lab with Logilab ELN
                                 </p>
-                              </div>
-                              <div className="d-flex justify-content-center hero-text mt-4">
+                            </div>
+                            <div className="d-flex justify-content-center hero-text mt-4">
                                 <Link href="/request-a-demo" passHref legacyBehavior>
-                                  <a className="home-btn rounded-pill">Request a Demo</a>
+                                    <a className="home-btn rounded-pill">Request a Demo</a>
                                 </Link>
                                 <Link href="/product-brochure-download" passHref legacyBehavior>
-                                  <a className="home-btn home-btn-white rounded-pill ms-3">Download brochure</a>
+                                    <a className="home-btn home-btn-white rounded-pill ms-3">Download brochure</a>
                                 </Link>
-                              </div>
                             </div>
-                          </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

@@ -148,7 +148,7 @@ const BlogByTag = ({ params }: { params: { tagslug: string } }) => {
 
   return (
     <div>
-      
+      <Header  whiteHeader/>
       <div className="blog-container">
         {/* {showPopup && (
           <div className="popup-ad">

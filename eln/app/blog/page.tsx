@@ -321,27 +321,23 @@ const Blog = () => {
     return false;
   });
 
+  const getItemsPerPage = () => {
+  if (["General", "Product", "News & Event"].includes(activeCategory)) {
+    return 6;
+  }
+  return blogsPerPage; // default = 4
+};
+
+
 
   const paginatedBlogs = (() => {
-  let perPage = blogsPerPage; // default = 4
+  const perPage = getItemsPerPage();
+  const start = (currentPage - 1) * perPage;
+  const end = start + perPage;
 
-  //  Custom per-category rules
-  if (activeCategory === "General") {
-    perPage = 6; // General = 6 posts
-  } else if (activeCategory === "Product") {
-    perPage = 6; // Product = 4 posts (change if needed)
-  } else if (activeCategory === "News & Event") {
-    perPage = 6; // News & Event = 4 posts (change if needed)
-  }
-
-  if (["General", "Product", "News & Event"].includes(activeCategory)) {
-    const start = (currentPage - 1) * perPage;
-    const end = start + perPage;
-    return filteredBlogs.slice(start, end);
-  }
-
-  return filteredBlogs;
+  return filteredBlogs.slice(start, end);
 })();
+
 
 
   // Group blogs by category
@@ -614,6 +610,7 @@ const Blog = () => {
                           usernameTags={blog.usernameTags}
                           publishedAt={blog.publishedAt}
                           slug={blog.slug.current}
+                          pageName={'blog'}
                         />
                       </div>
                     ))}
@@ -659,6 +656,7 @@ const Blog = () => {
                               usernameTags={blog.usernameTags}
                               publishedAt={blog.publishedAt}
                               slug={blog.slug.current}
+                              pageName={'blog'}
                             />
                           </div>
                         ))
@@ -694,6 +692,7 @@ const Blog = () => {
                                     usernameTags={blog.usernameTags}
                                     publishedAt={blog.publishedAt}
                                     slug={decodeURIComponent(blog.slug.current)}
+                                    pageName={'blog'}
                                   />
                                 </div>
                               ))
@@ -761,6 +760,7 @@ const Blog = () => {
                                             usernameTags={blog.usernameTags}
                                             publishedAt={blog.publishedAt}
                                             slug={decodeURIComponent(blog.slug.current)}
+                                            pageName={'blog'}
                                           />
                                         </div>
                                       ))}
@@ -854,6 +854,7 @@ const Blog = () => {
                               usernameTags={blog.usernameTags}
                               publishedAt={blog.publishedAt}
                               slug={blog.slug.current}
+                              pageName={'blog'}
                             />
                           </div>
                         ))
@@ -893,7 +894,7 @@ const Blog = () => {
                   <div className='py-5'>
                     <Pagination
                       totalItems={filteredBlogs.length}
-                      itemsPerPage={blogsPerPage}
+                      itemsPerPage={getItemsPerPage()}
                       currentPage={currentPage}
                       onPageChange={setCurrentPage}
                     />

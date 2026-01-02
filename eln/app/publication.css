@@ -1,41 +1,41 @@
-.publication-banner{
+.publication-banner {
     background-image: url('../public/assets/images/publication/blog-banner-bg.svg');
     background-position-y: -125px;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: inherit;
     padding: 10rem 0 4rem;
     border-radius: 140px 0 0 0;
 }
 
-.publication-banner h6{
+.publication-banner h6 {
     color: #fff;
     margin: 0;
-    font-family: 'Urbanist-Bold', sans-serif;   
+    font-family: 'Urbanist-Bold', sans-serif;
     font-size: 23px;
 }
 
-.publication-banner .line{
+.publication-banner .line {
     border-bottom: 1px solid #fff;
     width: 100%;
 }
 
-.publication-banner h1{
+.publication-banner h1 {
     color: #fff;
     line-height: 46px;
     margin: 1.2rem 0 1rem;
     font-family: 'Urbanist-Bold', sans-serif;
 }
 
-.publication-banner .placeholder1{
+.publication-banner .placeholder1 {
     height: 340px;
 }
 
-.publication-banner p{
+.publication-banner p {
     color: #fff;
     font-family: 'Urbanist-Regular', sans-serif;
 }
 
-.publication-banner a button{
+.publication-banner a button {
     margin-top: 8px;
     padding: 10px 20px;
     border-radius: 50px;
@@ -43,13 +43,14 @@
     border: none;
     font-family: 'SFPRO-BOLD', sans-serif;
 }
-.publication-banner .whitepaper{
+
+.publication-banner .whitepaper {
     position: absolute;
     top: -100px;
     right: -30px;
 }
 
-.search_bar{
+.search_bar {
     margin: 8rem 0 0rem;
     background-color: #FFFFFF6B;
     display: flex;
@@ -57,11 +58,11 @@
     padding: .2rem 1rem .2rem .3rem;
     border-radius: 50px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
-    transition: all 0.3s ease-in-out;
 }
-.search_bar.fixed{
+
+.search_bar.fixed {
     position: fixed;
-    top: 20px;
+    top: 95px;
     margin: 0rem;
     background-color: #f5f5f5;
     width: 50% !important;
@@ -69,19 +70,21 @@
     transform: translateX(-50%);
     z-index: 2;
 }
-.search_bar input{
-    width:100%;
+
+.search_bar input {
+    width: 100%;
     border: none;
     margin-left: 15px;
     background-color: transparent;
 }
-.search_bar input::placeholder{
+
+.search_bar input::placeholder {
     font-size: 13px;
     font-weight: 600;
     color: #888888;
 }
 
-.search_bar .search-icon{
+.search_bar .search-icon {
     background-color: #fff;
     height: 38px;
     width: 38px;
@@ -90,11 +93,12 @@
     align-items: center;
     justify-content: center;
 }
-.recent{
+
+.recent {
     margin-bottom: 5.5rem;
 }
 
-.recent label{
+.recent label {
     border: 1px solid #000;
     border-radius: 50px;
     padding: 5px 15px;
@@ -103,37 +107,37 @@
     color: #000;
 }
 
-.recent h2{
+.recent h2 {
     font-family: 'Urbanist-Regular', sans-serif;
     color: #000;
 }
 
-.recent h2 span{
-    /* color: #1163EA; */
+.recent h2 span {
+    color: #000;
     font-size: 2rem;
     font-family: 'Urbanist-ExtraBold', sans-serif;
 }
 
-.recent p{
+.recent p {
     font-family: 'SFPRO-THINITALIC';
     color: #727272;
     font-size: 15px;
 }
 
-.bannercard label{
+.bannercard label {
     color: #1163EA;
     margin: .5rem 0;
     font-family: 'Urbanist-SemiBold';
 }
 
-.bannercard h3{
+.bannercard h3 {
     color: #000;
     margin: 0 0 .35rem;
     font-family: 'SFPRO-BOLD', sans-serif;
     font-size: 20px;
 }
 
-.bannercard p{
+.bannercard p {
     color: #949494;
     font-family: 'SFPRO-REGULAR', sans-serif;
     font-size: 15px;
@@ -141,7 +145,7 @@
     line-height: 24px;
 }
 
-.download-btn{
+.download-btn {
     /* padding: 10px 20px; */
     height: 40px;
     width: 110px;
@@ -153,12 +157,12 @@
     font-family: 'Urbanist-Medium', sans-serif;
 }
 
-.download-btn:hover{
+.download-btn:hover {
     background-color: #0040ff;
     font-family: 'Urbanist-ExtraBold', sans-serif;
 }
 
-.helpCenter{
+.helpCenter {
     background-image: url('../public/assets/images/publication/publication_bg_1.svg');
     background-repeat: no-repeat;
     background-size: 100%;
@@ -166,7 +170,7 @@
     margin-top: 5rem;
 }
 
-.helpCenter .helpCenter-card{
+.helpCenter .helpCenter-card {
     background-color: #fff;
     border-radius: 16px;
     /* padding: 2rem; */
@@ -174,20 +178,20 @@
     height: 100%;
 }
 
-.helpCenter-card img{
+.helpCenter-card img {
     position: absolute;
     top: 20px;
     right: -75px;
 }
 
-.helpCenter-card .papers{
+.helpCenter-card .papers {
     position: absolute;
     top: 0;
     right: 0;
     border-radius: 0 16px 16px 0;
 }
 
-.helpCenter .help-btn-container{
+.helpCenter .help-btn-container {
     background-image: url('../public/assets/images/publication/help-center-bg.svg');
     background-size: 100%;
     padding: 0 3rem;
@@ -197,17 +201,17 @@
     align-items: center;
 }
 
-.helpCenter a button{
+.helpCenter a button {
     border: none;
     border-radius: 50px;
     padding: 10px 30px;
     color: #1163EA;
-    font-family: 'Urbanist-Bold', sans-serif; 
+    font-family: 'Urbanist-Bold', sans-serif;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     margin: 2rem 0 0;
 }
 
-.helpCenter-card h4{
+.helpCenter-card h4 {
     font-family: 'Urbanist-Regular', sans-serif;
     color: #000;
     font-size: 30px;
@@ -215,56 +219,454 @@
     line-height: .9rem;
 }
 
-.helpCenter-card h2{
+.helpCenter-card h2 {
     font-family: 'Urbanist-bold', sans-serif;
     color: #000;
     font-size: 45px;
     margin: 0 0 1rem;
 }
 
-.helpCenter-card p{
+.helpCenter-card p {
     color: #323232;
     font-family: 'SFPRO-REGULAR', sans-serif;
 }
 
-.ad_big{
+.ad_big {
     height: 1061px;
 }
+
 .back-arrow-btn {
- position: absolute;
-top: -68px;
-left: 0px;
-background:#fff;
-border-radius: 50%;
-width: 50px;
-height: 50px;
-display: flex;
-align-items: center;
-justify-content: center;
-border: none;
-backdrop-filter: blur(8px);
-z-index: 10;
-cursor: pointer;
+    position: absolute;
+    top: -68px;
+    left: 0px;
+    background: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    cursor: pointer;
 }
-.back-arrow-btn-body{
-top: 200px;
-left: 263px;
+
+.back-arrow-btn-body {
+    top: 200px;
+    left: 263px;
 }
 
 .back-arrow-btn img {
-  width: 16px;
-  height: 16px;
+    width: 16px;
+    height: 16px;
 }
 
 .blog-body {
-  position: relative;
-  z-index: 0;
+    position: relative;
+    z-index: 0;
 }
+
 .dotted-line {
-  position: absolute;
-  top: -185px; /* adjust based on where you want it */
-  left: 0;
-  width: 100%; /* or set specific width like 500px */
-  z-index: 1;
-  pointer-events: none; /* ensures it doesn't interfere with clicks */
+    position: absolute;
+    top: -185px;
+    /* adjust based on where you want it */
+    left: 0;
+    width: 100%;
+    /* or set specific width like 500px */
+    z-index: 1;
+    pointer-events: none;
+    /* ensures it doesn't interfere with clicks */
+}
+
+
+/*koushik*/
+
+
+.publication-card .tag-btn-mt {
+    display: none;
+}
+
+.publication-card .posted-date {
+    display: none;
+}
+
+.download-icon {
+    border: none;
+    background-color: #f6f6f6;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-content p {
+    color: #7A7A7A;
+    font-family: 'Urbanist-Regular', sans-serif;
+    margin: 2rem 0 2.5rem;
+}
+
+.challenge div {
+    display: flex;
+    align-items: center;
+
+    margin-top: .75rem;
+    gap: 12px;
+}
+
+.challenge div p {
+    color: #7A7A7A;
+    font-family: 'Urbanist-Regular', sans-serif;
+    width: 90%;
+    margin: 0;
+}
+
+.challenge div:first-child {
+    margin-top: 1.5rem;
+}
+
+.challenge div label {
+    background-color: #2883FE;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.recent {
+    margin-bottom: 1.5rem;
+}
+
+.recent h2 {
+    margin-top: 25px;
+}
+
+.recent-post-heading{
+    margin-top: 35px !important;
+}
+
+.customPagination button {
+    background-color: #0F57E2;
+    color: #fff;
+    font-family: 'Urbanist-Bold';
+    padding: 6px 12px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+    border-style: none;
+}
+
+.customPagination button:disabled {
+    background-color: #a3a3a3;
+    cursor: not-allowed;
+    color: #000;
+}
+
+.customPagination ul li {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 4px 4px rgb(200 222 237 / 68%);
+    padding: 0px 18px;
+    height: 29px;
+    line-height: normal;
+    font-weight: 700;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 .5rem;
+    transition: background-color 0.3s;
+}
+
+.customPagination ul li:hover {
+    background-color: #0F57E2;
+    color: #fff;
+}
+
+.customPagination ul li.active {
+    border: 1px solid #dee2e6;
+}
+
+
+
+
+@media (max-width: 1280px) {
+
+    .publication-banner {
+        background-position-y: 14px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .publication-banner {
+        background-image: url('../public/assets/images/publication/blog-banner-bg-mobile.jpg');
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 50px;
+        border-radius: 30px 0 0 0;
+        position: relative;
+        padding-bottom: 20px;
+    }
+
+    .publication-banner .placeholder1 {
+        height: auto;
+    }
+
+    .publication-banner h1 {
+        line-height: normal;
+        margin: auto;
+        font-size: 25px;
+        margin-top: 32px;
+    }
+
+    .feature-p {
+        margin-top: 10px;
+    }
+
+    .search_bar {
+        margin: 1rem 0 0rem;
+    }
+
+    .blog-sub-jotform {
+        width: 100% !important;
+    }
+
+    .bannercard h4 {
+        font-size: 20px;
+    }
+
+    .category-box-body {
+        display: none !important;
+    }
+
+    .back-arrow-btn-body {
+        display: none !important;
+    }
+
+    .publication-banner-image {
+        margin-top: 25px;
+    }
+
+    .dotted-line {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* 
+    .publication-banner{
+       background-image: url('../public/assets/images/publication/blog-banner-bg.svg');
+        background-position-y: -125px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+   padding: 10rem 0 4rem;
+    border-radius: 140px 0 0 0;
+    display: block;
+} */
+    .publication-banner-desktop {
+        display: none !important;
+    }
+
+    .publication-banner .cursor-pointer {
+        margin-top: 0 !important;
+    }
+
+    .publication-banner .whitepaper {
+        top: 12px;
+        right: 0px;
+        display: none;
+    }
+
+    .related-article {
+        margin-top: 50px;
+    }
+
+    .publication-banner {
+        background-image: none;
+        padding: 0px;
+        background-position: none;
+        border-radius: none;
+    }
+
+    .publication-banner-body {
+        background-image: url('../public/assets/images/publication/blog-banner-bg.svg');
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 50px;
+        border-radius: 30px 0 0 0;
+        position: relative;
+        padding-bottom: 20px;
+        display: block;
+    }
+
+    .stats-bar {
+        margin-top: 20px;
+    }
+
+    .post-meta .tag-btn {
+        margin-left: 0px !important;
+    }
+
+    .publication-banner-mobile {
+        background-image: url('../public/assets/images/publication/blog-banner-bg-mobile.jpg');
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 50px;
+        border-radius: 30px 0 0 0;
+        position: relative;
+        padding-bottom: 50px;
+        display: block;
+    }
+
+    .publication-banner-image {
+        margin-top: 25px;
+    }
+
+    .title-flex {
+        justify-content: center !important;
+    }
+
+    .post-meta>div:last-child {
+        margin-top: 10px;
+    }
+
+    .blog-content p {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .recent-post-heading {
+        text-align: center;
+    }
+
+    .recent h2 {
+        margin-top: 20px;
+    }
+
+    .recent {
+        margin-bottom: 0.3rem;
+    }
+
+    .back-to-top {
+        right: 20px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .publication-banner h1 {
+        line-height: normal;
+        margin: auto;
+        font-size: 22px;
+        margin-top: 32px;
+    }
+
+    .publication-banner-body h1 {
+        margin-top: 0px;
+    }
+
+    .category-box-body {
+        display: none !important;
+    }
+
+    .bannercard h4 {
+        font-size: 18px;
+        margin: 0 0 9px;
+    }
+
+    .bannercard label {
+        margin: 20px 0px 6px 0px;
+    }
+
+    .bannercard p {
+        margin-bottom: 9px;
+    }
+
+    .bannercard .mt-4 {
+        margin-top: 1rem !important;
+    }
+
+    .tag-btn-mt {
+        margin-top: 9px;
+    }
+
+    .search_bar .search-icon {
+        height: 30px;
+        width: 30px;
+        margin-left: 9px;
+        border-radius: 50px;
+    }
+
+    .feature-p {
+        margin-top: 10px;
+    }
+
+    .search_bar {
+        margin: 10rem 0 0rem;
+        width: 100% !important;
+    }
+
+    .search_bar.fixed {
+        width: 100% !important;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .recent-time {
+        display: none !important;
+    }
+
+    .publication-banner .placeholder1 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 335px;
+        height: auto;
+        top: -38px;
+    }
+
+    .back-arrow-btn {
+        display: none;
+    }
+
+}
+
+
+
+
+
+
+@media (max-width: 576px) {
+
+    .pagination-blog {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pagination-blog .pagination {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 6px;
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    .pagination-blog .btn {
+        padding: 0px 12px;
+        height: 32px !important;
+        font-size: 12px;
+    }
+
+    .pagination-blog .previous,
+    .pagination-blog .Next {
+        width: 100%;
+        max-width: 180px;
+        font-size: 13px;
+    }
 }

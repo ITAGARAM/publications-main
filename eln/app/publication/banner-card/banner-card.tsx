@@ -1,5 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
+const CATEGORY_LABELS: Record<string, string> = {
+    general: "General",
+    product: "Industry",
+    news: "News & Event",
+    featured: "Featured",
+    all: 'All',
+    caseStudy: 'Case Study',
+    whitePaper: 'White Paper',
+    ebook: 'Ebook'
+};
 
 interface BannerCardProps {
     img: string;
@@ -12,12 +22,13 @@ interface BannerCardProps {
     usernameTags?: string[];
     publishedAt?: string;
     slug: string;
+    pageName: string;
 }
 export default function BannerCard(props: BannerCardProps) {
     const tagColors = ["green", "purple", "orange"];
     return (
         <div className="bannercard">
-            <Link href={`/blog/${props.slug}`}>
+            <Link href={`/${props.pageName === 'publication' ? 'publication' : 'blog'}/${props.slug}`}>
                 <Image
                     src={props.img}
                     alt={props.alt || props.title}
@@ -27,13 +38,16 @@ export default function BannerCard(props: BannerCardProps) {
                 />
             </Link>
 
-            <label>{props.label?.toLowerCase() === "product" ? "Product" : props.label}</label>
-            <Link href={`/blog/${props.slug}`}><h4>
-                {props.title
-                    ? props.title.split(" ").slice(0, 15).join(" ") +
-                    (props.title.split(" ").length > 15 ? "..." : "")
-                    : ""}
-            </h4>
+            <label>{CATEGORY_LABELS[props.label] || props.label}</label>
+
+
+            <Link href={`/${props.pageName === 'publication' ? 'publication' : 'blog'}/${props.slug}`}>
+                <h4>
+                    {props.title
+                        ? props.title.split(" ").slice(0, 10).join(" ") +
+                        (props.title.split(" ").length > 15 ? "..." : "")
+                        : ""}
+                </h4>
 
             </Link>
             <p>
