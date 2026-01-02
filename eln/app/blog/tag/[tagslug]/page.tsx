@@ -213,6 +213,7 @@ const BlogByTag = ({ params }: { params: { tagslug: string } }) => {
                         usernameTags={blog.usernameTags}
                         publishedAt={blog.publishedAt}
                         slug={decodeURIComponent(blog.slug.current)}
+                        pageName={'blog'}
                       />
                     </div>
                   ))}

@@ -47,7 +47,7 @@ const publicationQuery = `*[_type == "publication"] {
 }
 `;
 
-const publicationPage = ({ params }: { params: { slug: string } }) => {
+const PublicationPage = ({ params }: { params: { slug: string } }) => {
 
     const [data, setData] = useState<any>(null);
 
@@ -208,7 +208,7 @@ const publicationPage = ({ params }: { params: { slug: string } }) => {
                         <div className="item ">
                             <div className="row">
                                 {relatedPublication.slice(0, 2).map((post, i) => (
-                                    <div className="col-md-6">
+                                    <div className="col-md-6" key={i}>
                                         <div className="publication-card px-3 mb-4">
                                             <BannerCard
                                                 label={post.category || "Whitepaper"}
@@ -241,7 +241,7 @@ const publicationPage = ({ params }: { params: { slug: string } }) => {
                         <div className="item ">
                             <div className="row">
                                 {relatedPublication.slice(2, 4).map((post, i) => (
-                                    <div className="col-md-6">
+                                    <div className="col-md-6" key={i}>
                                         <div className="publication-card px-3 mb-4">
                                             <BannerCard
                                                 label={post.category || "Whitepaper"}
@@ -278,4 +278,4 @@ const publicationPage = ({ params }: { params: { slug: string } }) => {
     );
 }
 
-export default publicationPage;
+export default PublicationPage;

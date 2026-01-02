@@ -359,8 +359,8 @@ export default function Publication() {
                             {
                                 selectedCategory === 'default' ?
                                     <>
-                                        {filteredpublications.slice(0, 2).map((post) => (
-                                            <div className="col-md-6">
+                                        {filteredpublications.slice(0, 2).map((post, i) => (
+                                            <div className="col-md-6" key={i}>
                                                 <div className="publication-card px-3 mb-4">
                                                     <BannerCard
                                                         label={post.category || "Whitepaper"}
@@ -397,8 +397,8 @@ export default function Publication() {
                                                     {publicationData
                                                         .filter((item) => item.category === cat.catValue)
                                                         .slice(0, 4)
-                                                        .map((subCat) => (
-                                                            <div className="col-md-6">
+                                                        .map((subCat, i) => (
+                                                            <div className="col-md-6" key={i}>
                                                                 <div className="publication-card px-3 mb-4">
                                                                     <BannerCard
                                                                         label={subCat.category || "Whitepaper"}
@@ -443,8 +443,8 @@ export default function Publication() {
 
                                     selectedCategory === "all" ?
                                         <>
-                                            {filteredpublications.map((post) => (
-                                                <div className="col-md-6">
+                                            {filteredpublications.map((post, i) => (
+                                                <div className="col-md-6" key={i}>
                                                     <div className="publication-card px-3 mb-4">
                                                         <BannerCard
                                                             label={post.category || "Whitepaper"}
