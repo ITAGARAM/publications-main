@@ -393,7 +393,8 @@ const Blog = () => {
 
   return (
     <div>
-
+      
+    <Header whiteHeader/>
       {/* Optional Protocolmenu */}
       {/* <div className={`protocolmenu ${isFixed ? 'fixed' : ''}`}>Sticky Content</div> */}
 

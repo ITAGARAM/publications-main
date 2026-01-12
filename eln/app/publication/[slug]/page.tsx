@@ -15,6 +15,7 @@ import dynamic from 'next/dynamic';
 import BannerCard from "../banner-card/banner-card";
 import { useEffect, useState } from "react";
 import { client } from "@/lib/sanity";
+import dottedEllipse from '../../../public/assets/images/publication/dotted-ellipse.svg';
 
 var $ = require('jquery');
 
@@ -123,11 +124,11 @@ const PublicationPage = ({ params }: { params: { slug: string } }) => {
             <Header whiteHeader />
             <div className="publication-banner publication-banner-body">
                 <Image
-                    src={blogRoundbody}
+                    src={dottedEllipse}
                     alt="Decorative dotted curve"
                     className="dotted-line"
                 />
-                <div className="container">
+                <div className="container position-relative">
                     <button
                         className="back-arrow-btn back-arrow-btn-body"
                         style={{zIndex: 8}}
@@ -135,20 +136,22 @@ const PublicationPage = ({ params }: { params: { slug: string } }) => {
                     >
                         <Image src={back_arrow} alt="Back" width={20} height={20} />
                     </button>
-                    <div className="mt-5 cursor-pointer">
+                    
                         <div className="text-center position-relative" style={{ margin: "auto", maxWidth: "820px", zIndex: 1 }}>
                             <Image
                                 src={data?.mainImage || placeholderImg}
                                 alt={"Blog image"}
                                 width={800}
                                 height={400}
-                                className="img-fluid publication-banner-image my-5"
+                                className="img-fluid publication-banner-image"
                             />
                         </div>
-                    </div>
+                    
                 </div>
+
+                {/* <div className="blur-bg" /> */}
             </div>
-            <div className="container recent mt-5">
+            <div className="container recent mt-3 mt-xl-5">
                 <div className="d-flex justify-content-between align-items-center">
                     <div>
                         <label>Download <span style={{ color: '#4042FD' }}>

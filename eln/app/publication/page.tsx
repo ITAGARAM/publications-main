@@ -6,6 +6,7 @@ import Link from "next/link";
 import { IoSearch } from "react-icons/io5";
 import placeholder_img from "../../public/assets/images/publication/placeholder1.png"
 import whitepaper from "../../public/assets/images/publication/f_whitepaper.svg"
+import caseStudy from "../../public/assets/images/publication/case_study_arrow.svg"
 import recent from "../../public/assets/images/publication/recent.svg"
 import Image from "next/image";
 import BannerCard from "./banner-card/banner-card";
@@ -43,7 +44,8 @@ const publicationQuery = `*[_type == "publication"] | order(publishedAt desc) {
     slug,
     category,
     summary,
-    "mainImage": mainImage.asset->url
+    "mainImage": mainImage.asset->url,
+    isTopRead
 }
 `
 
@@ -57,7 +59,8 @@ type PaginationProps = {
 
 
 export default function Publication() {
-    const [selectedCategory, setSelectedCategory] = useState("default")
+    const [selectedCategory, setSelectedCategory] = useState("default");
+    const [searchWord, setSearchWord] = useState(false);
 
     const [currentPageByCategory, setCurrentPageByCategory] = useState<
         Record<string, number>
@@ -103,9 +106,26 @@ export default function Publication() {
         fetchData();
     }, [])
 
+    const featuredPublication = publicationData.filter((item) => item.isTopRead === true);
+
+    useEffect(() => {
+        if (!publicationData.length) return;
+        if (featuredPublication.length > 1) {
+            alert(`${featuredPublication.map((item) => `${item.title}, `).join('\n')}\n\nonly one publication should be set as featured publication.`)
+        }
+        else if (featuredPublication.length === 0) {
+            alert("Atleast one publication should be set as featured publication")
+        }
+    }, [featuredPublication])
+
+
     const filteredpublications = selectedCategory === 'default' || selectedCategory === 'all' ?
         publicationData : publicationData.filter(
             (item) => item.category === selectedCategory);
+
+    const recentIDs = new Set(
+        filteredpublications.slice(0, 2).map(item => item._id)
+    )
 
     const scrollToTitle = () => {
         titleRef.current?.scrollIntoView({
@@ -159,7 +179,7 @@ export default function Publication() {
                     disabled={currentPage === totalPages}
                     onClick={() => { onPageChange(currentPage + 1); scrollToTitle() }}
                 >
-                     Next &rarr;
+                    Next &rarr;
                 </button>
             </div>
         );
@@ -210,6 +230,26 @@ export default function Publication() {
 
     }, [])
 
+    const searchPublication = publicationData.filter(item => {
+        const lowerSearch = searchTerm.toLowerCase();
+        return (
+            item.title?.toLowerCase().includes(lowerSearch) ||
+            item.summary?.toLowerCase().includes(lowerSearch)
+        )
+
+    })
+
+    useEffect(()=>{
+        if(searchTerm.length >= 1){
+            setSearchWord(true)
+        }else{
+            setSearchWord(false)
+            setSelectedCategory("default")
+        }
+    },[searchTerm])
+
+
+
     return (
         <div>
             <Header whiteHeader />
@@ -217,28 +257,35 @@ export default function Publication() {
                 <div className="container">
                     <div className="row mt-5 cursor-pointer" ref={BannerRef}>
                         <div className="col-lg-6 col-md-7 position-relative publication-banner-mobile">
-                            <Image src={whitepaper} alt="Feature Whitepaper" className="whitepaper" width={260} height={50} />
+                            <Image src={caseStudy} alt="Feature Whitepaper" className="whitepaper" width={260} height={50} />
                             <div className="d-flex align-items-center">
                                 <h6>Publications</h6>
                                 <span className="line ms-2"></span>
                             </div>
-                            <h1>How Logilab ELN helps organizations to follow GxP Regulations</h1>
-                            <p>GxP is a set of regulations and quality guidelines formulated to ensure the safety of life sciences products while maintaining the quality of processes throughout every stage of manufacturing,..</p>
+                            <h1>{featuredPublication[featuredPublication.length - 1]?.title}</h1>
+                            <p>{featuredPublication[featuredPublication.length - 1]?.summary.slice(0, 150)}...</p>
                             <Link href={'#'}>
                                 <button>
                                     Get Your Copy Now
                                 </button>
                             </Link>
                         </div>
-                        <div className="col-lg-6 col-md-5 position-relative d-md-flex justify-content-md-center align-items-md-center">
-                            <Image src={placeholder_img} alt="placeholder" className="img-fluid placeholder1" />
+                        <div className="col-lg-6 col-md-5 position-relative d-md-flex justify-content-md-center align-items-md-center" style={{ height: '340px' }}>
+                            <Image src={featuredPublication[featuredPublication.length - 1]?.mainImage || placeholder_img} alt="placeholder" className="img-fluid placeholder1" fill />
                         </div>
                     </div>
                     <div ref={SearchRef} className={`search_bar w-75 mx-auto ${touchedTop ? 'fixed' : ''}`}>
                         <div className="search-icon">
                             <Image src={search} alt="search" width={16} />
                         </div>
-                        <input type="text" placeholder="Start searching here" />
+                        <input type="text" placeholder="Start searching here" value={searchTerm}
+                            onChange={(e) => {
+                                setSearchTerm(e.target.value)
+                                setSelectedCategory("all")
+                                scrollToTitle()
+                                
+                                
+                            }} />
                     </div>
                     {touchedTop && <div style={{ height: "180px" }} />}
                 </div>
@@ -254,26 +301,7 @@ export default function Publication() {
                             <div className="p-3" style={{ width: '200px' }}>
                                 <h5 className="">Category</h5>
                                 <ul className="list-unstyled mt-3 mb-0">
-                                    {/* {categories
-                                        .filter(category => category !== 'Categorized')
-                                        .map((category) => {
-                                            const displayLabel = category === 'Product' ? 'Industry' : category;
-                                            return (
-                                                <li
-                                                    key={category}
-                                                    className={`d-flex align-items-center cursor-pointer ${category === activeCategory ? 'text-primary fw-semibold' : 'text-secondary-li'}`}
-                                                    onClick={() => onCategoryClick(category)}
-                                                    style={{ cursor: 'pointer' }}
-                                                >
-                                                    {category === activeCategory ? (
-                                                        <FaAngleRight className="me-2 text-primary" />
-                                                    ) : (
-                                                        <span className="me-4" />
-                                                    )}
-                                                    {displayLabel}
-                                                </li>
-                                            );
-                                        })} */}
+
 
                                     {categories.map((cat) => (
                                         <li
@@ -301,16 +329,6 @@ export default function Publication() {
                                     value={selectedCategory || ''}
                                     onChange={(e) => setSelectedCategory(e.target.value)}
                                 >
-                                    {/* {categories
-                                        .filter(category => category !== 'Categorized')
-                                        .map((category) => {
-                                            const displayLabel = category === 'Product' ? 'Industry' : category;
-                                            return (
-                                                <option key={category} value={category}>
-                                                    {displayLabel}
-                                                </option>
-                                            );
-                                        })} */}
 
                                     {categories.map((cat) => (
                                         <option key={cat.catValue} value={cat.catValue}>
@@ -342,12 +360,18 @@ export default function Publication() {
                     <div className="col-lg-9 col-md-8">
                         <div className="d-flex justify-content-between align-items-end recent">
 
-                            <h2 ref={titleRef}><span className="highlight-bg">{
-                                selectedCategory === 'default' ? 'Recent Publications' :
-                                    categories.find((item) =>
-                                        item.catValue === selectedCategory
-                                    )?.catName
-                            }</span></h2>
+                            {searchWord ? <h2 className="searchWord">You are searching for "{searchTerm}"</h2>
+                                :
+                                <h2 ref={titleRef}>
+                                    <span className="highlight-bg">{
+                                        selectedCategory === 'default' ? 'Recent Publications' :
+                                            categories.find((item) =>
+                                                item.catValue === selectedCategory
+                                            )?.catName
+                                    }</span>
+                                </h2>
+                            }
+
 
                             <div className="col-4 text-end">
                                 <Image src={recent} alt="recent" width={50} />
@@ -359,8 +383,8 @@ export default function Publication() {
                             {
                                 selectedCategory === 'default' ?
                                     <>
-                                        {filteredpublications.slice(0, 2).map((post, i) => (
-                                            <div className="col-md-6" key={i}>
+                                        {filteredpublications.slice(0, 2).map((post) => (
+                                            <div className="col-md-6" key={post._id}>
                                                 <div className="publication-card px-3 mb-4">
                                                     <BannerCard
                                                         label={post.category || "Whitepaper"}
@@ -396,9 +420,10 @@ export default function Publication() {
                                                 <div className="row">
                                                     {publicationData
                                                         .filter((item) => item.category === cat.catValue)
+                                                        .filter(item => !recentIDs.has(item._id))
                                                         .slice(0, 4)
-                                                        .map((subCat, i) => (
-                                                            <div className="col-md-6" key={i}>
+                                                        .map((subCat) => (
+                                                            <div className="col-md-6" key={subCat._id}>
                                                                 <div className="publication-card px-3 mb-4">
                                                                     <BannerCard
                                                                         label={subCat.category || "Whitepaper"}
@@ -426,7 +451,7 @@ export default function Publication() {
 
 
                                                 <div className="d-flex justify-content-end">
-                                                    <button className="download-btn" style={{ width: 'max-content' }} onClick={() => { setSelectedCategory(cat.catValue); scrollToTitle() }}>
+                                                    <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }} onClick={() => { setSelectedCategory(cat.catValue); scrollToTitle() }}>
                                                         Show More
                                                     </button>
                                                 </div>
@@ -443,8 +468,8 @@ export default function Publication() {
 
                                     selectedCategory === "all" ?
                                         <>
-                                            {filteredpublications.map((post, i) => (
-                                                <div className="col-md-6" key={i}>
+                                            {searchPublication.map((post) => (
+                                                <div className="col-md-6" key={post._id}>
                                                     <div className="publication-card px-3 mb-4">
                                                         <BannerCard
                                                             label={post.category || "Whitepaper"}
@@ -472,7 +497,7 @@ export default function Publication() {
                                         :
                                         <>
                                             {paginatedPublications.map((post) => (
-                                                <div className="col-md-6" key={post.id}>
+                                                <div className="col-md-6" key={post._id}>
                                                     <div className="publication-card px-3 mb-4">
                                                         <BannerCard
                                                             label={post.category || "Whitepaper"}

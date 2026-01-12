@@ -1,10 +1,11 @@
 .publication-banner {
-    background-image: url('../public/assets/images/publication/blog-banner-bg.svg');
-    background-position-y: -125px;
+    background-image: url('../public/assets/images/blog/blog-banner-bg-2.svg');
+    background-position-y: 0px;
     background-repeat: no-repeat;
-    background-size: inherit;
-    padding: 10rem 0 4rem;
+    background-size: cover;
+    padding: 7rem 0 4rem;
     border-radius: 140px 0 0 0;
+    position: relative;
 }
 
 .publication-banner h6 {
@@ -82,6 +83,10 @@
     font-size: 13px;
     font-weight: 600;
     color: #888888;
+}
+
+.search_bar input:focus-visible{
+    outline: none;
 }
 
 .search_bar .search-icon {
@@ -253,8 +258,8 @@
 }
 
 .back-arrow-btn-body {
-    top: 200px;
-    left: 263px;
+    top: 25px;
+    left: 120px;
 }
 
 .back-arrow-btn img {
@@ -269,7 +274,7 @@
 
 .dotted-line {
     position: absolute;
-    top: -185px;
+    top: -18px;
     /* adjust based on where you want it */
     left: 0;
     width: 100%;
@@ -390,13 +395,52 @@
     border: 1px solid #dee2e6;
 }
 
+.publication-banner-image{
+    border-radius: 40px;
+}
+
+.searchWord{
+    font-weight: 900;
+    font-size: 35px;
+    margin-bottom: 35px;
+}
 
 
 
-@media (max-width: 1280px) {
+@media (max-width: 1550px) {
 
     .publication-banner {
-        background-position-y: 14px;
+        padding: 7rem 0 0rem !important;
+    }
+    .publication-banner-image{
+        height: 350px !important;
+        width: 700px !important;
+    }
+    .dotted-line{
+        top: -100px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .publication-banner {
+        padding: 5rem 0 0rem !important;
+    }
+    .dotted-line{
+        top: -120px;
+    }
+}
+
+@media (max-width: 1200px) {
+    
+    .dotted-line{
+        top: -150px;
+    }
+    .back-arrow-btn-body{
+        left: 35px;
+    }
+    .publication-banner-image{
+        height: 300px !important;
+        width: 600px !important;
     }
 }
 
