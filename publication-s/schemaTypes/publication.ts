@@ -21,6 +21,13 @@ export default defineType({
             },
         }),
         defineField({
+            name: 'isTopRead',
+            title: 'Featured Publication',
+            type: 'boolean',
+            description: 'Check this to mark the publication as a Featured Publication',
+            initialValue: false,
+        }),
+        defineField({
             name: 'title',
             title: 'Title',
             type: 'string',
