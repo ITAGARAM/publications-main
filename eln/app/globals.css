@@ -1752,7 +1752,8 @@ only screen and (max-width: 767px) {
 
 .submenu-two {
   background: #fff;
-  width: 1144px;
+  /* width: 1144px; */
+  width: max-content;
   height: 393px;
   position: absolute;
   border-radius: 8px;
@@ -1760,8 +1761,8 @@ only screen and (max-width: 767px) {
 
 .submenu-resources {
   left: -127px;
-  height: 340px;
-  width: 920px;
+  height: max-content;
+  width: max-content;
 }
 
 .submenu-resources .menu-blog-card {
@@ -1769,9 +1770,10 @@ only screen and (max-width: 767px) {
 }
 
 .submenu-Company {
-  width: 890px;
+  width: max-content;
   left: -325px;
-  height: 355px;
+  height: max-content;
+  padding-right: 1.5rem;
 }
 
 .submenu-Company .menu-blog-card {
@@ -1782,8 +1784,9 @@ only screen and (max-width: 767px) {
 .submenu-pricing {
   background: #fff;
   position: absolute;
-  width: 340px !important;
+  width: max-content;
   border-radius: 8px;
+  padding-right: 1rem;
 }
 
 .menu-pricing {
@@ -1865,6 +1868,7 @@ only screen and (max-width: 767px) {
 
 .submenu-two.type {
   padding: 0 !important;
+  padding-right: 1.5rem !important;
 }
 
 .menu-mobile-ml.labtype {
@@ -1878,7 +1882,7 @@ only screen and (max-width: 767px) {
 
 .box-shadow-menu li {
   width: 290px;
-  height: 92px;
+  /* height: 92px; */
 }
 
 .use-case-menu li {
@@ -1894,7 +1898,7 @@ only screen and (max-width: 767px) {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 8px;
   width: 290px;
-  height: 92px;
+  /* height: 92px; */
 }
 
 .use-case-menu li:hover {
@@ -3454,6 +3458,7 @@ margin-top:20px; */
   /* prevents repetition */
   position: absolute;
   right: 0;
+  top: 31px;
 }
 
 .uparrow.active::after {
