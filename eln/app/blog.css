@@ -540,6 +540,19 @@ h6 {
     width: 50%;
 }
 
+@media (max-width: 1280px){
+    .publication-banner {
+        background-image: url('../public/assets/images/blog/blog-banner-bg.svg');
+        /* background-position-y: 14px; */
+        background-size: inherit;
+        padding-bottom: 2rem !important;
+        padding-top: 5rem;
+    }
+    .search_bar{
+        margin: 4rem auto;
+    }
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .publication-banner {
         background-image: url('../public/assets/images/publication/blog-banner-bg-mobile.jpg');
