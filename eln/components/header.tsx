@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { GoArrowRight } from "react-icons/go";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import logowhite from '../public/assets/images/eln_logo_white.svg';
+import logowhite from '../public/assets/images/home/agaram-logo.png';
 import { SlArrowDown } from "react-icons/sl";
 import logoblack from '../public/assets/images/eln_logo.svg'
 import downwhitearrow from '../public/assets/images/downwhitearrow.svg'
