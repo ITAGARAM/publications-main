@@ -48,6 +48,43 @@ import Project_Manage from '../public/assets/images/menu/Project_Manage.svg'
 import left_arrow from '../public/assets/images/menu/left_arrow.png'
 import response_closebtn from '../public/assets/images/menu/response_closebtn.svg'
 
+import limsIcon from '../public/assets/images/menu/products/lims-icon.svg'
+import elnIcon from '../public/assets/images/menu/products/eln-icon.svg'
+import cfrIcon from '../public/assets/images/menu/products/cfr-icon.png'
+import sdmsIcon from '../public/assets/images/menu/products/sdms-icon.svg'
+import dmsIcon from '../public/assets/images/menu/products/dms-icon.svg'
+import interfacerIcon from '../public/assets/images/menu/products/interfacer-icon.svg'
+import besIcon from '../public/assets/images/menu/products/bes-logo-menu.svg'
+
+import i1 from '../public/assets/images/menu/industry/i1.svg'
+import i2 from '../public/assets/images/menu/industry/i2.svg'
+import i3 from '../public/assets/images/menu/industry/i3.svg'
+import i4 from '../public/assets/images/menu/industry/i4.svg'
+import i5 from '../public/assets/images/menu/industry/i5.svg'
+import i6 from '../public/assets/images/menu/industry/i6.svg'
+import i7 from '../public/assets/images/menu/industry/i7.svg'
+import i8 from '../public/assets/images/menu/industry/i8.svg'
+import i9 from '../public/assets/images/menu/industry/i9.svg'
+
+import r1 from '../public/assets/images/menu/resources/r1.svg'
+import r2 from '../public/assets/images/menu/resources/r2.svg'
+import r3 from '../public/assets/images/menu/resources/r3.svg'
+import r4 from '../public/assets/images/menu/resources/r4.svg'
+import r5 from '../public/assets/images/menu/resources/r5.svg'
+
+import s1 from '../public/assets/images/menu/services/s1.svg'
+import s2 from '../public/assets/images/menu/services/s2.svg'
+import s3 from '../public/assets/images/menu/services/s3.svg'
+import s4 from '../public/assets/images/menu/services/s4.svg'
+
+import c1 from '../public/assets/images/menu/company/c1.svg'
+import c2 from '../public/assets/images/menu/company/c2.svg'
+import c3 from '../public/assets/images/menu/company/c3.svg'
+import c4 from '../public/assets/images/menu/company/c4.svg'
+import c7 from '../public/assets/images/menu/company/c7.svg'
+
+
+
 type HeaderProps = {
   whiteHeader?: boolean;
 };
@@ -116,6 +153,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
   const [isResourceOpen, setResourceOpen] = useState(false);
   const [isCompanyOpen, setCompanyOpen] = useState(false);
   const [isPricingOpen, setPricingOpen] = useState(false);
+  const [isService, setServiceOpen] = useState(false);
 
   const [showLabItems, setShowLabItems] = useState(false);
 
@@ -129,6 +167,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
     setResourceOpen(menu === "resources" ? !isResourceOpen : false);
     setCompanyOpen(menu === "company" ? !isCompanyOpen : false);
     setPricingOpen(menu === "pricing" ? !isPricingOpen : false);
+    setServiceOpen(menu === 'service' ? !isService : false);
   };
 
 
@@ -178,7 +217,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
 
                           <li className="has-children has-children--multilevel-submenu">
                             <a className="nav-link navdata pricing-link">
-                              Solutions
+                              Products
                               <Image
                                 src={scroll || whiteHeader ? downarrow : downwhitearrow}
                                 className="responsive_image_bottom ms-2 downwhitearrow"
@@ -190,7 +229,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
 
                             <ul className="submenu submenu-two type py-4">
 
-                              <li className="box-shadow-menu type ms-2">
+                              {/* <li className="box-shadow-menu type ms-2">
                                 <ul className="mt-5">
                                   <li
                                     onClick={handleLabTypesClick}
@@ -210,40 +249,40 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                                   </li>
 
                                 </ul>
-                              </li>
+                              </li> */}
 
                               {(activeSection === 'labTypes' || activeSection === null) && (
                                 <>
                                   <li className="box-shadow-menu ms-4 mt-2 py-3">
                                     <ul>
-                                      <Link href="/solution" className="nav-link ">
+                                      <Link href="https://www.agaramtech.com/product/qualis-lims-software" target="_blank" className="nav-link ">
                                         <li className="px-3 py-3 d-flex">
-                                          <Image src={all_solution} alt="" className="me-2 solution-memu-icon" />
+                                          <Image src={limsIcon} alt="" className="me-2" height={40} />
                                           <div className="d-flex flex-column">
-                                            <span className="f_600 f_size_16">All Solutions</span>
-                                            <span className="submenu-sub-text">Find the perfect solution for your lab</span>
+                                            <span className="f_600 f_size_16">Qualis Lims</span>
+                                            <span className="submenu-sub-text">Sample management, elevated</span>
                                           </div>
 
                                         </li>
                                       </Link>
-                                      <Link href="/solution/research" className="nav-link ">
+                                      <Link href="https://www.agaramtech.com/product/logilab-eln" target="_blank" className="nav-link ">
                                         <li className="mt-2 px-3 py-3 d-flex">
-                                          <Image src={research_development} alt="research_development" className="me-2" />
+                                          <Image src={elnIcon} alt="research_development" className="me-2" height={40} />
                                           <div className="d-flex flex-column">
-                                            <span className="f_600 f_size_16">Research & Development</span>
-                                            <span className="submenu-sub-text">From ideas to innovations</span>
+                                            <span className="f_600 f_size_16">Logilab ELN</span>
+                                            <span className="submenu-sub-text">Familiar interface, simply more powerful</span>
                                           </div>
                                         </li>
                                       </Link>
-                                      <Link href="/solution/academics" className="nav-link ">
+                                      <Link href="https://www.agaramtech.com/product/cfr-gateway" target="_blank" className="nav-link ">
                                         <li className="mt-2 px-3 py-3 d-flex">
 
-                                          <Image src={Academics_menu_icon} alt="" className="me-2" />
+                                          <Image src={cfrIcon} alt="" className="me-2" height={40} width={43} />
                                           <div className="d-flex flex-column">
                                             <span className="f_600 f_size_16">
-                                              Academics <Link href="/pricing" className="menu-pricing">Pricing</Link>
+                                              CFR Gateway
                                             </span>
-                                            <span className="submenu-sub-text">Streamline & centralize</span>
+                                            <span className="submenu-sub-text">Non-complaint instruments made complaint</span>
                                           </div>
 
                                         </li>
@@ -253,31 +292,57 @@ const Header = ({ whiteHeader }: HeaderProps) => {
 
                                   <li className="box-shadow-menu box-shadow-menu-two ms-4 mt-2 py-3">
                                     <ul>
-                                      <Link href="/solution/qa_qc_lab" className="nav-link ">
+                                      <Link href="https://www.agaramtech.com/product/logilab-sdms-scientific-data-management-system" target="_blank" className="nav-link ">
                                         <li className="ms-3 px-3 py-3 d-flex">
 
-                                          <Image src={qa_ac_labs} alt="" className="mt-1 me-1 qa-qc-memu-icon" />
+                                          <Image src={sdmsIcon} alt="" className="mt-1 me-1" height={40} width={50} />
                                           <div className="d-flex flex-column">
-                                            <span className="f_600 f_size_16">QA & QC Labs</span>
-                                            <span className="submenu-sub-text">Stay compliant & error-free</span>
+                                            <span className="f_600 f_size_16">Logilab SDMS</span>
+                                            <span className="submenu-sub-text">Automated data integrity & compliance</span>
                                           </div>
 
                                         </li>
                                       </Link>
-                                      <Link href="/solution/integrity" className="nav-link ">
+                                      <Link href="https://www.agaramtech.com/product/qualis-dms" target="_blank" className="nav-link ">
                                         <li className="ms-3 px-3 py-3 d-flex">
 
-                                          <Image src={data_integrity_compliance} alt="" className="me-2 mt-1" />
+                                          <Image src={dmsIcon} alt="" className="me-2 mt-1" height={40} />
                                           <div className="d-flex flex-column">
-                                            <span className="f_600 f_size_16">Data Integrity & Compliance</span>
-                                            <span className="submenu-sub-text">Secure & audit-ready</span>
+                                            <span className="f_600 f_size_16">Qualis DMS</span>
+                                            <span className="submenu-sub-text">Compliant document management & control</span>
                                           </div>
 
                                         </li>
                                       </Link>
                                     </ul>
                                   </li>
-                                  <Link href='https://www.logilabeln.com/blog/why-most-eln-solutions-are-not-suitable-for-the-regulated-industry/' target="_blank">
+                                  <li className="box-shadow-menu box-shadow-menu-two ms-4 mt-2 py-3">
+                                    <ul>
+                                      <Link href="https://www.agaramtech.com/product/interfacer" target="_blank" className="nav-link ">
+                                        <li className="ms-3 px-3 py-3 d-flex">
+
+                                          <Image src={interfacerIcon} alt="" className="mt-1 me-2" height={40} />
+                                          <div className="d-flex flex-column">
+                                            <span className="f_600 f_size_16">Interfacer</span>
+                                            <span className="submenu-sub-text">Integrate any clinical instruments</span>
+                                          </div>
+
+                                        </li>
+                                      </Link>
+                                      <Link href="https://www.agaramtech.com/product/logilab-bes-bioanalytical-execution-system" target="_blank" className="nav-link ">
+                                        <li className="ms-3 px-3 py-3 d-flex">
+
+                                          <Image src={besIcon} alt="" className="me-2 mt-1" height={40} width={42} />
+                                          <div className="d-flex flex-column">
+                                            <span className="f_600 f_size_16">Logilab BES</span>
+                                            <span className="submenu-sub-text">Optimize BA/BE & DMPK workflows</span>
+                                          </div>
+
+                                        </li>
+                                      </Link>
+                                    </ul>
+                                  </li>
+                                  {/* <Link href='https://www.logilabeln.com/blog/why-most-eln-solutions-are-not-suitable-for-the-regulated-industry/' target="_blank">
                                     <li className="box-shadow-menu box-shadow-menu-two pt-3  ms-4">
                                       <div>
                                         <div className="card menu-blog-card">
@@ -300,7 +365,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                                         </div>
                                       </div>
                                     </li>
-                                  </Link>
+                                  </Link> */}
                                 </>
                               )}
 
@@ -398,7 +463,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                           </li>
                           <li className="has-children has-children--multilevel-submenu">
                             <Link href="" className="nav-link navdata pricing-link">
-                              Resources
+                              Industry
                               <Image
                                 src={scroll || whiteHeader ? downarrow : downwhitearrow}
                                 className="responsive_image_bottom ms-2 downwhitearrow"
@@ -407,38 +472,38 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                                 onMouseLeave={(e) => (e.target as HTMLImageElement).classList.remove('hover')}
                               />
                             </Link>
-                            <ul className="submenu submenu-two submenu-resources py-4">
+                            <ul className="submenu submenu-two submenu-resources py-4 pe-4">
                               <li className='box-shadow-menu ms-4'>
                                 <ul>
-                                  <Link href="https://www.logilabeln.com/blog" className="nav-link ">
+                                  <Link href="https://www.agaramtech.com/industries/pharmaceutical" className="nav-link " target='_blank'>
                                     <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={blog_icon} alt="" className='mt-1 me-1 blog-memu-icon' />
+                                      <Image src={i1} alt="" className='mt-1 me-2' height={35} />
                                       <div className='d-flex flex-column'>
-                                        <span className='f_600 f_size_16'>Blogs</span>
-                                        <span className='submenu-sub-text'>Stay informed about latest <br /> insights & updates</span>
+                                        <span className='f_600 f_size_16'>Pharma LIMS | ELN</span>
+                                        <span className='submenu-sub-text'>Paperless quality control and compliance</span>
                                       </div>
 
                                     </li>
                                   </Link>
-                                  <Link href="/resource/publications" className="nav-link ">
+                                  <Link href="https://www.agaramtech.com/industries/life-sciences-biotech" className="nav-link " target='_blank'>
                                     <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={publications_icon} alt="" className='me-1 mt-1' />
+                                      <Image src={i2} alt="" className='me-2 mt-1' height={40} />
                                       <div className='d-flex flex-column'>
-                                        <span className='f_600 f_size_16'>Publications</span>
-                                        <span className='submenu-sub-text'>Explore research papers,<br />case studies & white papers </span>
+                                        <span className='f_600 f_size_16'>Life Sciences & Biotech LIMS | SDMS</span>
+                                        <span className='submenu-sub-text'>Standardize research data and workflows</span>
                                       </div>
 
                                     </li>
                                   </Link>
-                                  <Link href="/resource/download" className="nav-link ">
+                                  <Link href="https://www.agaramtech.com/industries/contract-research-organization" className="nav-link " target='_blank'>
                                     <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={Downloads_icon} alt="" className='me-2 mt-1' />
+                                      <Image src={i3} alt="" className='me-2 mt-1' height={40} />
                                       <div className='d-flex flex-column'>
-                                        <span className='f_600 f_size_16'>Downloads</span>
-                                        <span className='submenu-sub-text'>Access product brochures & guides</span>
+                                        <span className='f_600 f_size_16'>Contract Research Organization ELN</span>
+                                        <span className='submenu-sub-text'>Elevate collaboration and be audit-ready</span>
                                       </div>
 
                                     </li>
@@ -447,45 +512,74 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                               </li>
                               <li className='box-shadow-menu box-shadow-menu-two ms-4'>
                                 <ul className="">
-                                  <Link href="https://helpcenter.agaramtech.com/" className="nav-link ">
+                                  <Link href="https://www.agaramtech.com/industries/healthcare-diagnostics" className="nav-link " target='_blank'>
                                     <li className='ms-3 px-3 py-3 d-flex'>
-
-
-                                      <Image src={help_center_icon} alt="" className='me-2 mt-1' />
+                                      <Image src={i4} alt="" className='me-2 mt-1' height={40} />
                                       <div className='d-flex flex-column'>
-                                        <span className='f_600 f_size_16'>Help center </span>
-                                        <span className='submenu-sub-text'>View video tutorials, product <br />release notes & more  </span>
+                                        <span className='f_600 f_size_16'>Healthcate & Diagnostics LIMS</span>
+                                        <span className='submenu-sub-text'>Efficiently manage patient data and testing</span>
                                       </div>
 
                                     </li>
                                   </Link>
-                                  <Link href="https://agaramtech.freshdesk.com/support/login" className="nav-link ">
+                                  <Link href="https://www.agaramtech.com/industries/cell-and-gene-therapy" className="nav-link " target='_blank'>
                                     <li className='ms-3 px-3 py-3 d-flex'>
-
-
-                                      <Image src={support_icon} alt="" className='me-2 mt-1' />
+                                      <Image src={i5} alt="" className='me-2 mt-1' height={40} />
                                       <div className='d-flex flex-column'>
-                                        <span className='f_600 f_size_16'>Support</span>
-                                        <span className='submenu-sub-text'>Get in touch with our support team  </span>
+                                        <span className='f_600 f_size_16'>Cell & Gene Therapy ELN | SDMS</span>
+                                        <span className='submenu-sub-text'>Seamless and complaint sample management</span>
                                       </div>
 
                                     </li>
                                   </Link>
-                                  <Link href="/resource/faq" className="nav-link ">
+                                  <Link href="https://www.agaramtech.com/industries/chemical" className="nav-link " target='_blank'>
                                     <li className=' ms-3 px-3 py-3 d-flex'>
-
-
-                                      <Image src={faq_icon} alt="" className='me-2 mt-1' />
+                                      <Image src={i6} alt="" className='me-2 mt-1' height={40} />
                                       <div className='d-flex flex-column'>
-                                        <span className='f_600 f_size_16'>FAQ</span>
-                                        <span className='submenu-sub-text'>Find answers to common queries  </span>
+                                        <span className='f_600 f_size_16'>Chemical Manufacturing | Formulations | LIMS</span>
+                                        <span className='submenu-sub-text'>Enhance sample traceablitiy and data security</span>
                                       </div>
 
                                     </li>
                                   </Link>
                                 </ul>
                               </li>
-                              <Link href='https://www.logilabeln.com/blog/what-is-an-electronic-lab-notebook-a-comprehensive-guide/' target="_blank">
+
+                              <li className='box-shadow-menu box-shadow-menu-two ms-4'>
+                                <ul className="">
+                                  <Link href="https://www.agaramtech.com/industries/oil-gas-industry" className="nav-link " target='_blank'>
+                                    <li className='ms-3 px-3 py-3 d-flex'>
+                                      <Image src={i7} alt="" className='me-2 mt-1' height={40} />
+                                      <div className='d-flex flex-column'>
+                                        <span className='f_600 f_size_16'>Oil & Gas LIMS | SDMS</span>
+                                        <span className='submenu-sub-text'>Automate quality control processes</span>
+                                      </div>
+
+                                    </li>
+                                  </Link>
+                                  <Link href="https://www.agaramtech.com/industries/dairy-food-beverage" className="nav-link " target='_blank'>
+                                    <li className='ms-3 px-3 py-3 d-flex'>
+                                      <Image src={i8} alt="" className='me-2 mt-1' height={40} />
+                                      <div className='d-flex flex-column'>
+                                        <span className='f_600 f_size_16'>Dairy, Food & Beverage LIMS</span>
+                                        <span className='submenu-sub-text'>Accelerate quality test and assurance</span>
+                                      </div>
+
+                                    </li>
+                                  </Link>
+                                  <Link href="https://www.agaramtech.com/industries/manufacturing" className="nav-link " target='_blank'>
+                                    <li className=' ms-3 px-3 py-3 d-flex'>
+                                      <Image src={i9} alt="" className='me-2 mt-1' height={40} />
+                                      <div className='d-flex flex-column'>
+                                        <span className='f_600 f_size_16'>Manufacturing LIMS | ELN</span>
+                                        <span className='submenu-sub-text'>Deliver consistent Superior quality</span>
+                                      </div>
+
+                                    </li>
+                                  </Link>
+                                </ul>
+                              </li>
+                              {/* <Link href='https://www.logilabeln.com/blog/what-is-an-electronic-lab-notebook-a-comprehensive-guide/' target="_blank">
                                 <li className='box-shadow-menu box-shadow-menu-two pt-3 ms-4'>
                                   <div>
                                     <div className="card menu-blog-card">
@@ -501,7 +595,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                                     </div>
                                   </div>
                                 </li>
-                              </Link>
+                              </Link> */}
 
 
                             </ul>
@@ -509,7 +603,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
 
                           <li className="has-children has-children--multilevel-submenu ">
                             <a className="nav-link pricing-link" >
-                              Pricing
+                              Resources
                               <Image
                                 src={scroll || whiteHeader ? downarrow : downwhitearrow}
                                 className="responsive_image_bottom ms-2 downwhitearrow"
@@ -521,39 +615,135 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                             <ul className="py-4 submenu submenu-pricing">
                               <li className='ms-3 box-shadow-menu'>
                                 <ul>
-                                  <Link href="/pricing" className="nav-link " id="nav-tab1" role="tab" aria-selected="true">
-                                    <li className='px-3 py-3 box-shadow-menu d-flex'>
+                                  <Link href="https://www.agaramtech.com/resources/brochures" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={standard_icon} alt="" className='mt-1' style={{ width: '22px', height: '21px', marginLeft: '-5px' }} />
-                                      <div className='d-flex flex-column ms-3'>
-                                        <span className='f_600 f_size_16'> General Plans</span>
-                                        <span className='submenu-sub-text'>Find the perfect solution for your lab</span>
+                                      <Image src={r1} alt="" className='mt-1 me-2' height={35} />
+                                      <div className='d-flex flex-column'>
+                                        <span className='f_600 f_size_16'>Brochures</span>
+                                        <span className='submenu-sub-text'>Access product brochures & guides</span>
                                       </div>
 
                                     </li>
                                   </Link>
-                                  <Link href="/pricing/academic_plans" className="nav-link " id="nav-tab2" role="tab" aria-selected="false" >
-                                    <li className='mt-2 px-2 py-3 box-shadow-menu d-flex'>
+                                  <Link href="https://www.agaramtech.com/resources/publications" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={academic_icon} alt="" className='me-2 mt-1' />
-                                      <div className='d-flex flex-column ms-1'>
-                                        <span className='f_600 f_size_16'>Academic Plans</span>
-                                        <span className='submenu-sub-text'>Affordable plans for<br /> students & academic researchers</span>
+                                      <Image src={r2} alt="" className='mt-1 me-2' height={35} />
+                                      <div className='d-flex flex-column'>
+                                        <span className='f_600 f_size_16'>Publications</span>
+                                        <span className='submenu-sub-text'>Explore research papers, case studies & white papers</span>
                                       </div>
 
                                     </li>
                                   </Link>
-                                  <Link href="/contact-us" className="nav-link ">
-                                    <li className='mt-2 px-2 py-3 box-shadow-menu d-flex'>
+                                  <Link href="https://www.agaramtech.com/resources/videos" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={Request_icon} alt="" className='mt-1  me-1 request-memu-icon' />
-                                      <div className='d-flex flex-column li-hover-content'>
-                                        <span className='f_600 f_size_16'>Request A Quote</span>
-                                        <span className='submenu-sub-text'>Get Custom pricing for your Lab</span>
+                                      <Image src={r3} alt="" className='mt-1 me-2' height={35} />
+                                      <div className='d-flex flex-column'>
+                                        <span className='f_600 f_size_16'>Videos</span>
+                                        <span className='submenu-sub-text'>View informational videos & product tutorials</span>
                                       </div>
 
                                     </li>
                                   </Link>
+                                </ul>
+                              </li>
+                              <li className='ms-3 box-shadow-menu'>
+                                <ul>
+                                  <Link href="https://helpcenter.agaramtech.com/" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
+
+                                      <Image src={r4} alt="" className='mt-1 me-2' height={35} />
+                                      <div className='d-flex flex-column'>
+                                        <span className='f_600 f_size_16'>Help Center</span>
+                                        <span className='submenu-sub-text'>Find FAQs, articles, product release notes & more</span>
+                                      </div>
+
+                                    </li>
+                                  </Link>
+                                  <Link href="https://agaramtech.freshdesk.com/" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
+
+                                      <Image src={r5} alt="" className='mt-1 me-2' height={35} />
+                                      <div className='d-flex flex-column'>
+                                        <span className='f_600 f_size_16'>Helpdesk Portal</span>
+                                        <span className='submenu-sub-text'>Connect for guidance</span>
+                                      </div>
+
+                                    </li>
+                                  </Link>
+
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li className="has-children has-children--multilevel-submenu ">
+                            <a className="nav-link pricing-link" >
+                              Services
+                              <Image
+                                src={scroll || whiteHeader ? downarrow : downwhitearrow}
+                                className="responsive_image_bottom ms-2 downwhitearrow"
+                                alt=""
+                                onMouseEnter={(e) => (e.target as HTMLImageElement).classList.add('hover')}
+                                onMouseLeave={(e) => (e.target as HTMLImageElement).classList.remove('hover')}
+                              />
+                            </a>
+                            <ul className="py-4 submenu submenu-pricing">
+                              <li className='ms-3 box-shadow-menu'>
+                                <ul>
+                                  <Link href="https://www.agaramtech.com/services/professional-services" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
+
+                                      <Image src={s1} alt="" className='mt-1 me-2' height={35} />
+                                      <div className='d-flex flex-column'>
+                                        <span className='f_600 f_size_16'>Professional Services</span>
+                                        <span className='submenu-sub-text'>Everything we can do for you</span>
+                                      </div>
+
+                                    </li>
+                                  </Link>
+                                  <Link href="https://www.agaramtech.com/services/implementation-methodology" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
+
+                                      <Image src={s2} alt="" className='mt-1 me-2' height={35} />
+                                      <div className='d-flex flex-column'>
+                                        <span className='f_600 f_size_16'>Implementation Methodology</span>
+                                        <span className='submenu-sub-text'>The steps we take to provide the best services</span>
+                                      </div>
+
+                                    </li>
+                                  </Link>
+
+                                </ul>
+                              </li>
+                              <li className='ms-3 box-shadow-menu'>
+                                <ul>
+                                  <Link href="https://www.agaramtech.com/services/training" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
+
+                                      <Image src={s3} alt="" className='mt-1 me-2' height={35} />
+                                      <div className='d-flex flex-column'>
+                                        <span className='f_600 f_size_16'>Training</span>
+                                        <span className='submenu-sub-text'>How we train you to achieve peak performance</span>
+                                      </div>
+
+                                    </li>
+                                  </Link>
+                                  <Link href="https://www.agaramtech.com/services/support" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
+
+                                      <Image src={s4} alt="" className='mt-1 me-2' height={35} />
+                                      <div className='d-flex flex-column'>
+                                        <span className='f_600 f_size_16'>Support</span>
+                                        <span className='submenu-sub-text'>How we provide guidance</span>
+                                      </div>
+
+                                    </li>
+                                  </Link>
+
                                 </ul>
                               </li>
                             </ul>
@@ -574,35 +764,35 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                             <ul className="submenu submenu-two  submenu-Company py-4">
                               <li className='box-shadow-menu ms-4'>
                                 <ul>
-                                  <Link href="/company/about-us" className="nav-link ">
-                                    <li className='mt-2 px-3 py-3 d-flex'>
+                                  <Link href="https://www.agaramtech.com/about-us" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={aboutus_icon} alt="" className='me-2 mt-1 About-memu-icon' />
+                                      <Image src={c1} alt="" className='mt-1 me-2' height={35} />
                                       <div className='d-flex flex-column'>
-                                        <span className='f_600 f_size_16'>About Agaram </span>
-                                        <span className='submenu-sub-text'>Who we are & what we do </span>
+                                        <span className='f_600 f_size_16'>About Us</span>
+                                        <span className='submenu-sub-text'>Who we are & what we do</span>
                                       </div>
 
                                     </li>
                                   </Link>
-                                  <Link href="/company/certifications" className="nav-link ">
-                                    <li className='mt-1 px-3 py-3 d-flex'>
+                                  <Link href="https://www.agaramtech.com/partners" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={certification_icon} alt="" className='me-2 mt-1 certifications-memu-icon' />
+                                      <Image src={c2} alt="" className='mt-1 me-2' height={35} />
                                       <div className='d-flex flex-column'>
-                                        <span className='f_600 f_size_16'>Certifications </span>
-                                        <span className='submenu-sub-text'>Committed to delivering uncompromised quality</span>
+                                        <span className='f_600 f_size_16'>Partners</span>
+                                        <span className='submenu-sub-text'>Our global strategic alliances</span>
                                       </div>
 
                                     </li>
                                   </Link>
-                                  <Link href="/company/customers" className="nav-link ">
-                                    <li className='mt-2 px-3 py-3 d-flex'>
+                                  <Link href="https://www.agaramtech.com/customers" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={customers_icon} alt="" className='me-2 mt-1 customers-memu-icon' />
+                                      <Image src={c3} alt="" className='mt-1 me-2' height={35} />
                                       <div className='d-flex flex-column'>
-                                        <span className='f_600 f_size_16'> Our Customers</span>
-                                        <span className='submenu-sub-text'>Testimonials & reviews from our <br />cherished customers </span>
+                                        <span className='f_600 f_size_16'>Customers</span>
+                                        <span className='submenu-sub-text'>Testimonial & reviews from out cherished customers</span>
                                       </div>
 
                                     </li>
@@ -611,31 +801,31 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                               </li>
                               <li className='box-shadow-menu ms-4'>
                                 <ul>
-                                  <Link href="/company/terms-conditions" className="nav-link">
-                                    <li className='mt-2 px-3 py-3  d-flex'>
+                                  <Link href="https://www.agaramtech.com/careers" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={terms_conditions_icon} alt="" className='me-1 mt-1 termsconditions-memu-icon' />
+                                      <Image src={c4} alt="" className='mt-1 me-2' height={35} />
                                       <div className='d-flex flex-column'>
-                                        <span className='f_600 f_size_16'>Terms & Conditions </span>
-                                        <span className='submenu-sub-text'>What to know before we <br />get in touch   </span>
+                                        <span className='f_600 f_size_16'>Careers</span>
+                                        <span className='submenu-sub-text'>Join us in transforming laboratories</span>
                                       </div>
 
                                     </li>
                                   </Link>
-                                  <Link href="/company/privacy-policy" className="nav-link ">
-                                    <li className='mt-2 px-3 py-3 d-flex'>
+                                  <Link href="https://www.agaramtech.com/certifications" className="nav-link " target='_blank'>
+                                    <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={privacy_policy} alt="" className='me-2 mt-1 privacy-policy-memu-icon' />
+                                      <Image src={c7} alt="" className='mt-1 me-2' height={35} />
                                       <div className='d-flex flex-column'>
-                                        <span className='f_600 f_size_16'>Privacy policy</span>
-                                        <span className='submenu-sub-text'>How we safeguard your privacy </span>
+                                        <span className='f_600 f_size_16'>Certifications</span>
+                                        <span className='submenu-sub-text'>Commited to delivering uncompromised quality</span>
                                       </div>
 
                                     </li>
                                   </Link>
                                 </ul>
                               </li>
-                              <Link href="https://www.logilabeln.com/blog/how-laboratories-on-a-budget-can-benefit-from-cloud-based-eln-solutions/" target="_blank" className="nav-link d-flex">
+                              {/* <Link href="https://www.logilabeln.com/blog/how-laboratories-on-a-budget-can-benefit-from-cloud-based-eln-solutions/" target="_blank" className="nav-link d-flex">
                                 <li className='box-shadow-menu box-shadow-menu-two pt-3 ms-4'>
                                   <div>
                                     <div className="card menu-blog-card">
@@ -651,15 +841,15 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                                     </div>
                                   </div>
                                 </li>
-                              </Link>
+                              </Link> */}
                             </ul>
                           </li>
 
-                          <li>
+                          {/* <li>
                             <Link href="/contact-us" className="nav-link" >
                               Contact Us
                             </Link>
-                          </li>
+                          </li> */}
                         </ul>
 
                       </nav>
@@ -765,7 +955,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                     style={{ cursor: 'pointer', fontWeight: "bold", fontSize: "18px" }}
                     className={`uparrow ${isProductsOpen ? "active" : ""}`} id='submenuline'
                   >
-                    <Image src={all_solution} alt="" className='me-2 all-solution-menu-mobile-icon labtype' />  Solutions
+                    Products
                   </Link>
                   {/* </span> */}
                   <AnimatePresence>
@@ -793,31 +983,27 @@ const Header = ({ whiteHeader }: HeaderProps) => {
       <Image  src={right_arrow} alt="" className='mt-1 ms-auto blog-memu-icon' style={{height:"12px",width:"12px"}}/>
       </li> */}
 
-                        <li
-                          className="d-flex align-items-center justify-content-start ms-2"
-                          role="button"
-                          data-bs-toggle="offcanvas"
-                          data-bs-target="#offcanvasExample"
-                          aria-controls="offcanvasExample"
-                        >
-                          <Image src={lab_type} alt="" className="mt-1 me-1 blog-memu-icon labtype" />
-                          <span className="nav-link menu-mobile-ml labtype" style={{ fontSize: "15px" }}>Lab Type</span>
-                          <Image
-                            src={right_arrow}
-                            alt=""
-                            className="mt-1 ms-auto blog-memu-icon"
-                            style={{ height: "11px", width: "6px" }}
-                          />
+                        <li>
+                          <Link href="https://www.agaramtech.com/product/qualis-lims-software" className="nav-link menu-mobile-ml" target='_blank' onClick={() => { setProductsOpen(false); setMenuActive(false); }}>Qualis Lims</Link>
                         </li>
 
-                        <li className='d-flex align-items-center justify-content-start ms-2 mt-2 mb-3'
-                          role="button"
-                          data-bs-toggle="offcanvas"
-                          data-bs-target="#offcanvasExample1"
-                          aria-controls="offcanvasExample">
-                          <Image src={use_cases} alt="" className='mt-1 me-1 blog-memu-icon usecases' />
-                          <span className="nav-link menu-mobile-ml labtype" style={{ fontSize: "15px" }}>Use Cases</span>
-                          <Image src={right_arrow} alt="" className='mt-1 ms-auto blog-memu-icon' style={{ height: "11px", width: "6px" }} />
+                        <li>
+                          <Link href="https://www.agaramtech.com/product/logilab-eln" className="nav-link menu-mobile-ml" target='_blank' onClick={() => { setProductsOpen(false); setMenuActive(false); }}>Logilab ELN</Link>
+                        </li>
+                        <li>
+                          <Link href="https://www.agaramtech.com/product/cfr-gateway" className="nav-link menu-mobile-ml" target='_blank' onClick={() => { setProductsOpen(false); setMenuActive(false); }}>CFR Gateway</Link>
+                        </li>
+                        <li>
+                          <Link href="https://www.agaramtech.com/product/logilab-sdms-scientific-data-management-system" className="nav-link menu-mobile-ml" target='_blank' onClick={() => { setProductsOpen(false); setMenuActive(false); }}>Logilab SDMS</Link>
+                        </li>
+                        <li>
+                          <Link href="https://www.agaramtech.com/product/qualis-dms" className="nav-link menu-mobile-ml" target='_blank' onClick={() => { setProductsOpen(false); setMenuActive(false); }}>Qualis DMS</Link>
+                        </li>
+                        <li>
+                          <Link href="https://www.agaramtech.com/product/interfacer" className="nav-link menu-mobile-ml" target='_blank' onClick={() => { setProductsOpen(false); setMenuActive(false); }}>Interfacer</Link>
+                        </li>
+                        <li>
+                          <Link href="https://www.agaramtech.com/product/logilab-bes-bioanalytical-execution-system" className="nav-link menu-mobile-ml" target='_blank' onClick={() => { setProductsOpen(false); setMenuActive(false); }}>Logilab BES</Link>
                         </li>
                         {/* 
       <li className='d-flex align-items-center justify-content-start ms-2'>
@@ -974,36 +1160,43 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                     className={`uparrow ${isResourceOpen ? "active" : ""}`}
                     id="submenuline"
                   >
-                    <Image src={resource_menu} alt="" className='me-2' /> Resources
+                    Industry
                   </Link>
                   <AnimatePresence>
                     {isResourceOpen && (
                       <motion.ul
                         initial={{ maxHeight: 0, opacity: 0 }}
-                        animate={{ maxHeight: 300, opacity: 1 }}
+                        animate={{ maxHeight: 300, opacity: 1, overflow: 'auto' }}
                         exit={{ maxHeight: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                         className="sub-menu"
                       >
                         <li>
-                          <Link href="https://www.logilabeln.com/blog/" className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Blog</Link>
+                          <Link href="https://www.agaramtech.com/industries/pharmaceutical" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Pharma LIMS | ELN</Link>
                         </li>
                         <li>
-                          <Link href="/resource/publications" className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Publications</Link>
+                          <Link href="https://www.agaramtech.com/industries/life-sciences-biotech" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Life Sciences & Biotech LIMS | SDMS</Link>
                         </li>
                         <li>
-                          <Link href="/resource/download" className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Downloads</Link>
+                          <Link href="https://www.agaramtech.com/industries/contract-research-organization" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Contract Research Organization ELN</Link>
                         </li>
                         <li>
-                          <Link target="_blank" href="https://agaramtech.freshdesk.com/support/login"
-                            className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}> Support</Link>
+                          <Link href="https://www.agaramtech.com/industries/healthcare-diagnostics" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Healthcate & Diagnostics LIMS</Link>
                         </li>
                         <li>
-                          <Link target="_blank" href="https://helpcenter.agaramtech.com"
-                            className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}> Help Center</Link>
+                          <Link href="https://www.agaramtech.com/industries/cell-and-gene-therapy" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Cell & Gene Therapy ELN | SDMS</Link>
                         </li>
                         <li>
-                          <Link href="/resource/faq" className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>FAQ</Link>
+                          <Link href="https://www.agaramtech.com/industries/chemical" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Chemical Manufacturing | Formulations | LIMS</Link>
+                        </li>
+                        <li>
+                          <Link href="https://www.agaramtech.com/industries/oil-gas-industry" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Oil & Gas LIMS | SDMS</Link>
+                        </li>
+                        <li>
+                          <Link href="https://www.agaramtech.com/industries/dairy-food-beverage" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Dairy, Food & Beverage LIMS</Link>
+                        </li>
+                        <li>
+                          <Link href="https://www.agaramtech.com/industries/manufacturing" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Manufacturing LIMS | ELN</Link>
                         </li>
 
                       </motion.ul>
@@ -1021,7 +1214,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                     className={`uparrow ${isPricingOpen ? "active" : ""}`}
                     id="submenuline"
                   >
-                    <Image src={pricing_menu} alt="" className='me-2' />  Pricing
+                    Resources
                   </Link>
                   <AnimatePresence>
                     {isPricingOpen && (
@@ -1035,18 +1228,64 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                         <li>
                           {/* <Link href="/company/about-us" className="nav-link" onClick={() => {setCompanyOpen(false); setMenuActive(false);}}>About Us</Link> */}
 
-                          <Link href="/pricing" className="nav-link menu-mobile-ml" id="nav-tab1" role="tab" aria-selected="true">
-                            General plans
+                          <Link href="https://www.agaramtech.com/resources/brochures" className="nav-link menu-mobile-ml" target='_blank'>
+                            Brochures
                           </Link>
                         </li>
                         <li>
-                          <Link href="/pricing/academic_plans" className="nav-link menu-mobile-ml" id="nav-tab1" role="tab" aria-selected="true">
-                            Academic plans
+                          <Link href="https://www.agaramtech.com/resources/publications" className="nav-link menu-mobile-ml" target='_blank'>
+                            Publications
                           </Link>
                         </li>
                         <li>
-                          <Link href="/contact-us" className="nav-link menu-mobile-ml">Request A Quote</Link>
+                          <Link href="https://www.agaramtech.com/resources/videos" className="nav-link menu-mobile-ml" target='_blank'>Videos</Link>
                         </li>
+                        <li>
+                          <Link href="https://helpcenter.agaramtech.com/" className="nav-link menu-mobile-ml" target='_blank'>Help Center</Link>
+                        </li>
+                        <li>
+                          <Link href="https://agaramtech.freshdesk.com/" className="nav-link menu-mobile-ml" target='_blank'>Helpdesk Portal</Link>
+                        </li>
+                      </motion.ul>
+                    )}
+                  </AnimatePresence>
+                </li>
+
+                <li className="has-children">
+                  <Link
+                    href=""
+                    onClick={(e) => {
+                      e.preventDefault(); // Prevent default link behavior
+                      handleMenuToggle("service"); // Toggle submenu
+                    }}
+                    style={{ cursor: 'pointer', fontSize: "18px", fontWeight: "bold" }}
+                    className={`uparrow ${isService ? "active" : ""}`} id='submenuline'
+                  >
+                    Services
+                  </Link>
+                  <AnimatePresence>
+                    {isService && (
+                      <motion.ul
+                        initial={{ maxHeight: 0, opacity: 0 }}
+                        animate={{ maxHeight: 300, opacity: 1 }}
+                        exit={{ maxHeight: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="sub-menu"
+                      >
+                        <li>
+                          <Link href="https://www.agaramtech.com/services/professional-services" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setCompanyOpen(false); setMenuActive(false); }}>Professional Services</Link>
+                        </li>
+                        <li>
+                          <Link href="https://www.agaramtech.com/services/implementation-methodology" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setCompanyOpen(false); setMenuActive(false); }}>Implementation Methodology</Link>
+                        </li>
+                        <li>
+                          <Link href="https://www.agaramtech.com/services/training" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setCompanyOpen(false); setMenuActive(false); }}>Training</Link>
+                        </li>
+                        <li>
+                          <Link href="https://www.agaramtech.com/services/support" className="nav-link menu-mobile-ml" onClick={() => { setCompanyOpen(false); setMenuActive(false); }}>Support</Link>
+                        </li>
+
+
                       </motion.ul>
                     )}
                   </AnimatePresence>
@@ -1062,7 +1301,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                     style={{ cursor: 'pointer', fontSize: "18px", fontWeight: "bold" }}
                     className={`uparrow ${isCompanyOpen ? "active" : ""}`} id='submenuline'
                   >
-                    <Image src={company_menu} alt="" className='me-2' />  Company
+                    Company
                   </Link>
                   <AnimatePresence>
                     {isCompanyOpen && (
@@ -1074,30 +1313,31 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                         className="sub-menu"
                       >
                         <li>
-                          <Link href="/company/about-us" className="nav-link menu-mobile-ml" onClick={() => { setCompanyOpen(false); setMenuActive(false); }}>About Agaram</Link>
+                          <Link href="https://www.agaramtech.com/about-us" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setServiceOpen(false); setMenuActive(false); }}>About Us</Link>
                         </li>
                         <li>
-                          <Link href="/company/certifications" className="nav-link menu-mobile-ml" onClick={() => { setCompanyOpen(false); setMenuActive(false); }}>Certifications</Link>
+                          <Link href="https://www.agaramtech.com/partners" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setServiceOpen(false); setMenuActive(false); }}>Partners</Link>
                         </li>
                         <li>
-                          <Link href="/company/customers" className="nav-link menu-mobile-ml" onClick={() => { setCompanyOpen(false); setMenuActive(false); }}>Our Customers</Link>
+                          <Link href="https://www.agaramtech.com/customers" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setServiceOpen(false); setMenuActive(false); }}>Customers</Link>
                         </li>
                         <li>
-                          <Link href="/company/terms-conditions" className="nav-link menu-mobile-ml" onClick={() => { setCompanyOpen(false); setMenuActive(false); }}>Terms and conditions</Link>
+                          <Link href="https://www.agaramtech.com/careers" className="nav-link menu-mobile-ml" onClick={() => { setServiceOpen(false); setMenuActive(false); }}>Careers</Link>
                         </li>
                         <li>
-                          <Link href="/company/privacy-policy" className="nav-link menu-mobile-ml" onClick={() => { setCompanyOpen(false); setMenuActive(false); }}>Privacy policy</Link>
+                          <Link href="https://www.agaramtech.com/certifications" className="nav-link menu-mobile-ml" onClick={() => { setServiceOpen(false); setMenuActive(false); }}>Careers</Link>
                         </li>
+
 
                       </motion.ul>
                     )}
                   </AnimatePresence>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/contact-us" className="nav-link" onClick={() => setMenuActive(false)} style={{ fontSize: "18px", fontWeight: "bold" }}>
                     <Image src={contact_menu} alt="" className='me-2' />    Contact Us
                   </Link>
-                </li>
+                </li> */}
 
               </ul>
             </nav>
