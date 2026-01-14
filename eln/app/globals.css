@@ -286,13 +286,15 @@ p {
     flex: 0 0 auto;
     width: 100%;
   }
+  
+  
 }
 
 /* footer */
 
 .footerLogo img {
-  height: 70px;
-  float: left;
+  height: auto;
+  width: 160px;
   margin-bottom: 20px;
 }
 
@@ -342,11 +344,7 @@ p {
   padding-left: 40px;
 }
 
-.footer_top .col-lg-3 {
-  -ms-flex: 0 0 18%;
-  flex: 0 0 18%;
-  /* max-width: 100%; */
-}
+
 
 .publication-banner-body h2,
 h3,
@@ -600,6 +598,15 @@ h6 {
   color: #333;
 }
 
+@media (min-width: 992px) {
+  .footer_top .footer-col {
+    flex: 0 0 18%;
+    max-width: 18%;
+  }
+}
+
+
+
 @media only screen and (min-width: 992px) and (max-width: 1199px),
 only screen and (min-width: 768px) and (max-width: 991px),
 only screen and (max-width: 767px) {
@@ -611,6 +618,9 @@ only screen and (max-width: 767px) {
     -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
     background-color: #fff;
+  }
+  .pl_40{
+    padding-left: 0;
   }
 }
 
@@ -747,6 +757,9 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 .header__logo .light-logo {
   display: inherit;
 }
+
+
+
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
 only screen and (max-width: 767px) {
@@ -3119,7 +3132,7 @@ only screen and (max-width: 767px) {
     /* margin-top: 60px; */
     text-align: center;
   }
-
+  
   .Analytica-homebanner-hero {
     background-image: url("/public/assets/images/dna\ strand.svg");
     background: #1970EB;
@@ -3274,6 +3287,7 @@ margin-top:20px; */
     -ms-flex-pack: end;
     /* justify-content: flex-start; */
   }
+
 }
 
 
@@ -3790,3 +3804,4 @@ ul {
   -ms-transform: translateY(0px) !important;
   transform: translateY(0px) !important;
 }
+

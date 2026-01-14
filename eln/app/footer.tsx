@@ -21,13 +21,10 @@ const Footer = () => {
         <div className="footer_top">
           <div className="container">
             <div className="row">
-            {/* <div className="col-lg-3 col-md-6 col-xs-12"> */}
-              <div className="col-xs-12 col-md-6 col-lg-3 ">
+              <div className="col-12 col-md-6 col-lg-3 footer-col">
                 <div className="f_widget company_widget">
                   <div className="footerLogo">
-                    {/* <a href="index.html" className="f-logo"><img src="/images/Agaram_Technologies_Logo.svg" alt="Company Logo" /></a> */}
-                    <Link className="footer_logo" href="/">
-                       {/* <img src="../assets/images/eln_logo.svg" alt="logo" /> */}
+                    <Link className="footer_logo" href="/">                    
                        <Image src={elnlogofooter} className="img-fluid" alt="logo" />
                     </Link>
                   </div>
@@ -48,7 +45,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="col-xs-12 col-md-6 col-lg-3">
+              <div className="col-12 col-md-6 col-lg-3 footer-col">
                 <div className="f_widget about-widget pl_40">
                
                     <h3 className="f-title f_600 t_color f_size_15 mb_20">All Solutions</h3>
@@ -69,7 +66,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="col-xs-12 col-md-6 col-lg-3">
+              <div className="col-12 col-md-6 col-lg-3 footer-col">
                 <div className="f_widget about-widget">
                   <h3 className="f-title f_600 t_color f_size_15 mb_20">Resources</h3>
                   <ul className="list-unstyled f_list">
@@ -88,7 +85,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="col-xs-12 col-md-6 col-lg-3">
+              <div className="col-12 col-md-6 col-lg-3 footer-col">
                 <div className="f_widget about-widget">
                   <h3 className="f-title f_600 t_color f_size_15 mb_20">Company</h3>
                   <ul className="list-unstyled f_list">
@@ -105,7 +102,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="col-xs-12 col-md-6 col-lg-3">
+              <div className="col-12 col-md-6 col-lg-3 footer-col">
                 <div className="f_widget about-widget">
                   <h3 className="f-title f_600 t_color f_size_15 mb_20">Subscribe to our Newsletter</h3>
                   <iframe
@@ -124,28 +121,7 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* <a href="#" className="floatbutton" data-toggle="modal" style={{ color: '#fff' }} data-target="#floatModel">
-              <i className="fa fa-envelope my-float"></i>
-            </a> */}
-
-            {/* <div className="modal fade" id="floatModel"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div className="modal-dialog" role="document">
-                <div className="modal-content">
-                  <iframe
-                    id="JotFormIFrame-240092031021435"
-                    title="ELN Contact us"
-                    onLoad={() => window.parent.scrollTo(0, 0)}
-                
-                    allow="geolocation; microphone; camera"
-                    src="https://form.jotform.com/240092031021435"
-                    frameBorder="0"
-                    style={{ minWidth: '100%', maxWidth: '100%', height: '539px', border: 'none' }}
-                    scrolling="no"
-                  ></iframe>
-                </div>
-              </div>
-            </div> */}
-            {/* <img src="../assets/images/home_footer_imag.svg" alt="" className='w-100 mt-5' /> */}
+         
             <Image src={homefooterimag} className="img-fluid mt-4" 
             alt="Logilab ELN Software is trusted by over 150+ customers for its ablity to streamline 
             lab data and meet compliance requirements." />

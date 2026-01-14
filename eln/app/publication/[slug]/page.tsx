@@ -130,7 +130,7 @@ const PublicationPage = ({ params }: { params: { slug: string } }) => {
                 />
                 <div className="container position-relative">
                     <button
-                        className="back-arrow-btn back-arrow-btn-body"
+                        className="back-arrow-btn back-arrow-btn-body "
                         style={{zIndex: 8}}
                         onClick={() => router.push("/publication")}   // redirect to main page
                     >

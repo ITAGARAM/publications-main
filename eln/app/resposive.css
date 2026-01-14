@@ -532,15 +532,17 @@ display: inline-block;
 }
 
 .hero-section{
-background: linear-gradient(180deg, #ff7e5f 0%, #5f7fff 100%);
-background-image: url('../../eln/public/assets/images/blog/Mask group.svg'); /* Optional */
-background-size: cover;
-background-repeat: no-repeat;
-border-radius: 20px;
-color: white;
-padding-top: 145px;
-padding-bottom: 70px;
-margin-top: 30px;
+    background: linear-gradient(180deg, #ff7e5f 0%, #5f7fff 100%);
+   background-image: url('../../eln/public/assets/images/blog/cta-asset.svg');
+    background-repeat: no-repeat;
+    border-radius: 40px;
+    color: white;
+    padding-top: 37px;
+    padding-bottom: 37px;
+    margin-top: 30px;
+    background-size: cover;
+    max-width: 1000px;
+    margin: auto;
 }
 @keyframes marquee {
   0% {
@@ -551,6 +553,11 @@ margin-top: 30px;
   }
 }
 
+.hero-section .center-sub-heading-weight{
+  font-size: 46px;
+  padding-top: 50px;
+  font-weight: 900;
+}
 .marquee-wrapper {
   overflow: hidden;
   position: relative;
@@ -1858,17 +1865,17 @@ margin-top: 20px !important;
 .hero-section h1{
   font-size: 33px;
 }
-.hero-section{
-padding-top: 90px;
-padding-bottom: 41px;
-margin-top: 30px;
-}
+
 .hero-text{
   display: block !important;
   text-align: center;
   padding-right:0rem !important;
 }
-
+.hero-section .center-sub-heading-weight {
+    font-size: 27px;
+    padding-top: 67px;
+    font-weight: 900;
+}
 
 .hero-section .lead{
   font-size: 18px;
@@ -2179,10 +2186,7 @@ height: 20px;
   font-size: 30px;
   text-align:center;
 }
-.home-btn{
-  width: 158px;
-  font-size: 12px;
-}
+
 .cta-btn-ps{
 text-align: center !important;
 }
@@ -2304,9 +2308,7 @@ text-align: center !important;
 .three-user-ps{
   padding-left:0!important;
 }
-        .home-btn {
-        width: 138px;
-    }
+  
     .cta-btn-ps{
         padding-left: 0 !important;
     }
@@ -2419,18 +2421,14 @@ text-align: center !important;
     .one-size-section .one_size_splash {
         left: 45px;
     }
-    .hero-section {
-        padding-top: 133px;
-      }
+ 
     .discover-everything-card {
         height: 323px;
     }
     .discover-everything-card-height{
       height: 377px;
     }
-    .home-btn{
-      width: 133px;
-    }
+   
 
 }
 @media (max-width: 390px){
@@ -2536,10 +2534,7 @@ text-align: center !important;
 .banner-home .banner-content p{
   font-size: 18px;
 }
-    .home-btn {
-        padding: 12px 15px;
-        font-size: 12px;
-    }
+  
     .wave-heading::after {
         width: 34%;
         height: 19px;
@@ -2657,7 +2652,7 @@ transform: rotate(359deg);
         margin-bottom: 20px;
     }
     .hero-section {
-      border-radius: 43px;
+      border-radius:0px;
     }
     .Powerful-mt-flex{
       flex-direction: column !important;
@@ -2668,9 +2663,7 @@ transform: rotate(359deg);
        .stat-item-down{
       margin-top: 3px !important;
     }
-    .home-btn{
-      width: 133px;
-    }
+  
 }  
 
 
@@ -2702,8 +2695,5 @@ right: 95px;
 .Increase {
         font-size: 22px;
     }
-        .home-btn {
-        padding: 14px 8px;
-        font-size: 14px;
-    }
+     
 }

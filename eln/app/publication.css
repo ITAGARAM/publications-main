@@ -260,6 +260,7 @@
 .back-arrow-btn-body {
     top: 25px;
     left: 120px;
+     z-index: 1;
 }
 
 .back-arrow-btn img {
@@ -284,6 +285,9 @@
     /* ensures it doesn't interfere with clicks */
 }
 
+.dotted-line-two{
+    top: 26px;
+}
 
 /*koushik*/
 
@@ -428,18 +432,22 @@
     .dotted-line{
         top: -120px;
     }
+    .dotted-line-two{
+        top: 10px;
+    }
 }
 
 @media (max-width: 1280px){
-    .publication-banner {
-        background-image: url('../public/assets/images/blog/blog-banner-bg.svg');
-        /* background-position-y: 14px; */
-        background-size: inherit;
-        padding-bottom: 2rem !important;
-    }
-    .search_bar{
-        margin: 4rem auto;
-    }
+.publication-banner {
+background-image: url('../public/assets/images/blog/blog-banner-bg.svg');
+/* background-position-y: 14px; */
+background-size: inherit;
+padding-bottom: 2rem !important;
+}
+.search_bar{
+margin: 4rem auto;
+}
+
 }
 
 @media (max-width: 1200px) {

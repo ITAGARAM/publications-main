@@ -36,8 +36,9 @@ h6 {
 
 .publication-banner .placeholder1 {
     height: 340px;
-
 }
+
+
 
 .publication-banner .line {
     border-bottom: 1px solid #fff;
@@ -49,6 +50,7 @@ h6 {
     line-height: 46px;
     margin: 1.2rem 0 1rem;
     font-family: 'Urbanist-Bold';
+ font-size: 2.5rem;
 }
 
 .publication-banner p {
@@ -185,26 +187,6 @@ h6 {
 .posted-date .author-name {
     font-family: 'Urbanist-SemiBold';
 }
-
-/* .blog-container .hero-section {
-  background: linear-gradient(180deg, #ff7e5f 0%, #5f7fff 100%);
-  background-image: url('../../eln/public/assets/images/blog/Mask group.svg'); 
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 20px;
-  color: white;
-}
-.blog-container .hero-section{
- padding-top: 129px;
- padding-bottom: 40px;
- margin-top: 30px;
-}  */
-
-/* .hero-section h1{
-    font-weight: bold;
-    font-family: 'Urbanist-Bold';
-    font-size: 50px;
-} */
 
 
 
@@ -485,6 +467,11 @@ h6 {
     height: 18px;
 }
 
+  .back-arrow-btn-body {
+top: 25px;
+left: 120px;
+    }
+
 .blog-body {
     background-image: url('../public/assets/images/publication/blog-banner-bg.svg');
     /* background-position: center; */
@@ -502,17 +489,17 @@ h6 {
 }
 
 .related-article h3 {
-    font-family: 'Urbanist-Bold';
+font-family: 'Urbanist-Bold';
 }
 
 .post-meta {
-    display: flex;
-    flex-wrap: wrap;
-    /* ✅ allows wrapping on smaller screens */
-    align-items: center;
-    gap: 8px;
-    font-family: sans-serif;
-    font-size: 14px;
+display: flex;
+flex-wrap: wrap;
+/* ✅ allows wrapping on smaller screens */
+align-items: center;
+gap: 8px;
+font-family: sans-serif;
+font-size: 14px;
 }
 
 
@@ -541,16 +528,25 @@ h6 {
 }
 
 @media (max-width: 1280px){
-    .publication-banner {
-        background-image: url('../public/assets/images/blog/blog-banner-bg.svg');
-        /* background-position-y: 14px; */
-        background-size: inherit;
-        padding-bottom: 2rem !important;
-        padding-top: 5rem;
-    }
-    .search_bar{
-        margin: 4rem auto;
-    }
+.publication-banner .blog-title {
+    font-size: 30px;
+}
+
+
+.back-arrow-btn-body {
+top: -5px;
+left: 68px;
+}
+.publication-banner {
+background-image: url('../public/assets/images/blog/blog-banner-bg.svg');
+/* background-position-y: 14px; */
+background-size: inherit;
+padding-bottom: 2rem !important;
+padding-top: 5rem;
+}
+.search_bar{
+margin: 4rem auto;
+}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -621,6 +617,10 @@ h6 {
     border-radius: 140px 0 0 0;
     display: block;
 } */
+   .mobile-hide {
+    display: none;
+  }
+
     .publication-banner-desktop {
         display: none !important;
     }
