@@ -325,7 +325,7 @@ authorUrl,
                     </div>
                     <div className="col-lg-9">
                         <div className="admin-tag">
-                            <p>{blog.summary}</p>
+                            <p className="mt-4">{blog.summary}</p>
                             <div className="post-meta">
                                 <div>
                                     {blog.author && blog.authorUrl ? (

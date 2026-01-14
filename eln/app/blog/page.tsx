@@ -805,35 +805,35 @@ const Blog = () => {
                                 </>
 
                               );
-                              if ((index + 1) % 2 === 0) {
-                                elements.push(
-                                  <div key={`ad-${index}`} className="container mt-1 mb-4">
-                                    {randomAd ? (
-                                      randomAd.url ? (
-                                        <a href={randomAd.url} target="_blank" rel="noopener noreferrer">
-                                          <Image
-                                            src={urlFor(randomAd.image).url()}
-                                            alt="Advertisement"
-                                            className="img-fluid w-100"
-                                            width={1200}
-                                            height={400}
-                                          />
-                                        </a>
-                                      ) : (
-                                        <Image
-                                          src={urlFor(randomAd.image).url()}
-                                          alt="Advertisement"
-                                          className="img-fluid w-100"
-                                          width={1200}
-                                          height={400}
-                                        />
-                                      )
-                                    ) : (
-                                      <Image src={blog_banner_ad} alt="recent" className="img-fluid w-100" />
-                                    )}
-                                  </div>
-                                );
-                              }
+                              // if ((index + 1) % 2 === 0) {
+                              //   elements.push(
+                              //     <div key={`ad-${index}`} className="container mt-1 mb-4">
+                              //       {randomAd ? (
+                              //         randomAd.url ? (
+                              //           <a href={randomAd.url} target="_blank" rel="noopener noreferrer">
+                              //             <Image
+                              //               src={urlFor(randomAd.image).url()}
+                              //               alt="Advertisement"
+                              //               className="img-fluid w-100"
+                              //               width={1200}
+                              //               height={400}
+                              //             />
+                              //           </a>
+                              //         ) : (
+                              //           <Image
+                              //             src={urlFor(randomAd.image).url()}
+                              //             alt="Advertisement"
+                              //             className="img-fluid w-100"
+                              //             width={1200}
+                              //             height={400}
+                              //           />
+                              //         )
+                              //       ) : (
+                              //         <Image src={blog_banner_ad} alt="recent" className="img-fluid w-100" />
+                              //       )}
+                              //     </div>
+                              //   );
+                              // }
                               return elements;
                             }, [])}
                         </>
