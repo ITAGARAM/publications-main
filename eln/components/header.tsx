@@ -865,7 +865,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                             </div>
 
                             <div className='signin'>
-                              <Link href="/request-a-demo" className="ht-btn ht-btn-md">Request Demo</Link>
+                              <Link href="https://www.agaramtech.com/request-a-demo" className="ht-btn ht-btn-md">Request Demo</Link>
                             </div>
 
                           </div>
@@ -924,7 +924,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                 </div>
                 <div className="col-md-6 col-6">
                   <div className="mobile-menu-content header-button downlode-btn ml-4 mobilemenu_for headermenu mb-1">
-                    <Link href="/request-a-demo" className="ht-btn ht-btn-md mobilemenu_btn" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Request Demo</Link>
+                    <Link href="https://www.agaramtech.com/request-a-demo" className="ht-btn ht-btn-md mobilemenu_btn" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Request Demo</Link>
 
                   </div>
                 </div>

@@ -18,7 +18,7 @@ export default function NotFound() {
                 <p className="f_400">
                     We’re sorry, the page you have looked for does not exist in our database!
                 </p>
-                <a href="https://www.logilabeln.com/" className="about_btn btn_hover mt_40 mb_40 ">
+                <a href="https://publications.agaramtech.com/" className="about_btn btn_hover mt_40 mb_40 ">
                     Go Back to Home Page
                 </a>
             </div>

@@ -709,18 +709,16 @@ authorUrl,
              Kickstart your paperless lab with Logilab ELN
             </p>
           </div>
-
-          <div className="mt-0 mt-lg-4">
-            <Link href="/request-a-demo" className="home-btn rounded-pill">
+  <div className="mt-0 mt-lg-4">
+            <Link href="https://www.agaramtech.com/request-a-demo" className="home-btn rounded-pill">
             
               Request a Demo
             </Link>
 
             <Link
-              href="/product-brochure-download"
+              href="https://www.agaramtech.com/resources/brochures"
               className="home-btn home-btn-white rounded-pill ms-3 mobile-hide"
             >
-           
               Download brochure
             </Link>
           </div>
