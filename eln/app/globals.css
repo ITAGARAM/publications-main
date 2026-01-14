@@ -3690,7 +3690,7 @@ ul {
   background: white; 
 }
 .header-area.white-header .head-home-logo, .my-custom-class .head-home-logo{
-     content: url(../public/assets/images/agaram-logo.png);
+  content: url(../public/assets/images/agaram-logo.png);
   padding: 0px 10px;
   background-repeat: no-repeat;
   background-size: contain;

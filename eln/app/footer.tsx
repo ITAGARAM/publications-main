@@ -5,7 +5,7 @@ import { ImTwitter } from "react-icons/im";
 import { RiLinkedinBoxFill } from "react-icons/ri";
 import { GrYoutube } from "react-icons/gr";
 import Image from "next/image";
-import elnlogofooter from '../../eln/public/assets/images/eln-logo.png'
+import elnlogofooter from '../../eln/public/assets/images/home/agaram-logo.png'
 import homefooterimag from '../../eln/public/assets/images/home_footer_imag.svg'
 import  Link  from 'next/link'
 const Footer = () => {
@@ -48,20 +48,20 @@ const Footer = () => {
               <div className="col-12 col-md-6 col-lg-3 footer-col">
                 <div className="f_widget about-widget pl_40">
                
-                    <h3 className="f-title f_600 t_color f_size_15 mb_20">All Solutions</h3>
+                    <h3 className="f-title f_600 t_color f_size_15 mb_20">Products</h3>
                   <ul className="list-unstyled f_list">
-                     <li><Link href="/solution">Solution</Link></li>
-                      <li><Link href="/solution/qa_qc_lab">QA & QC Labs</Link></li>
-                      <li><Link href="/solution/research">Research & Development</Link></li>
-                      <li><Link href="/solution/integrity">Data Integrity & Compliance</Link></li>
-                      <li><Link href="/solution/academics">Academics</Link></li>
+                     <li><Link href="https://www.agaramtech.com/product/qualis-lims-software">Qualis LIMS</Link></li>
+                      <li><Link href="https://www.agaramtech.com/product/logilab-sdms-scientific-data-management-system">Logilab SDMS</Link></li>
+                      <li><Link href="https://www.agaramtech.com/product/logilab-eln">Logilab ELN</Link></li>
+                      <li><Link href="https://www.agaramtech.com/product/qualis-dms">Qualis DMS</Link></li>
+                      <li><Link href="https://www.agaramtech.com/product/interfacer">Interfacer Middleware</Link></li>
             </ul>
-               <h3 className="f-title f_600 t_color f_size_15 mb_20 mt-3">use cases</h3>
+               <h3 className="f-title f_600 t_color f_size_15 mb_20 mt-3">Services</h3>
                   <ul className="list-unstyled f_list">
-                    <li><Link href="/inventory-management">Inventory Management</Link></li>
-                     <li><Link href="/collaboration-and-team-management">Collaboration & Team Management</Link></li>
-                      <li><Link href="/dynamic-report-generation">Dynamic Report Generation</Link></li>
-                       <li><Link href="/instrument-integration"> Instrument Integration</Link></li>
+                    <li><Link href="https://www.agaramtech.com/services/professional-services">Professional Services</Link></li>
+                     <li><Link href="https://www.agaramtech.com/services/implementation-methodology">Implementation Methodology</Link></li>
+                      <li><Link href="https://www.agaramtech.com/services/training">Training</Link></li>
+                       <li><Link href="https://www.agaramtech.com/services/support"> Support</Link></li>
                   </ul>
                 </div>
               </div>
@@ -70,12 +70,11 @@ const Footer = () => {
                 <div className="f_widget about-widget">
                   <h3 className="f-title f_600 t_color f_size_15 mb_20">Resources</h3>
                   <ul className="list-unstyled f_list">
-                    <li><Link href="https://www.logilabeln.com/blog/">Blog</Link></li>
-                    <li><Link href="/resource/publications">Publications</Link></li>
+                     <li><Link href="https://www.agaramtech.com/resources/brochures">Brochures</Link></li>
+                    <li><Link href="https://publications.agaramtech.com/">Blog</Link></li>
+                    <li><Link href="https://www.agaramtech.com/resources/publications">Publications</Link></li>
                     <li><Link href="https://agaramtech.freshdesk.com/support/login">support</Link></li>
                     <li><Link href="https://helpcenter.agaramtech.com/">Helpcenter</Link></li>
-                    <li><Link href="/resource/download">Downloads</Link></li>
-                    <li><Link href="/resource/faq">FAQ</Link></li>
                   </ul>
                    <h3 className="f-title f_600 t_color f_size_15 mb_20 mt-3">pricing</h3>
                   <ul className="list-unstyled f_list">
@@ -84,20 +83,23 @@ const Footer = () => {
                   </ul>
                 </div>
               </div>
-
               <div className="col-12 col-md-6 col-lg-3 footer-col">
                 <div className="f_widget about-widget">
-                  <h3 className="f-title f_600 t_color f_size_15 mb_20">Company</h3>
+                  <h3 className="f-title f_600 t_color f_size_15 mb_20">About Us</h3>
                   <ul className="list-unstyled f_list">
-                    <li><Link href="/company/about-us">About Us</Link></li>
-                    <li><Link href="/company/certifications">Certifications</Link></li>
-                    <li><Link href="/company/customers">Customers</Link></li>
-                    <li><Link href="/company/terms-conditions">Terms and conditions</Link></li>
+                    <li><Link href="https://www.agaramtech.com/about-us">Company</Link></li>
+                    <li><Link href="https://www.agaramtech.com/customers">Customers</Link></li>
+                    <li><Link href="https://www.agaramtech.com/partners">Partners</Link></li>
+                    <li><Link href="https://www.agaramtech.com/careers">Careers</Link></li>
+                    <li><Link href="https://www.agaramtech.com/certifications">Quality Certifications</Link></li>
+                    <li><Link href="https://www.agaramtech.com/contact-us">Contact Us</Link></li>
                   </ul>
                   <br />
                   <h3 className="f-title f_600 t_color f_size_15 mb_20">Legal</h3>
                   <ul className="list-unstyled f_list">
-                    <li><Link href="/company/privacy-policy">Privacy Policy</Link></li>
+                    <li><Link href="https://www.agaramtech.com/terms-and-conditions">Terms & Conditions</Link></li>
+                     <li><Link href="https://www.agaramtech.com/privacy-policy">Privacy Policy</Link></li>
+                      <li><Link href="https://www.agaramtech.com/refund-policy">Refund Policy</Link></li>
                   </ul>
                 </div>
               </div>
