@@ -767,7 +767,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                                   <Link href="https://www.agaramtech.com/about-us" className="nav-link " target='_blank'>
                                     <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={c1} alt="" className='mt-1 me-2' height={35} />
+                                      <Image src={c1} alt="" className='mt-1 me-2' height={35}  style={{width:'30px'}}/>
                                       <div className='d-flex flex-column'>
                                         <span className='f_600 f_size_16'>About Us</span>
                                         <span className='submenu-sub-text'>Who we are & what we do</span>
@@ -778,7 +778,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                                   <Link href="https://www.agaramtech.com/partners" className="nav-link " target='_blank'>
                                     <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={c2} alt="" className='mt-1 me-2' height={35} />
+                                      <Image src={c2} alt="" className='mt-1 me-2' height={35}  style={{width:'30px'}}/>
                                       <div className='d-flex flex-column'>
                                         <span className='f_600 f_size_16'>Partners</span>
                                         <span className='submenu-sub-text'>Our global strategic alliances</span>
@@ -789,7 +789,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                                   <Link href="https://www.agaramtech.com/customers" className="nav-link " target='_blank'>
                                     <li className='px-3 py-3 d-flex'>
 
-                                      <Image src={c3} alt="" className='mt-1 me-2' height={35} />
+                                      <Image src={c3} alt="" className='mt-1 me-2' height={35} style={{width:'30px'}}/>
                                       <div className='d-flex flex-column'>
                                         <span className='f_600 f_size_16'>Customers</span>
                                         <span className='submenu-sub-text'>Testimonial & reviews from out cherished customers</span>

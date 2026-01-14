@@ -378,7 +378,7 @@ h6 {
     width: 50% !important;
     left: 54%;
     transform: translateX(-50%);
-    z-index: 100;
+    z-index: 1;
 }
 
 .search_bar input {

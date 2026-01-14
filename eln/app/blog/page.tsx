@@ -322,7 +322,7 @@ const Blog = () => {
   });
 
   const getItemsPerPage = () => {
-  if (["General", "Product", "News & Event"].includes(activeCategory)) {
+  if (["General", "Product", "News & Event , All articles "].includes(activeCategory)) {
     return 6;
   }
   return blogsPerPage; // default = 4
@@ -891,7 +891,7 @@ const Blog = () => {
                 )}
 
               </div> */}
-                {["General", "Product", "News & Event"].includes(activeCategory) && filteredBlogs.length > blogsPerPage && (
+                {["General", "Product", "News & Event, All articles"].includes(activeCategory) && filteredBlogs.length > blogsPerPage && (
                   <div className='py-5'>
                     <Pagination
                       totalItems={filteredBlogs.length}

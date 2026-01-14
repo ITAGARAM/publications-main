@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 const CATEGORY_LABELS: Record<string, string> = {
     general: "General",
-    product: "Industry",
+    product: "Product",
     news: "News & Event",
     featured: "Featured",
     all: 'All',

@@ -68,7 +68,7 @@ function getTextFromChildren(children: React.ReactNode): string {
 }
 
 
-export default function Productdownload({ params }: { params: { slug: string } }) {
+export default function BlogDetailClient({ params }: { params: { slug: string } }) {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [selected, setSelected] = useState("Newest");
