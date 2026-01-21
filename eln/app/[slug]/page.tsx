@@ -1,8 +1,6 @@
-
-
-
 import { client } from "@/lib/sanity";
 import BlogDetailClient from "./BlogDetailClient";
+import { Metadata } from "next";
 
 const query = `*[_type == "blog" && slug.current == $slug][0]{
   title,
@@ -13,20 +11,32 @@ const query = `*[_type == "blog" && slug.current == $slug][0]{
   "mainImage": mainImage.asset->url
 }`;
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+): Promise<Metadata> {
+
   const blog = await client.fetch(query, { slug: params.slug });
 
   if (!blog) return {};
 
+  const title = blog.seoTitle || blog.title;
+  const description = blog.seoDescription || blog.summary;
+  const url = `https://publications.agaramtech.com/${params.slug}`;
+
   return {
-    title: blog.seoTitle || blog.title,
-    description: blog.seoDescription || blog.summary,
+    title,
+    description,
+
+    // ✅ CANONICAL (MOST IMPORTANT)
+    alternates: {
+      canonical: url,
+    },
 
     openGraph: {
       type: "article",
-      title: blog.seoTitle || blog.title,
-      description: blog.seoDescription || blog.summary,
-      url: `https://publications.agaramtech.com/blog/${params.slug}`,
+      title,
+      description,
+      url,
       images: [
         {
           url: blog.mainImage,
@@ -38,8 +48,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
     twitter: {
       card: "summary_large_image",
-      title: blog.seoTitle || blog.title,
-      description: blog.seoDescription || blog.summary,
+      title,
+      description,
       images: [blog.mainImage],
     },
   };
@@ -48,37 +58,3 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default function Page({ params }: { params: { slug: string } }) {
   return <BlogDetailClient params={params} />;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

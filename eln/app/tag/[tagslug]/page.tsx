@@ -4,23 +4,23 @@ import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "@/lib/imageUrlBuilder";
 import { useEffect, useState, useRef } from "react";
-import "../../../blog.css";
+import "../../blog.css";
 import Header from "@/components/header";
 import blog_new_img from "@/public/assets/images/blog/blog_new_img.svg";
 import { IoSearch } from "react-icons/io5";
-import placeholder_img from "../../../../public/assets/images/publication/placeholder.svg";
-import back_arrow from "../../../../public/assets/images/blog/back-arrow.svg";
+import placeholder_img from "../../../public/assets/images/publication/placeholder.svg";
+import back_arrow from "../../../public/assets/images/blog/back-arrow.svg";
 import placeholder_img1 from "../../../../public/assets/images/publication/placeholder1.png";
 import whitepaper from "../../../../public/assets/images/blog/featured.svg";
-import blog_banner_ad from "../../../../public/assets/images/blog/blog_banner_ad.svg";
+import blog_banner_ad from "../../../public/assets/images/blog/blog_banner_ad.svg";
 import blog_banner_ad_two from "../../../../public/assets/images/blog/blog_banner_ad_two.svg";
-import backto_top from "../../../../public/assets/images/blog/backto_top.svg";
+import backto_top from "../../../public/assets/images/blog/backto_top.svg";
 import blog_banner_ad_three from "../../public/assets/images/blog/blog_banner_ad_three.svg";
 import recent from "../../../../public/assets/images/publication/recent.svg";
-import search from "../../../../public/assets/images/publication/search.svg";
-import Footer from "../../../footer";
+import search from "../../../public/assets/images/publication/search.svg";
+import Footer from "../../footer";
 import { FaAngleRight } from "react-icons/fa";
-import BannerCard from "../../../publication/banner-card/banner-card";
+import BannerCard from "../../publication/banner-card/banner-card";
 import Pagination from "@/components/Pagination";
 import { useRouter } from "next/navigation";
 import { client } from "@/lib/sanity";
@@ -220,7 +220,7 @@ const BlogByTag = ({ params }: { params: { tagslug: string } }) => {
                 </div>
               </div>
 
-              <div className='container mt-5'>
+              {/* <div className='container mt-5'>
                 {randomAd ? (
                   randomAd.url ? (
                     <a href={randomAd.url} target="_blank" rel="noopener noreferrer">
@@ -244,7 +244,7 @@ const BlogByTag = ({ params }: { params: { tagslug: string } }) => {
                 ) : (
                   <Image src={blog_banner_ad} alt="recent" className="img-fluid w-100" />
                 )}
-              </div>
+              </div> */}
                       <div className="projects-wrapper projects-masonary-wrapper mt-5">
       <div className="hero-section container text-center">
         <div>

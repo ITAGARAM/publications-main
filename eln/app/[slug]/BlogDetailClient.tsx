@@ -4,26 +4,26 @@ import { urlFor } from "@/lib/imageUrlBuilder";
 import { PortableText } from "@portabletext/react";
 import React, { useState, useEffect } from "react";
 import Header from "@/components/header";
-import "../../publication.css";
-import "../../blog.css";
+import "../publication.css";
+import "../blog.css";
 import Link from "next/link";
 import { IoSearch } from "react-icons/io5";
-import placeholder_img from "../../../public/assets/images/blog-body-banner.svg";
+import placeholder_img from "../../public/assets/images/blog-body-banner.svg";
 import comments_profile from "../../../public/assets/images/blog/comments_profile.svg";
-import eye from "../../../public/assets/images/eye.svg";
+import eye from "../../public/assets/images/eye.svg";
 import linkedin from "../../../public/assets/images/linkedin.svg";
 import starimage from "../../../public/assets/images/star.svg";
-import arrow from "../../../public/assets/images/arrowsimple.svg";
+import arrow from "../../public/assets/images/arrowsimple.svg";
 import search from "../../../public/assets/images/publication/search.svg";
-import back_arrow from "../../../public/assets/images/blog/back-arrow.svg";
-import dotted_line from "../../../public/assets/images/blog/blog-body-round.svg";
+import back_arrow from "../../public/assets/images/blog/back-arrow.svg";
+import dotted_line from "../../public/assets/images/blog/blog-body-round.svg";
 import star_rating from "../../../public/assets/images/blog/star_rating.svg";
 import halfstar from "../../../public/assets/images/blog/halfstar.svg";
 import right_arrow_coments from "../../../public/assets/images/blog/right_arrow_coments.svg";
 import Image from "next/image";
 import Pagination from "@/components/Pagination";
 import { FaAngleRight } from "react-icons/fa";
-import BannerCard from "../../publication/banner-card/banner-card";
+import BannerCard from "../publication/banner-card/banner-card";
 import { useRouter } from "next/navigation";
 import Footer from "@/app/footer";
 
@@ -350,7 +350,7 @@ authorUrl,
                                 <span className="date">{new Date(blog.publishedAt).toDateString()}</span>
                                 <div>
                                     {blog.usernameTags?.map((tag: string, idx: number) => (
-                                        <Link key={idx} href={`/blog/tag/${tag}`}>
+                                        <Link key={idx} href={`/tag/${tag}`}>
                                             <button className={`tag-btn tag-btn-green ms-${idx > 0 ? 2 : 0}`}>
                                                 {tag}
                                             </button>
