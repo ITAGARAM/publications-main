@@ -861,7 +861,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                           <div className="header-button downlode-btn ml-4 menu_for headermenu mb-1">
 
                             <div className='getstart'>
-                              <Link href="https://logilabelnlite.azurewebsites.net/register" className="ht-btn ht-btn-md" target="_blank">Get Started</Link>
+                              <Link href="https://www.agaramtech.com/contact-us" className="ht-btn ht-btn-md" target="_blank">Contact Us</Link>
                             </div>
 
                             <div className='signin'>
@@ -919,13 +919,12 @@ const Header = ({ whiteHeader }: HeaderProps) => {
               <div className="row align-items-center">
                 <div className="col-md-6 col-6">
                   <div className="header-button downlode-btn ml-4 mobilemenu_for headermenu mb-1">
-                    <Link href="https://logilabelnlite.azurewebsites.net/register" className="ht-btn ht-btn-md mobilemenu_btn">Get Started</Link>
+                    <Link href="https://www.agaramtech.com/contact-us" className="ht-btn ht-btn-md mobilemenu_btn">Contact Us</Link>
                   </div>
                 </div>
                 <div className="col-md-6 col-6">
                   <div className="mobile-menu-content header-button downlode-btn ml-4 mobilemenu_for headermenu mb-1">
                     <Link href="https://www.agaramtech.com/request-a-demo" className="ht-btn ht-btn-md mobilemenu_btn" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Request Demo</Link>
-
                   </div>
                 </div>
               </div>
