@@ -61,6 +61,13 @@ const BlogByTag = ({ params }: { params: { tagslug: string } }) => {
   const decodedTag = decodeURIComponent(params.tagslug);
   
   
+const handleBack = () => {
+  if (window.history.length > 1) {
+    router.back();
+  } else {
+    router.push("/");
+  }
+}
 
 
   useEffect(() => {
@@ -168,9 +175,12 @@ const BlogByTag = ({ params }: { params: { tagslug: string } }) => {
 
                 <div className="d-flex align-items-center justify-content-center">
                   <h6>Tags</h6>
-                  <button className="back-arrow-btn" onClick={() => router.back()}>
+                  {/* <button className="back-arrow-btn" onClick={() => router.back()}>
                     <Image src={back_arrow} alt="Back" width={20} height={100} />
-                  </button>
+                  </button> */}
+                  <button className="back-arrow-btn" onClick={handleBack}>
+                       <Image src={back_arrow} alt="Back" width={20} height={100} />
+                 </button>
                   <span className="line ms-2" />
                 </div>
                 <h1>Posts tagged with "{decodedTag}"</h1>

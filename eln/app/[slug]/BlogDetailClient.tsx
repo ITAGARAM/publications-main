@@ -243,7 +243,7 @@ authorUrl,
                 <div className="container position-relative">
                     <button
                         className="back-arrow-btn back-arrow-btn-body"
-                        onClick={() => router.push("/blog")}   // redirect to main page
+                        onClick={() => router.push("/")}   // redirect to main page
                     >
                         <Image src={back_arrow} alt="Back" width={20} height={20} />
                     </button>
