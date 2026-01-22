@@ -537,8 +537,8 @@ display: inline-block;
     background-repeat: no-repeat;
     border-radius: 40px;
     color: white;
-    padding-top: 37px;
-    padding-bottom: 37px;
+    padding-top: 60px;
+    padding-bottom:20px;
     margin-top: 30px;
     background-size: cover;
     max-width: 1000px;
@@ -554,10 +554,20 @@ display: inline-block;
 }
 
 .hero-section .center-sub-heading-weight{
-  font-size: 46px;
+  font-size: 30px;
   padding-top: 50px;
   font-weight: 900;
 }
+
+.max-800 {
+  max-width: 900px;
+  width: 100%;
+}
+.max-600{
+ max-width: 600px;
+  width: 100%;
+}
+
 .marquee-wrapper {
   overflow: hidden;
   position: relative;
@@ -1376,6 +1386,9 @@ right: 278px;
     }
     .homebutton{
       justify-content: center !important;
+    }
+    .hero-section {
+          border-radius: 0px;
     }
 }
 

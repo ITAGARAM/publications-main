@@ -534,10 +534,7 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
             </div>
             {touchedTop && <div style={{ height: "180px" }} />}
           </div>
-
-
         </div>
-
 
         <div className="container">
           <div className='row mt-5'>
@@ -570,8 +567,6 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
                         );
                       })}
                   </ul>
-
-
 
                 </div>
                 <div>
@@ -619,7 +614,8 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
                 {filteredBlogs.length > 0 ? (
                   <div className="row">
                     {filteredBlogs.map((blog, idx) => (
-                      <div key={blog.slug.current || idx} className="col-md-6 px-3 mb-4">
+                      // <div key={blog.slug.current || idx} className="col-md-6 px-3 mb-4">
+                       <div key={blog.slug.current || idx}className={`col-md-6 px-3 mb-4 ${idx >= 2 ? "mt-5" : ""}`}>
                         <BannerCard
                           img={blog.mainImage || placeholder_img}
                           alt={blog.title}
@@ -663,51 +659,52 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
                   <div className="container">
                     <div className="row">
                   {activeCategory === "All articles" ? (
-  <>
-    {visibleBlogs.map((blog, idx) => (
-      <div key={blog.slug.current || idx} className="col-md-6 px-3 mb-4">
-        <BannerCard
-          img={blog.mainImage || placeholder_img}
-          alt={blog.title}
-          label={blog.category || "General"}
-          title={blog.title}
-          desc={blog.summary}
-          author={blog.author}
-          authorUrl={blog.authorUrl}
-          usernameTags={blog.usernameTags}
-          publishedAt={blog.publishedAt}
-          slug={blog.slug.current}
-          pageName="blog"
-        />
-      </div>
-    ))}
+      <>
+        {visibleBlogs.map((blog, idx) => (
+          // <div key={blog.slug.current || idx} className="col-md-6 px-3 mb-4">
+           <div key={blog.slug.current || idx}className={`col-md-6 px-3 mb-4 ${idx >= 2 ? "mt-5" : ""}`}>
+            <BannerCard
+              img={blog.mainImage || placeholder_img}
+              alt={blog.title}
+              label={blog.category || "General"}
+              title={blog.title}
+              desc={blog.summary}
+              author={blog.author}
+              authorUrl={blog.authorUrl}
+              usernameTags={blog.usernameTags}
+              publishedAt={blog.publishedAt}
+              slug={blog.slug.current}
+              pageName="blog"
+            />
+          </div>
+        ))}
 
-    {/* ✅ SHOW MORE BUTTON */}
-    {visibleCount < allArticlesBlogs.length && (
-      <div className="col-12 text-center mt-4">
-        <div style={{ textAlign: "right", marginTop: "10px" }}>
-           <button
-          className="btn btn-primary px-4 py-2 rounded-pill text-end"
-          onClick={() => setVisibleCount(prev => prev + 10)}
-          style={{
-          backgroundColor: "#007bff",
-          color: "white",
-          border: "none",
-          padding: "8px 18px",
-          borderRadius: "25px",
-          fontSize: "14px",
-          fontWeight: "500",
-          cursor: "pointer",
-          transition: "background-color 0.3s ease",
-        }}
-        >
-          Show more
-        </button>
-        </div>
-      </div>
-    )}
-  </>
-)
+        {/* ✅ SHOW MORE BUTTON */}
+        {visibleCount < allArticlesBlogs.length && (
+          <div className="col-12 text-center mt-4">
+            <div >
+              <button
+              className="btn btn-primary px-4 py-2 rounded-pill text-end"
+              onClick={() => setVisibleCount(prev => prev + 10)}
+              style={{
+              backgroundColor: "#007bff",
+              color: "white",
+              border: "none",
+              padding: "8px 18px",
+              borderRadius: "25px",
+              fontSize: "14px",
+              fontWeight: "500",
+              cursor: "pointer",
+              transition: "background-color 0.3s ease",
+            }}
+            >
+              Show more
+            </button>
+            </div>
+          </div>
+        )}
+      </>
+    )
  : activeCategory === "Categorized" ? (
                         <>
                           <div className="d-flex justify-content-between align-items-center title-flex">
@@ -728,7 +725,8 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
                               .sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime())
                               .slice(0, 2)
                               .map((blog, idx) => (
-                                <div key={blog.slug.current || idx} className="col-md-6 px-3 mb-4">
+                          <div key={blog.slug.current || idx} className={`col-md-6 px-3 mb-4 ${idx >= 2 ? "mt-5" : ""}`}>
+
                                   <BannerCard
                                     img={blog.mainImage || placeholder_img}
                                     alt={blog.title}
@@ -796,7 +794,8 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
                                   <div key={cat} className="mb-5">
                                     <div className="row">
                                       {groupedBlogs[cat].slice(0, 4).map((blog, idx) => (
-                                        <div key={blog.slug.current || idx} className="col-md-6 px-3 mb-4">
+                                        // <div key={blog.slug.current || idx} className="col-md-6 px-3 mb-4">
+                                        <div key={blog.slug.current || idx}className={`col-md-6 px-3 mb-4 ${idx >= 2 ? "mt-5" : ""}`}>
                                           <BannerCard
                                             img={blog.mainImage || placeholder_img}
                                             alt={blog.title}
@@ -890,7 +889,8 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
                       ) : (
                         // For all other categories, show filtered/paginated blogs
                         paginatedBlogs.map((blog, idx) => (
-                          <div key={blog.slug.current || idx} className="col-md-6 px-3 mb-4">
+                          // <div key={blog.slug.current || idx} className="col-md-6 px-3 mb-4">
+                           <div key={blog.slug.current || idx}className={`col-md-6 px-3 mb-4 ${idx >= 2 ? "mt-5" : ""}`}>
                             <BannerCard
                               img={blog.mainImage || placeholder_img}
                               alt={blog.title}
@@ -960,17 +960,17 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
                  <div className="projects-wrapper projects-masonary-wrapper mt-5">
       <div className="hero-section container text-center">
         <div>
-          <div className="d-flex flex-column justify-content-center align-items-center mt-3">
+          <div className="d-flex flex-column justify-content-center align-items-center">
             <h2 className="text-white max-800 center-sub-heading-weight">
-                  Digitize <span className="text-white">.</span> Simplify <span className="text-white">.</span> Organize <span className="text-white">.</span>
+                 Would you like to learn more about us or our products?
             </h2>
 
-            <p className="max-600 py-3 text-white lead">
-             Kickstart your paperless lab with Logilab ELN
+            <p className="max-600 text-white lead">
+            Submit this form and our sales representative will contact you soon  <a href="mailto:sales@agaramtech.com" className="text-white fw-bold">sales@agaramtech.com</a>
             </p>
           </div>
 
-          <div className="mt-0 mt-lg-4">
+          <div className="mt-2 mb-4 ">
             <Link href="https://www.agaramtech.com/request-a-demo" className="home-btn rounded-pill">
             
               Request a Demo

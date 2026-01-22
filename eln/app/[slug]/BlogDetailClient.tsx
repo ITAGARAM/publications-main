@@ -697,19 +697,20 @@ authorUrl,
 
                         </div>
                     </div>
-                 <div className="projects-wrapper projects-masonary-wrapper mt-5">
+                  <div className="projects-wrapper projects-masonary-wrapper mt-5">
       <div className="hero-section container text-center">
         <div>
-          <div className="d-flex flex-column justify-content-center align-items-center mt-3">
+          <div className="d-flex flex-column justify-content-center align-items-center">
             <h2 className="text-white max-800 center-sub-heading-weight">
-                  Digitize <span className="text-white">.</span> Simplify <span className="text-white">.</span> Organize <span className="text-white">.</span>
+                 Would you like to learn more about us or our products?
             </h2>
 
-            <p className="max-600 py-3 text-white lead">
-             Kickstart your paperless lab with Logilab ELN
+            <p className="max-600 text-white lead">
+            Submit this form and our sales representative will contact you soon  <a href="mailto:sales@agaramtech.com" className="text-white fw-bold">sales@agaramtech.com</a>
             </p>
           </div>
-  <div className="mt-0 mt-lg-4">
+
+          <div className="mt-2 mb-4 ">
             <Link href="https://www.agaramtech.com/request-a-demo" className="home-btn rounded-pill">
             
               Request a Demo
