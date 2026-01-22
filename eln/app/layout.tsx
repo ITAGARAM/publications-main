@@ -23,18 +23,18 @@ const myFont1 = localFont({
 export const metadata: Metadata = {
   title: "Home - Blogs Agaram Technologies | LIMS | SDMS | ELN",
   description:
-    "Accelerate your research with Logilab ELN. Record data, create SOPs, configure workflows, track inventory usage, meet GxP compliance requirements and more.",
+    "",
   metadataBase: new URL("https://publications.agaramtech.com"),
 
   openGraph: {
     title: "Home - Blogs Agaram Technologies | LIMS | SDMS | ELN",
     description:
-      "Accelerate your research with Logilab ELN. Record data, create SOPs, configure workflows, track inventory usage, meet GxP compliance requirements and more.",
+      "",
     url: "https://publications.agaramtech.com",
     siteName: "Agaram Technologies Blogs",
     images: [
       {
-        url: "/assets/images/eln_logo.png",
+        url: "/assets/images/agaram-logo.png",
         width: 1200,
         height: 630,
         alt: "Agaram Technologies",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Home - Blogs Agaram Technologies | LIMS | SDMS | ELN",
     description:
-      "Accelerate your research with Logilab ELN. Record data, create SOPs, configure workflows, track inventory usage, meet GxP compliance requirements and more.",
+      "",
     images: ["/assets/images/eln_logo.png"],
   },
 
