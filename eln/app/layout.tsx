@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: "Home - Blogs Agaram Technologies | LIMS | SDMS | ELN",
     description:
       "",
-    images: ["/assets/images/eln_logo.png"],
+    images: ["/assets/images/agaram-logo.png"],
   },
 
   icons: {
