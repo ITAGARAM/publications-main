@@ -799,6 +799,9 @@ margin: 4rem auto;
 .blog-content ol {
   /* no color here so nested inline colors (from Sanity) are preserved if they set color directly */
 }
+.blog-content ul{
+    margin-left: 25px;
+}
 
 .blog-content li,
 .blog-content ul li,

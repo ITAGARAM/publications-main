@@ -3643,7 +3643,7 @@ margin-top:20px; */
   }
 
 ul {
-  list-style: outside none none;
+  /* list-style: outside none none; */
   margin: 0;
   padding: 0;
 }

@@ -375,7 +375,7 @@ authorUrl,
                                         className="img-fluid"
                                         style={{ width: "18px" }}
                                     />
-                                    <span className="mt-1">{viewCount !== null ? viewCount.toLocaleString() : "Loading..."} Views</span>
+                                    <span className="mt-1 ms-2">{viewCount !== null ? viewCount.toLocaleString() : "Loading..."} Views</span>
 
 
                                 </span>
