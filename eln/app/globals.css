@@ -3642,6 +3642,11 @@ margin-top:20px; */
     transform: rotate(180deg); /* Rotate the arrow upwards */
   }
 
+.navigation-menu > ul{
+    list-style: outside none none;
+}
+
+
 ul {
   /* list-style: outside none none; */
   margin: 0;
