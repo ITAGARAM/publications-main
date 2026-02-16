@@ -933,7 +933,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
 
           <div className="mobile-menu-overlay__body">
             <nav className="offcanvas-navigation">
-              <ul>
+              <ul className='list-unstyled'>
 
                 {/* <li className="nav-item">
               <Link href="/" className="nav-link navdata" onClick={() =>  setMenuActive(false)}>
@@ -964,7 +964,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                         animate={{ maxHeight: 300, opacity: 1 }}
                         exit={{ maxHeight: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="sub-menu"
+                        className="sub-menu list-unstyled"
                       >
 
 
@@ -1168,34 +1168,34 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                         animate={{ maxHeight: 300, opacity: 1, overflow: 'auto' }}
                         exit={{ maxHeight: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="sub-menu"
+                        className="sub-menu list-unstyled"
                       >
                         <li>
-                          <Link href="https://www.agaramtech.com/industries/pharmaceutical" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Pharma LIMS | ELN</Link>
+                          <Link href="https://www.agaramtech.com/industries/pharmaceutical" target='_blank' className="nav-link " onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Pharma LIMS | ELN</Link>
                         </li>
                         <li>
-                          <Link href="https://www.agaramtech.com/industries/life-sciences-biotech" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Life Sciences & Biotech LIMS | SDMS</Link>
+                          <Link href="https://www.agaramtech.com/industries/life-sciences-biotech" target='_blank' className="nav-link " onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Life Sciences & Biotech LIMS | SDMS</Link>
                         </li>
                         <li>
-                          <Link href="https://www.agaramtech.com/industries/contract-research-organization" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Contract Research Organization ELN</Link>
+                          <Link href="https://www.agaramtech.com/industries/contract-research-organization" target='_blank' className="nav-link" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Contract Research Organization ELN</Link>
                         </li>
                         <li>
-                          <Link href="https://www.agaramtech.com/industries/healthcare-diagnostics" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Healthcate & Diagnostics LIMS</Link>
+                          <Link href="https://www.agaramtech.com/industries/healthcare-diagnostics" target='_blank' className="nav-link" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Healthcate & Diagnostics LIMS</Link>
                         </li>
                         <li>
-                          <Link href="https://www.agaramtech.com/industries/cell-and-gene-therapy" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Cell & Gene Therapy ELN | SDMS</Link>
+                          <Link href="https://www.agaramtech.com/industries/cell-and-gene-therapy" target='_blank' className="nav-link " onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Cell & Gene Therapy ELN | SDMS</Link>
                         </li>
                         <li>
-                          <Link href="https://www.agaramtech.com/industries/chemical" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Chemical Manufacturing | Formulations | LIMS</Link>
+                          <Link href="https://www.agaramtech.com/industries/chemical" target='_blank' className="nav-link" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Chemical Manufacturing | Formulations | LIMS</Link>
                         </li>
                         <li>
-                          <Link href="https://www.agaramtech.com/industries/oil-gas-industry" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Oil & Gas LIMS | SDMS</Link>
+                          <Link href="https://www.agaramtech.com/industries/oil-gas-industry" target='_blank' className="nav-link" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Oil & Gas LIMS | SDMS</Link>
                         </li>
                         <li>
-                          <Link href="https://www.agaramtech.com/industries/dairy-food-beverage" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Dairy, Food & Beverage LIMS</Link>
+                          <Link href="https://www.agaramtech.com/industries/dairy-food-beverage" target='_blank' className="nav-link" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Dairy, Food & Beverage LIMS</Link>
                         </li>
                         <li>
-                          <Link href="https://www.agaramtech.com/industries/manufacturing" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Manufacturing LIMS | ELN</Link>
+                          <Link href="https://www.agaramtech.com/industries/manufacturing" target='_blank' className="nav-link" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Manufacturing LIMS | ELN</Link>
                         </li>
 
                       </motion.ul>
@@ -1222,7 +1222,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                         animate={{ maxHeight: 300, opacity: 1 }}
                         exit={{ maxHeight: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="sub-menu"
+                        className="sub-menu list-unstyled"
                       >
                         <li>
                           {/* <Link href="/company/about-us" className="nav-link" onClick={() => {setCompanyOpen(false); setMenuActive(false);}}>About Us</Link> */}
@@ -1269,7 +1269,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                         animate={{ maxHeight: 300, opacity: 1 }}
                         exit={{ maxHeight: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="sub-menu"
+                        className="sub-menu list-unstyled"
                       >
                         <li>
                           <Link href="https://www.agaramtech.com/services/professional-services" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setCompanyOpen(false); setMenuActive(false); }}>Professional Services</Link>
@@ -1309,7 +1309,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                         animate={{ maxHeight: 300, opacity: 1 }}
                         exit={{ maxHeight: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="sub-menu"
+                        className="sub-menu list-unstyled"
                       >
                         <li>
                           <Link href="https://www.agaramtech.com/about-us" target='_blank' className="nav-link menu-mobile-ml" onClick={() => { setServiceOpen(false); setMenuActive(false); }}>About Us</Link>
