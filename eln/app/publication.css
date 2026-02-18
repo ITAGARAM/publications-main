@@ -1,11 +1,15 @@
 .publication-banner {
     background-image: url('../public/assets/images/blog/blog-banner-bg-2.svg');
-    background-position-y: 0px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 7rem 0 4rem;
-    border-radius: 140px 0 0 0;
-    position: relative;
+ background-position: center top;   /* better than position-y */
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 7rem 0 4rem;
+  border-radius: 140px 0 0 0;
+  position: relative;
+  min-height: 659px;
+  height: auto;
+  display: flex;              
+  align-items: center;  
 }
 
 .publication-banner h6 {

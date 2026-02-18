@@ -7,6 +7,7 @@ import download from "../../../public/assets/images/download.png";
 import bulb from '../../../public/assets/images/publication/idea.svg';
 import placeholder_whitepaper from "../../../public/assets/images/publication/placeholder-whitepaper.svg"
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import '../../publication.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -16,6 +17,7 @@ import BannerCard from "../banner-card/banner-card";
 import { useEffect, useState } from "react";
 import { client } from "@/lib/sanity";
 import dottedEllipse from '../../../public/assets/images/publication/dotted-ellipse.svg';
+import Footer from "@/app/footer";
 
 var $ = require('jquery');
 
@@ -49,8 +51,13 @@ const publicationQuery = `*[_type == "publication"] {
 `;
 
 const PublicationPage = ({ params }: { params: { slug: string } }) => {
-
     const [data, setData] = useState<any>(null);
+
+    const PublicationName = data?.title;
+    const encodedPublication = encodeURIComponent(PublicationName);
+    const formURL = `https://form.jotform.com/260192761354053?select_publication=${encodedPublication.slice(0, -3)}`;
+    console.log(formURL)
+
 
     const [publicationData, setPublicationData] = useState<any[]>([])
     useEffect(() => {
@@ -63,7 +70,7 @@ const PublicationPage = ({ params }: { params: { slug: string } }) => {
     }, [])
 
     const relatedPublication = publicationData.filter((item) => item.category === data?.category)
-        .filter((catItem)=> catItem._id !== data?._id)
+        .filter((catItem) => catItem._id !== data?._id)
         .slice()
         .sort(() => 0.5 - Math.random());
 
@@ -130,23 +137,23 @@ const PublicationPage = ({ params }: { params: { slug: string } }) => {
                 />
                 <div className="container position-relative">
                     <button
-                        className="back-arrow-btn back-arrow-btn-body "
-                        style={{zIndex: 8}}
+                        className="back-arrow-btn back-arrow-btn-body"
+                        style={{ zIndex: 8 }}
                         onClick={() => router.push("/publication")}   // redirect to main page
                     >
                         <Image src={back_arrow} alt="Back" width={20} height={20} />
                     </button>
-                    
-                        <div className="text-center position-relative" style={{ margin: "auto", maxWidth: "820px", zIndex: 1 }}>
-                            <Image
-                                src={data?.mainImage || placeholderImg}
-                                alt={"Blog image"}
-                                width={800}
-                                height={400}
-                                className="img-fluid publication-banner-image"
-                            />
-                        </div>
-                    
+
+                    <div className="text-center position-relative" style={{ margin: "auto", maxWidth: "820px", zIndex: 1 }}>
+                        <Image
+                            src={data?.mainImage || placeholderImg}
+                            alt={"Blog image"}
+                            width={800}
+                            height={400}
+                            className="img-fluid publication-banner-image"
+                        />
+                    </div>
+
                 </div>
 
                 {/* <div className="blur-bg" /> */}
@@ -180,8 +187,8 @@ const PublicationPage = ({ params }: { params: { slug: string } }) => {
 
                         <div className="challenge">
                             {data?.challenges.map((challenge: any, i: any) => (
-                                <div key={i}><label><Image src={bulb} height={25} width={25} alt="bulb"/></label>
-                                <p>{challenge}</p>
+                                <div key={i}><label><Image src={bulb} height={25} width={25} alt="bulb" /></label>
+                                    <p>{challenge}</p>
                                 </div>
                             ))}
 
@@ -189,7 +196,11 @@ const PublicationPage = ({ params }: { params: { slug: string } }) => {
                         </div>
                     </div>
                     <div className="col-md-6">
-
+                        <iframe
+                            id="myForm"
+                            src={formURL}
+                            style={{ width: '100%', height: '100%' }}
+                        />
                     </div>
                 </div>
             </div>
@@ -277,6 +288,37 @@ const PublicationPage = ({ params }: { params: { slug: string } }) => {
                     </OwlCarousel>
                 </div>
             </div>
+
+                           <div className="projects-wrapper projects-masonary-wrapper mt-5">
+                  <div className="hero-section container text-center">
+                    <div>
+                      <div className="d-flex flex-column justify-content-center align-items-center">
+                        <h2 className="text-white max-800 center-sub-heading-weight">
+                             Would you like to learn more about us or our products?
+                        </h2>
+            
+                        <p className="max-600 text-white lead">
+                        Submit this form and our sales representative will contact you soon  <a href="mailto:sales@agaramtech.com" className="text-white fw-bold">sales@agaramtech.com</a>
+                        </p>
+                      </div>
+            
+                      <div className="mt-2 mb-4 ">
+                        <Link href="https://www.agaramtech.com/request-a-demo" className="home-btn rounded-pill">
+                        
+                          Request a Demo
+                        </Link>
+            
+                        <Link
+                          href="https://www.agaramtech.com/resources/brochures"
+                          className="home-btn home-btn-white rounded-pill ms-3 mobile-hide"
+                        >
+                          Download brochure
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            <Footer/>
         </>
     );
 }

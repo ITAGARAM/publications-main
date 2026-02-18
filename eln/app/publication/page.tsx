@@ -20,6 +20,7 @@ import { useEffect, useRef, useState } from "react";
 import { FaAngleRight } from "react-icons/fa";
 import { client } from "@/lib/sanity";
 import Pagination from "@/components/Pagination";
+import { useRouter } from "next/navigation";
 
 
 interface Blog {
@@ -85,9 +86,9 @@ export default function Publication() {
     const [hideCategoryBox, setHideCategoryBox] = useState(false);
     const SearchRef = useRef<HTMLDivElement>(null);
     const BannerRef = useRef<HTMLDivElement>(null);
-
     const [touchedTop, setTouchedTop] = useState(false);
     const [publicationData, setPublicationData] = useState<any[]>([])
+     const router = useRouter();
 
 
 
@@ -399,7 +400,7 @@ export default function Publication() {
                                                         slug={post.slug.current}
                                                         pageName={'publication'}
                                                     />
-                                                    <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }}>
+                                                    <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }} onClick={()=>router.push(`/publication/${post.slug.current}`)}>
                                                         {post.category === 'whitePaper' ? 'Read White Paper' :
                                                             post.category === 'caseStudy' ? 'Read Case Study' :
                                                                 'Download Ebook'
@@ -408,7 +409,6 @@ export default function Publication() {
                                                 </div>
                                             </div>
                                         ))}
-
 
                                         {categories.slice(-3).map((cat) => (
                                             <div key={cat.catValue}>
@@ -438,7 +438,7 @@ export default function Publication() {
                                                                         slug={subCat.slug.current}
                                                                         pageName={'publication'}
                                                                     />
-                                                                    <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }}>
+                                                                    <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }} onClick={()=>router.push(`/publication/${subCat.slug.current}`)}>
                                                                         {subCat.category === 'whitePaper' ? 'Read Whitepaper' :
                                                                             subCat.category === 'caseStudy' ? 'Read Case Study' :
                                                                                 'Download Ebook'
@@ -455,13 +455,8 @@ export default function Publication() {
                                                         Show More
                                                     </button>
                                                 </div>
-
-
                                             </div>
                                         ))}
-
-
-
                                     </>
 
                                     :
@@ -484,7 +479,7 @@ export default function Publication() {
                                                             slug={post.slug.current}
                                                             pageName={'publication'}
                                                         />
-                                                        <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }}>
+                                                        <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }} onClick={()=>router.push(`/publication/${post.slug.current}`)}>
                                                             {post.category === 'whitePaper' ? 'Read White Paper' :
                                                                 post.category === 'caseStudy' ? 'Read Case Study' :
                                                                     'Download Ebook'
@@ -545,26 +540,35 @@ export default function Publication() {
 
             <div className="container">
 
-                <div className="hero-section container mt-5">
-                    <div className="d-flex justify-content-between  align-items-center text-white px-4  hero-text">
-                        <div className="d-flex flex-column ">
-                            <h1 className="text-white">
-                                Digitize <span className="text-white">.</span> Simplify <span className="text-white">.</span> Organize <span className="text-white">.</span>
-                            </h1>
-                            <p className="lead text-white mt-2">
-                                Kickstart your paperless lab with Logilab ELN
-                            </p>
-                        </div>
-                        <div className="d-flex justify-content-center hero-text mt-4">
-                            <Link href="/request-a-demo" passHref legacyBehavior>
-                                <a className="home-btn rounded-pill">Request a Demo</a>
-                            </Link>
-                            <Link href="/product-brochure-download" passHref legacyBehavior>
-                                <a className="home-btn home-btn-white rounded-pill ms-3">Download brochure</a>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+                     <div className="projects-wrapper projects-masonary-wrapper mt-5">
+      <div className="hero-section container text-center">
+        <div>
+          <div className="d-flex flex-column justify-content-center align-items-center">
+            <h2 className="text-white max-800 center-sub-heading-weight">
+                 Would you like to learn more about us or our products?
+            </h2>
+
+            <p className="max-600 text-white lead">
+            Submit this form and our sales representative will contact you soon  <a href="mailto:sales@agaramtech.com" className="text-white fw-bold">sales@agaramtech.com</a>
+            </p>
+          </div>
+
+          <div className="mt-2 mb-4 ">
+            <Link href="https://www.agaramtech.com/request-a-demo" className="home-btn rounded-pill">
+            
+              Request a Demo
+            </Link>
+
+            <Link
+              href="https://www.agaramtech.com/resources/brochures"
+              className="home-btn home-btn-white rounded-pill ms-3 mobile-hide"
+            >
+              Download brochure
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
 
             </div>
 
