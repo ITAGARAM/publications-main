@@ -19,11 +19,6 @@ import { client } from "@/lib/sanity";
 import dottedEllipse from '../../../public/assets/images/publication/dotted-ellipse.svg';
 import Footer from "@/app/footer";
 
-var $ = require('jquery');
-
-if (typeof window !== 'undefined') {
-    window.$ = window.jQuery = require('jquery');
-}
 
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
     ssr: false,
@@ -37,6 +32,7 @@ const query = `*[_type == "publication" && slug.current == $slug][0]{
     summary,
     challengeTitle,
     challenges,
+    jotformOptionText,   // ✅ ADD THIS
     "mainImage": mainImage.asset->url
 }`;
 
@@ -52,14 +48,25 @@ const publicationQuery = `*[_type == "publication"] {
 
 const PublicationPage = ({ params }: { params: { slug: string } }) => {
     const [data, setData] = useState<any>(null);
+    
 
-    const PublicationName = data?.title;
-    const encodedPublication = encodeURIComponent(PublicationName);
-    const formURL = `https://form.jotform.com/260192761354053?select_publication=${encodedPublication.slice(0, -3)}`;
-    console.log(formURL)
+const jotformValue = data?.jotformOptionText || "";
+
+const formURL =
+  `https://form.jotform.com/260192761354053?select_publication=${encodeURIComponent(jotformValue)}`;
+
 
 
     const [publicationData, setPublicationData] = useState<any[]>([])
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const $ = require("jquery");
+            window.$ = window.jQuery = $;
+            require("owl.carousel");
+        }
+    }, []);
+    
     useEffect(() => {
         async function fetchData() {
             const relatedData = await client.fetch(publicationQuery);
@@ -69,19 +76,21 @@ const PublicationPage = ({ params }: { params: { slug: string } }) => {
         console.log(publicationData)
     }, [])
 
+    
     const relatedPublication = publicationData.filter((item) => item.category === data?.category)
         .filter((catItem) => catItem._id !== data?._id)
         .slice()
         .sort(() => 0.5 - Math.random());
 
     const [itemsToShow, setItemsToShow] = useState(5); // Default for desktop
-    const [autoplay, setAutoplay] = useState(false); // Default autoplay off
+    const [autoplay, setAutoplay] = useState(false); 
     const router = useRouter();
     const options = {
         loop: true,
         margin: 10,
         dots: true,
-        autoplay: true,
+        // autoplay: true,
+        autoplay: autoplay,   // ✅ FIXED
         autoplayTimeout: 3000,
         smartSpeed: 200,
         responsive: {
@@ -198,6 +207,7 @@ const PublicationPage = ({ params }: { params: { slug: string } }) => {
                     <div className="col-md-6">
                         <iframe
                             id="myForm"
+                            key={formURL}
                             src={formURL}
                             style={{ width: '100%', height: '100%' }}
                         />
@@ -217,76 +227,88 @@ const PublicationPage = ({ params }: { params: { slug: string } }) => {
                     </h2>
                 </div>
 
-                <div className="use-case-slider-bg">
-                    <OwlCarousel className="owl-theme" {...options}>
-                        <div className="item ">
-                            <div className="row">
-                                {relatedPublication.slice(0, 2).map((post, i) => (
-                                    <div className="col-md-6" key={i}>
-                                        <div className="publication-card px-3 mb-4">
-                                            <BannerCard
-                                                label={post.category || "Whitepaper"}
-                                                title={post.title}
-                                                desc={post.summary}
-                                                alt={post.title}
-                                                img={post.mainImage || placeholder_whitepaper}
-                                                author={""}
-                                                authorUrl={""}
-                                                usernameTags={[]}
-                                                publishedAt={""}
-                                                slug={post.slug.current}
-                                                pageName={'publication'}
-                                            />
-                                            <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }}>
-                                                {post.category === 'whitePaper' ? 'Read White Paper' :
-                                                    post.category === 'caseStudy' ? 'Read Case Study' :
-                                                        'Download Ebook'
-                                                }
-                                            </button>
-                                        </div>
-                                    </div>
-                                ))}
+          {relatedPublication.length > 0 && (
+  <div className="use-case-slider-bg">
+    <OwlCarousel className="owl-theme" {...options}>
 
+      {/* Slide 1 */}
+      <div className="item">
+        <div className="row">
+          {relatedPublication.slice(0, 2).map((post, i) => (
+            <div className="col-md-6" key={i}>
+              <div className="publication-card px-3 mb-4">
+                <BannerCard
+                  label={post.category || "Whitepaper"}
+                  title={post.title}
+                  desc={post.summary}
+                  alt={post.title}
+                  img={post.mainImage || placeholder_whitepaper}
+                  author={""}
+                  authorUrl={""}
+                  usernameTags={[]}
+                  publishedAt={""}
+                  slug={post.slug.current}
+                  pageName={"publication"}
+                />
 
-                            </div>
+                <button
+                  className="download-btn"
+                  style={{ width: "max-content", padding: "4px 16px" }}
+                    onClick={() => router.push(`/publication/${post.slug.current}`)}
+                >
+                  {post.category === "whitePaper"
+                    ? "Read White Paper"
+                    : post.category === "caseStudy"
+                    ? "Read Case Study"
+                    : "Download Ebook"}
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-                        </div>
+      {/* Slide 2 */}
+      <div className="item">
+        <div className="row">
+          {relatedPublication.slice(2, 4).map((post, i) => (
+            <div className="col-md-6" key={i}>
+              <div className="publication-card px-3 mb-4">
+                <BannerCard
+                  label={post.category || "Whitepaper"}
+                  title={post.title}
+                  desc={post.summary}
+                  alt={post.title}
+                  img={post.mainImage || placeholder_whitepaper}
+                  author={""}
+                  authorUrl={""}
+                  usernameTags={[]}
+                  publishedAt={""}
+                  slug={post.slug.current}
+                  pageName={"publication"}
+                />
 
-                        <div className="item ">
-                            <div className="row">
-                                {relatedPublication.slice(2, 4).map((post, i) => (
-                                    <div className="col-md-6" key={i}>
-                                        <div className="publication-card px-3 mb-4">
-                                            <BannerCard
-                                                label={post.category || "Whitepaper"}
-                                                title={post.title}
-                                                desc={post.summary}
-                                                alt={post.title}
-                                                img={post.mainImage || placeholder_whitepaper}
-                                                author={""}
-                                                authorUrl={""}
-                                                usernameTags={[]}
-                                                publishedAt={""}
-                                                slug={post.slug.current}
-                                                pageName={'publication'}
-                                            />
-                                            <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }}>
-                                                {post.category === 'whitePaper' ? 'Read White Paper' :
-                                                    post.category === 'caseStudy' ? 'Read Case Study' :
-                                                        'Download Ebook'
-                                                }
-                                            </button>
-                                        </div>
-                                    </div>
-                                ))}
+                <button
+                  className="download-btn"
+                  style={{ width: "max-content", padding: "4px 16px" }}
+                    onClick={() => router.push(`/publication/${post.slug.current}`)}
+                >
+                  {post.category === "whitePaper"
+                    ? "Read White Paper"
+                    : post.category === "caseStudy"
+                    ? "Read Case Study"
+                    : "Download Ebook"}
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
+    </OwlCarousel>
+  </div>
+)}
 
-                            </div>
-
-                        </div>
-
-                    </OwlCarousel>
-                </div>
             </div>
 
                            <div className="projects-wrapper projects-masonary-wrapper mt-5">

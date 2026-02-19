@@ -29,7 +29,7 @@ export default function BannerCard(props: BannerCardProps) {
     const tagColors = ["green", "purple", "orange"];
     return (
         <div className="bannercard">
-            <Link href={`/${props.pageName === 'publication' ? 'publication' : 'blog'}/${props.slug}`}>
+            <Link href={props.pageName === "publication" ? `/publication/${props.slug}` : `/${props.slug}`}>
                 <Image
                     src={props.img}
                     alt={props.alt || props.title}
@@ -42,7 +42,7 @@ export default function BannerCard(props: BannerCardProps) {
             <label>{CATEGORY_LABELS[props.label] || props.label}</label>
 
 
-            <Link href={`/${props.pageName === 'publication' ? 'publication' : 'blog'}/${props.slug}`}>
+          <Link href={props.pageName === "publication" ? `/publication/${props.slug}` : `/${props.slug}`}>
                 <h4>
                     {props.title
                         ? props.title.split(" ").slice(0, 10).join(" ") +
@@ -64,7 +64,7 @@ export default function BannerCard(props: BannerCardProps) {
                     // Cycle through the colors
                     const colorClass = `tag-btn-${tagColors[idx % tagColors.length]}`;
                     return (
-                        <Link key={idx} href={`/blog/tag/${tag}`}>
+                        <Link key={idx} href={`/tag/${tag}`}>
                             <button
                                 className={`tag-btn mt-2 ${colorClass} ms-${idx > 0 ? 2 : 0}`}
                             >
