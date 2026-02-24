@@ -23,6 +23,20 @@ export default defineType({
       title: 'Summary',
       type: 'text', // shorter overview
     }),
+defineField({
+  name: 'seoTitle',
+  title: 'SEO Title',
+  type: 'string',
+  description: 'Meta title',
+}),
+
+defineField({
+  name: 'seoDescription',
+  title: 'SEO Description',
+  type: 'text',
+  rows: 3,
+  description: 'Meta description from WordPress',
+}),
     defineField({
       name: 'fullDetails',
       title: 'Full Details',

@@ -68,7 +68,12 @@ export default defineType({
             title: 'Published At',
             type: 'datetime',
         }),
-
+        
+            {
+                name: "jotformOptionText",
+                title: "JotForm Dropdown Text",
+                type: "string",
+                },
 
     ],
 })
