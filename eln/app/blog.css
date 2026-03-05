@@ -468,8 +468,8 @@ h6 {
 }
 
   .back-arrow-btn-body {
-top: 25px;
-left: 120px;
+    top: -5px;
+    left: 0px;
     }
 
 .blog-body {
@@ -792,7 +792,15 @@ margin: 4rem auto;
     .back-arrow-btn {
         display: none;
     }
-
+    .dotted-line{
+     display: none;
+    }
+.publication-banner-image{
+    border-radius: 0px;
+}
+.publication-banner{
+    min-height: 454px;
+}
 }
 /* Minimal: make list text & markers match paragraph color */
 .blog-content ul,

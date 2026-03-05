@@ -33,7 +33,8 @@ const query = `*[_type == "publication" && slug.current == $slug][0]{
     challengeTitle,
     challenges,
     jotformOptionText,   // ✅ ADD THIS
-    "mainImage": mainImage.asset->url
+    "mainImage": mainImage.asset->url,
+    "pdfUrl": pdfFile.asset->url
 }`;
 
 const publicationQuery = `*[_type == "publication"] {
@@ -50,10 +51,24 @@ const PublicationPage = ({ params }: { params: { slug: string } }) => {
     const [data, setData] = useState<any>(null);
     
 
-const jotformValue = data?.jotformOptionText || "";
+// const jotformValue = data?.jotformOptionText || "";
 
-const formURL =
-  `https://form.jotform.com/260192761354053?select_publication=${encodeURIComponent(jotformValue)}`;
+// const formURL =
+//   `https://form.jotform.com/260192761354053?select_publication=${encodeURIComponent(jotformValue)}`;
+
+const jotformValue = data?.jotformOptionText || "";
+const pdfUrl = data?.pdfUrl || "";
+
+const formId =
+  data?.category === "caseStudy"
+    ? "233211048510441"
+    : data?.category === "ebook"
+    ? "240101257158447"
+    : "233193321268454";
+
+const formURL = `https://form.jotform.com/${formId}?select_publication=${encodeURIComponent(
+  jotformValue
+)}&pdfUrl=${encodeURIComponent(pdfUrl)}`;
 
 
 
@@ -177,7 +192,7 @@ const formURL =
                             }</span></label>
 
                     </div>
-                    <div className="col-4 d-flex flex-column align-items-end">
+                    <div className="col-4 d-flex flex-column align-items-end recent-time">
                         <button className="download-icon">
                             <Image src={download} alt="recent" width={30} />
                         </button>
@@ -186,7 +201,7 @@ const formURL =
                 </div>
 
             </div>
-            <div className="container mt-5">
+            <div className="container mt-lg-5 mt-md-3">
                 <div className="row">
                     <div className="col-md-6 form-content">
                         <h2>{data?.title}</h2>
@@ -195,13 +210,11 @@ const formURL =
                         <h6>{data?.challengeTitle}</h6>
 
                         <div className="challenge">
-                            {data?.challenges.map((challenge: any, i: any) => (
+                            {data?.challenges?.map((challenge: any, i: any) => (
                                 <div key={i}><label><Image src={bulb} height={25} width={25} alt="bulb" /></label>
                                     <p>{challenge}</p>
                                 </div>
                             ))}
-
-
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -209,7 +222,7 @@ const formURL =
                             id="myForm"
                             key={formURL}
                             src={formURL}
-                            style={{ width: '100%', height: '100%' }}
+                            style={{ width: '100%', height: '800px' }}
                         />
                     </div>
                 </div>

@@ -31,17 +31,11 @@
 
 
 @font-face {
-
   font-family: 'Urbanist-SemiBold';
-
   src: url('../app/fonts/Urbanist-SemiBold.woff2') format('woff2');
-
   font-weight: 600;
-
   font-style: normal;
-
   font-display: swap;
-
 }
 
 
@@ -63,23 +57,16 @@
 
 
 @font-face {
-
   font-family: 'Urbanist-ExtraBold';
-
   src: url('../app/fonts/Urbanist-ExtraBold.woff2') format('woff2');
-
   font-weight: bolder;
-
   font-style: normal;
-
   font-display: swap;
-
 }
 
 
 
 @font-face {
-
   font-family: 'SFPRO-REGULAR';
 
   src: url('../app/fonts/SFPRODISPLAYREGULAR.woff2') format('woff2');

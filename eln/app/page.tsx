@@ -88,7 +88,7 @@ const Blog = () => {
   const router = useRouter();
   const [touchedTop, setTouchedTop] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [visibleCount, setVisibleCount] = useState(10);
+  const [visibleCount, setVisibleCount] = useState(6);
   const [featuredBlog, setFeaturedBlog] = useState<Blog | null>(null);
   const [randomAd, setRandomAd] = useState<any>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -379,7 +379,7 @@ const allArticlesBlogs = blogs
 
 // ✅ Only show what is currently visible (10, 20, 30...)
 const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
-
+const visibleCategoryBlogs = filteredBlogs.slice(0, visibleCount);
 
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
@@ -403,13 +403,6 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, [popupClosed]);
-
-
-
-
-
-
-
 
   return (
     <div>
@@ -448,7 +441,7 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
               }}
               style={{ cursor: "pointer" }}
             >
-              {/* Left column: text + whitepaper */}
+              {/* Left column: text + whitepaper*/}
               <div className="col-lg-6 col-md-7 position-relative publication-banner-mobile">
                 {/* Whitepaper image (always visible) */}
                 <Image
@@ -529,8 +522,6 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
                   }
                 }}
               />
-
-
             </div>
             {touchedTop && <div style={{ height: "180px" }} />}
           </div>
@@ -680,7 +671,7 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
         ))}
 
         {/* ✅ SHOW MORE BUTTON */}
-        {visibleCount < allArticlesBlogs.length && (
+        {/* {visibleCount < allArticlesBlogs.length && (
           <div className="col-12 text-center mt-4">
             <div >
               <button
@@ -702,7 +693,7 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
             </button>
             </div>
           </div>
-        )}
+        )} */}
       </>
     )
  : activeCategory === "Categorized" ? (
@@ -888,7 +879,7 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
 
                       ) : (
                         // For all other categories, show filtered/paginated blogs
-                        paginatedBlogs.map((blog, idx) => (
+                    visibleCategoryBlogs.map((blog, idx) => (
                           // <div key={blog.slug.current || idx} className="col-md-6 px-3 mb-4">
                            <div key={blog.slug.current || idx}className={`col-md-6 px-3 mb-4 ${idx >= 2 ? "mt-5" : ""}`}>
                             <BannerCard
@@ -911,7 +902,26 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
                   </div>
                 </div>
 
-
+{activeCategory !== "Categorized" && visibleCount < filteredBlogs.length && (
+  <div className="col-12 text-center mt-4">
+    <button
+      className="btn btn-primary px-4 py-2 rounded-pill"
+      onClick={() => setVisibleCount(prev => prev + 6)}
+      style={{
+        backgroundColor: "#007bff",
+        color: "white",
+        border: "none",
+        padding: "8px 18px",
+        borderRadius: "25px",
+        fontSize: "14px",
+        fontWeight: "500",
+        cursor: "pointer"
+      }}
+    >
+      Show more
+    </button>
+  </div>
+)}
                 {/* <div className='container mt-5'>
                 {randomAd ? (
                   randomAd.url ? (
@@ -938,7 +948,7 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
                 )}
 
               </div> */}
-
+{/* 
              {["General", "Product", "News & Event"].includes(activeCategory) &&
   filteredBlogs.length > getItemsPerPage() && (
     <div className="py-5 d-flex justify-content-center">
@@ -949,7 +959,7 @@ const visibleBlogs = allArticlesBlogs.slice(0, visibleCount);
         onPageChange={setCurrentPage}
       />
     </div>
-)}
+)} */}
 
 
               </div>

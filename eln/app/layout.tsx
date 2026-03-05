@@ -7,6 +7,7 @@ import "./globals.css";
 import "./resposive.css";
 import "./blog.css";
 import BootstrapClient from "@/components/boostrapclient";
+import ClientLoader from "@/components/ClientLoader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -86,7 +87,10 @@ export default function RootLayout({
       </head>
 
       <body className={`${inter.className} ${myFont1.variable}`}>
+
+        <ClientLoader>
         {children}
+        </ClientLoader>
 
         {/* Bootstrap JS */}
         <BootstrapClient />

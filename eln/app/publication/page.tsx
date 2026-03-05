@@ -89,7 +89,12 @@ export default function Publication() {
     const [touchedTop, setTouchedTop] = useState(false);
     const [publicationData, setPublicationData] = useState<any[]>([])
      const router = useRouter();
-
+const [visibleCountByCategory, setVisibleCountByCategory] = useState<Record<string, number>>({
+  all: 6,
+  caseStudy: 6,
+  whitePaper: 6,
+  ebook: 6,
+});
 
 
     const categories = [
@@ -135,10 +140,14 @@ export default function Publication() {
         });
     }
 
-    const paginatedPublications = filteredpublications.slice(
-        startIndex,
-        endIndex
-    );
+    // const paginatedPublications = filteredpublications.slice(
+    //     startIndex,
+    //     endIndex
+    // );
+    const visiblePublications =
+  filteredpublications.slice(0, visibleCountByCategory[selectedCategory] || 6);
+
+
     const handlePageChange = (page: number) => {
         setCurrentPageByCategory((prev) => ({
             ...prev,
@@ -254,9 +263,18 @@ export default function Publication() {
     return (
         <div>
             <Header whiteHeader />
-            <div className="publication-banner" >
+            <div className="publication-banner">
                 <div className="container">
-                    <div className="row mt-5 cursor-pointer" ref={BannerRef}>
+               <div
+  className="row mt-5 cursor-pointer"
+  ref={BannerRef}
+  onClick={() => {
+    if (featuredPublication[featuredPublication.length - 1]?.slug?.current) {
+      router.push(`/publication/${featuredPublication[featuredPublication.length - 1].slug.current}`);
+    }
+  }}
+
+              style={{ cursor: "pointer" }}>
                         <div className="col-lg-6 col-md-7 position-relative publication-banner-mobile">
                             <Image src={caseStudy} alt="Feature Whitepaper" className="whitepaper" width={260} height={50} />
                             <div className="d-flex align-items-center">
@@ -271,21 +289,20 @@ export default function Publication() {
                                 </button>
                             </Link>
                         </div>
-                        <div className="col-lg-6 col-md-5 position-relative d-md-flex justify-content-md-center align-items-md-center" style={{ height: '340px' }}>
-                            <Image src={featuredPublication[featuredPublication.length - 1]?.mainImage || placeholder_img} alt="placeholder" className="img-fluid placeholder1" fill />
+                        <div className="col-lg-6 col-md-5 position-relative d-md-flex justify-content-md-center align-items-md-center">
+                            <Image src={featuredPublication[featuredPublication.length - 1]?.mainImage || placeholder_img} alt="placeholder" className="img-fluid placeholder1"    width={600}
+                  height={400} />
                         </div>
                     </div>
                     <div ref={SearchRef} className={`search_bar w-75 mx-auto ${touchedTop ? 'fixed' : ''}`}>
                         <div className="search-icon">
-                            <Image src={search} alt="search" width={16} />
+                            <Image src={search} alt="search" width={16}/>
                         </div>
                         <input type="text" placeholder="Start searching here" value={searchTerm}
                             onChange={(e) => {
                                 setSearchTerm(e.target.value)
                                 setSelectedCategory("all")
-                                scrollToTitle()
-                                
-                                
+                                scrollToTitle()                                
                             }} />
                     </div>
                     {touchedTop && <div style={{ height: "180px" }} />}
@@ -363,7 +380,7 @@ export default function Publication() {
 
                             {searchWord ? <h2 className="searchWord">You are searching for "{searchTerm}"</h2>
                                 :
-                                <h2 ref={titleRef}>
+                                <h2 ref={titleRef} className="recent-post-heading">
                                     <span className="highlight-bg">{
                                         selectedCategory === 'default' ? 'Recent Publications' :
                                             categories.find((item) =>
@@ -374,13 +391,12 @@ export default function Publication() {
                             }
 
 
-                            <div className="col-4 text-end">
+                            <div className="col-4 text-end recent-time">
                                 <Image src={recent} alt="recent" width={50} />
                                 <p className="mt-4">Explore how our solutions have empowered labs across industries - research papers, case studies & white papers.</p>
                             </div>
                         </div>
                         <div className="row">
-
                             {
                                 selectedCategory === 'default' ?
                                     <>
@@ -413,7 +429,7 @@ export default function Publication() {
                                         {categories.slice(-3).map((cat) => (
                                             <div key={cat.catValue}>
                                                 <div className="d-flex justify-content-between align-items-end recent">
-                                                    <h2>
+                                                    <h2 className="recent-post-heading">
                                                         <span className="highlight-bg">{cat.catName}</span>
                                                     </h2>
                                                 </div>
@@ -491,7 +507,7 @@ export default function Publication() {
                                         </>
                                         :
                                         <>
-                                            {paginatedPublications.map((post) => (
+                                            {visiblePublications.map((post) => (
                                                 <div className="col-md-6" key={post._id}>
                                                     <div className="publication-card px-3 mb-4">
                                                         <BannerCard
@@ -511,14 +527,31 @@ export default function Publication() {
                                                 </div>
                                             ))}
 
-                                            <div>
+                                            {/* <div>
                                                 <CustomPagination
                                                     totalItems={filteredpublications.length}
                                                     itemsPerPage={ITEMS_PER_PAGE}
                                                     currentPage={currentPage}
                                                     onPageChange={handlePageChange}
                                                 />
-                                            </div>
+                                            </div> */}
+                                            {visibleCountByCategory[selectedCategory] < filteredpublications.length && (
+  <div className="d-flex justify-content-center mt-4">
+    <button
+      className="download-btn"
+      style={{ width: "max-content", padding: "6px 18px" }}
+      onClick={() =>
+        setVisibleCountByCategory((prev) => ({
+          ...prev,
+          [selectedCategory]: (prev[selectedCategory] || 6) + 6,
+        }))
+      }
+    >
+      Show More
+    </button>
+  </div>
+)}
+
                                         </>
 
                             }

@@ -595,6 +595,7 @@ margin: 4rem auto;
 
     .publication-banner-image {
         margin-top: 25px;
+        height: auto !important;
     }
 
     .title-flex {
@@ -701,7 +702,10 @@ margin: 4rem auto;
     .back-arrow-btn {
         display: none;
     }
-
+    .publication-banner-body{
+        min-height: 340px;
+    }
+ 
 }
 
 
