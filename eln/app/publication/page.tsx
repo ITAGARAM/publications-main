@@ -263,7 +263,7 @@ const [visibleCountByCategory, setVisibleCountByCategory] = useState<Record<stri
     return (
         <div>
             <Header whiteHeader />
-            <div className="publication-banner">
+            <div className="publication-banner publication-banner-two">
                 <div className="container">
                <div
   className="row mt-5 cursor-pointer"
@@ -282,7 +282,7 @@ const [visibleCountByCategory, setVisibleCountByCategory] = useState<Record<stri
                                 <span className="line ms-2"></span>
                             </div>
                             <h1>{featuredPublication[featuredPublication.length - 1]?.title}</h1>
-                            <p>{featuredPublication[featuredPublication.length - 1]?.summary.slice(0, 150)}...</p>
+                            <p className="feature-p">{featuredPublication[featuredPublication.length - 1]?.summary.slice(0, 150)}...</p>
                             <Link href={'#'}>
                                 <button>
                                     Get Your Copy Now
@@ -347,7 +347,6 @@ const [visibleCountByCategory, setVisibleCountByCategory] = useState<Record<stri
                                     value={selectedCategory || ''}
                                     onChange={(e) => setSelectedCategory(e.target.value)}
                                 >
-
                                     {categories.map((cat) => (
                                         <option key={cat.catValue} value={cat.catValue}>
                                             {cat.catName}

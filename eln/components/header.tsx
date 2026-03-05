@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import logowhite from '../public/assets/images/home/agaram-logo.png';
 import { SlArrowDown } from "react-icons/sl";
-import logoblack from '../public/assets/images/eln_logo.svg'
+import logoblack from '../public/assets/images/agaram-logo.png'
 import downwhitearrow from '../public/assets/images/downwhitearrow.svg'
 import downarrow from '../public/assets/images/downarrow..svg'
 import all_solution from '../public/assets/images/menu/all_solution.svg'
@@ -865,7 +865,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                             </div>
 
                             <div className='signin'>
-                              <Link href="https://www.agaramtech.com/request-a-demo" className="ht-btn ht-btn-md">Request Demo</Link>
+                              <Link href="https://www.agaramtech.com/" className="ht-btn ht-btn-md">Go to Agaram</Link>
                             </div>
 
                           </div>
@@ -919,12 +919,12 @@ const Header = ({ whiteHeader }: HeaderProps) => {
               <div className="row align-items-center">
                 <div className="col-md-6 col-6">
                   <div className="header-button downlode-btn ml-4 mobilemenu_for headermenu mb-1">
-                    <Link href="https://www.agaramtech.com/contact-us" className="ht-btn ht-btn-md mobilemenu_btn">Contact Us</Link>
+                    <Link href="https://www.agaramtech.com/contact-us" className="ht-btn ht-btn-md ms-0 ms-md-2 mobilemenu_btn">Contact Us</Link>
                   </div>
                 </div>
                 <div className="col-md-6 col-6">
                   <div className="mobile-menu-content header-button downlode-btn ml-4 mobilemenu_for headermenu mb-1">
-                    <Link href="https://www.agaramtech.com/request-a-demo" className="ht-btn ht-btn-md mobilemenu_btn" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Request Demo</Link>
+                    <Link href="https://www.agaramtech.com/" className="ht-btn ht-btn-md ms-0 ms-md-2 mobilemenu_btn" onClick={() => { setResourceOpen(false); setMenuActive(false); }}>Go to Agaram</Link>
                   </div>
                 </div>
               </div>

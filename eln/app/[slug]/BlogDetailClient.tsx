@@ -282,7 +282,7 @@ authorUrl,
                                                     setActiveTopic(topic.text);
                                                     document.getElementById(topicId)?.scrollIntoView({ behavior: "smooth" });
                                                 }}
-                                                className={`cursor-pointer d-flex align-items-start mb-2 ${topic.level === "h1" ? "fw-bold" : topic.level === "h2" ? "ms-2" : "ms-4 text-muted"
+                                                className={`cursor-pointer d-flex align-items-center mb-2 ${topic.level === "h1" ? "fw-bold" : topic.level === "h2" ? "ms-2" : "ms-4 text-muted"
                                                     }`}
                                                 style={
                                                     isActive

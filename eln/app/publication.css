@@ -705,12 +705,12 @@ margin: 4rem auto;
     .publication-banner-body{
         min-height: 340px;
     }
+.publication-banner-two{
+    padding: 0px !important;
+    min-height: 500px;
+}
  
 }
-
-
-
-
 
 
 @media (max-width: 576px) {
