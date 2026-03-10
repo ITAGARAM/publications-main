@@ -19,7 +19,7 @@ import recent from "../public/assets/images/publication/recent.svg";
 import search from "../public/assets/images/publication/search.svg"
 import Footer from './footer';
 import { FaAngleRight } from 'react-icons/fa';
-import BannerCard from './publication/banner-card/banner-card';
+import BannerCard from './publications/banner-card/banner-card';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Pagination from '@/components/Pagination';
 import { useRouter } from 'next/navigation';

@@ -626,9 +626,8 @@ const Header = ({ whiteHeader }: HeaderProps) => {
 
                                     </li>
                                   </Link>
-                                  <Link href="https://www.agaramtech.com/resources/publications" className="nav-link " target='_blank'>
+                                  <Link href="/publications" className="nav-link " target='_blank'>
                                     <li className='px-3 py-3 d-flex'>
-
                                       <Image src={r2} alt="" className='mt-1 me-2' height={35} />
                                       <div className='d-flex flex-column'>
                                         <span className='f_600 f_size_16'>Publications</span>
@@ -1232,7 +1231,7 @@ const Header = ({ whiteHeader }: HeaderProps) => {
                           </Link>
                         </li>
                         <li>
-                          <Link href="https://www.agaramtech.com/resources/publications" className="nav-link menu-mobile-ml" target='_blank'>
+                          <Link href="/publications" className="nav-link menu-mobile-ml" target='_blank'>
                             Publications
                           </Link>
                         </li>

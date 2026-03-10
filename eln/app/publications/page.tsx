@@ -36,7 +36,6 @@ interface Blog {
     mainImage?: string;
     viewCount?: number;
     isTopRead?: boolean;
-
 }
 
 const publicationQuery = `*[_type == "publication"] | order(publishedAt desc) {
@@ -64,7 +63,7 @@ export default function Publication() {
     const [searchWord, setSearchWord] = useState(false);
 
     const [currentPageByCategory, setCurrentPageByCategory] = useState<
-        Record<string, number>
+ Record<string, number>
     >({
         all: 1,
         caseStudy: 1,
@@ -270,7 +269,7 @@ const [visibleCountByCategory, setVisibleCountByCategory] = useState<Record<stri
   ref={BannerRef}
   onClick={() => {
     if (featuredPublication[featuredPublication.length - 1]?.slug?.current) {
-      router.push(`/publication/${featuredPublication[featuredPublication.length - 1].slug.current}`);
+      router.push(`/publications/${featuredPublication[featuredPublication.length - 1].slug.current}`);
     }
   }}
 
@@ -399,8 +398,8 @@ const [visibleCountByCategory, setVisibleCountByCategory] = useState<Record<stri
                             {
                                 selectedCategory === 'default' ?
                                     <>
-                                        {filteredpublications.slice(0, 2).map((post) => (
-                                            <div className="col-md-6" key={post._id}>
+                                        {filteredpublications.slice(0, 2).map((post, idx) => (
+                                            <div   className={`col-md-6 px-3 mb-4 ${idx >= 2 ? "mt-5" : ""}`} key={post._id}>
                                                 <div className="publication-card px-3 mb-4">
                                                     <BannerCard
                                                         label={post.category || "Whitepaper"}
@@ -415,7 +414,7 @@ const [visibleCountByCategory, setVisibleCountByCategory] = useState<Record<stri
                                                         slug={post.slug.current}
                                                         pageName={'publication'}
                                                     />
-                                                    <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }} onClick={()=>router.push(`/publication/${post.slug.current}`)}>
+                                                    <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }} onClick={()=>router.push(`/publications/${post.slug.current}`)}>
                                                         {post.category === 'whitePaper' ? 'Read White Paper' :
                                                             post.category === 'caseStudy' ? 'Read Case Study' :
                                                                 'Download Ebook'
@@ -437,8 +436,8 @@ const [visibleCountByCategory, setVisibleCountByCategory] = useState<Record<stri
                                                         .filter((item) => item.category === cat.catValue)
                                                         .filter(item => !recentIDs.has(item._id))
                                                         .slice(0, 4)
-                                                        .map((subCat) => (
-                                                            <div className="col-md-6" key={subCat._id}>
+                                                        .map((subCat , idx) => (
+                                                            <div  className={`col-md-6 ${idx >= 2 ? "mt-5" : ""}`} key={subCat._id}>
                                                                 <div className="publication-card px-3 mb-4">
                                                                     <BannerCard
                                                                         label={subCat.category || "Whitepaper"}
@@ -453,7 +452,7 @@ const [visibleCountByCategory, setVisibleCountByCategory] = useState<Record<stri
                                                                         slug={subCat.slug.current}
                                                                         pageName={'publication'}
                                                                     />
-                                                                    <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }} onClick={()=>router.push(`/publication/${subCat.slug.current}`)}>
+                                                                    <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }} onClick={()=>router.push(`/publications/${subCat.slug.current}`)}>
                                                                         {subCat.category === 'whitePaper' ? 'Read Whitepaper' :
                                                                             subCat.category === 'caseStudy' ? 'Read Case Study' :
                                                                                 'Download Ebook'
@@ -494,7 +493,7 @@ const [visibleCountByCategory, setVisibleCountByCategory] = useState<Record<stri
                                                             slug={post.slug.current}
                                                             pageName={'publication'}
                                                         />
-                                                        <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }} onClick={()=>router.push(`/publication/${post.slug.current}`)}>
+                                                        <button className="download-btn" style={{ width: 'max-content', padding: '4px 16px' }} onClick={()=>router.push(`/publications/${post.slug.current}`)}>
                                                             {post.category === 'whitePaper' ? 'Read White Paper' :
                                                                 post.category === 'caseStudy' ? 'Read Case Study' :
                                                                     'Download Ebook'

@@ -23,7 +23,7 @@ import right_arrow_coments from "../../../public/assets/images/blog/right_arrow_
 import Image from "next/image";
 import Pagination from "@/components/Pagination";
 import { FaAngleRight } from "react-icons/fa";
-import BannerCard from "../publication/banner-card/banner-card";
+import BannerCard from "../publications/banner-card/banner-card";
 import { useRouter } from "next/navigation";
 import Footer from "@/app/footer";
 

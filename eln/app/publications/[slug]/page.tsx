@@ -64,7 +64,7 @@ const formId =
     ? "233211048510441"
     : data?.category === "ebook"
     ? "240101257158447"
-    : "233193321268454";
+    : "260631260348452";
 
 const formURL = `https://form.jotform.com/${formId}?select_publication=${encodeURIComponent(
   jotformValue
@@ -182,7 +182,7 @@ const formURL = `https://form.jotform.com/${formId}?select_publication=${encodeU
 
                 {/* <div className="blur-bg" /> */}
             </div>
-            <div className="container recent mt-3 mt-xl-5">
+            {/* <div className="container recent mt-3 mt-xl-5">
                 <div className="d-flex justify-content-between align-items-center">
                     <div>
                         <label>Download <span style={{ color: '#4042FD' }}>
@@ -200,7 +200,7 @@ const formURL = `https://form.jotform.com/${formId}?select_publication=${encodeU
                     </div>
                 </div>
 
-            </div>
+            </div> */}
             <div className="container mt-lg-5 mt-md-3">
                 <div className="row">
                     <div className="col-md-6 form-content">
