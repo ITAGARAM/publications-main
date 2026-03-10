@@ -241,10 +241,14 @@ authorUrl,
                     className="dotted-line dotted-line-two img-fluid"
                 />
                 <div className="container position-relative">
-                    <button
-                        className="back-arrow-btn back-arrow-btn-body"
-                        onClick={() => router.push("/")}   // redirect to main page
-                    >
+                 <button className="back-arrow-btn back-arrow-btn-body" onClick={() => {
+                            if (window.history.length > 1) {
+                            router.back();
+                            } else {
+                            router.push("/");
+                            }
+                        }}
+                        >
                         <Image src={back_arrow} alt="Back" width={20} height={20} />
                     </button>
                     <div className="mt-5 cursor-pointer">

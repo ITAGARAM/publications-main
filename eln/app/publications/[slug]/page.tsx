@@ -64,7 +64,7 @@ const formId =
     ? "233211048510441"
     : data?.category === "ebook"
     ? "240101257158447"
-    : "260631260348452";
+    : "233193321268454";
 
 const formURL = `https://form.jotform.com/${formId}?select_publication=${encodeURIComponent(
   jotformValue
@@ -160,11 +160,17 @@ const formURL = `https://form.jotform.com/${formId}?select_publication=${encodeU
                     className="dotted-line"
                 />
                 <div className="container position-relative">
-                    <button
-                        className="back-arrow-btn back-arrow-btn-body"
-                        style={{ zIndex: 8 }}
-                        onClick={() => router.push("/publication")}   // redirect to main page
-                    >
+                  <button
+  className="back-arrow-btn back-arrow-btn-body"
+  style={{ zIndex: 8 }}
+  onClick={() => {
+    if (window.history.length > 1) {
+      router.back();
+    } else {
+      router.push("/publications");
+    }
+  }}
+>
                         <Image src={back_arrow} alt="Back" width={20} height={20} />
                     </button>
 
