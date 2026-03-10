@@ -20,7 +20,7 @@ import recent from "../../../../public/assets/images/publication/recent.svg";
 import search from "../../../public/assets/images/publication/search.svg";
 import Footer from "../../footer";
 import { FaAngleRight } from "react-icons/fa";
-import BannerCard from "../../publication/banner-card/banner-card";
+import BannerCard from "../../publications/banner-card/banner-card";
 import Pagination from "@/components/Pagination";
 import { useRouter } from "next/navigation";
 import { client } from "@/lib/sanity";
