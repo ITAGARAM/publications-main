@@ -28,7 +28,7 @@ export async function GET() {
 const blogUrls = blogs.map((post:any) => `
   <url>
     <loc>${baseUrl}/${post.slug}</loc>
-    <lastmod>${post.publishedAt ? new Date(post.publishedAt).toISOString() : ""}</lastmod>
+    ${post.publishedAt ? `<lastmod>${new Date(post.publishedAt).toISOString()}</lastmod>` : ""}
     <priority>0.8</priority>
   </url>
 `).join("");
@@ -44,7 +44,7 @@ const blogUrls = blogs.map((post:any) => `
 const publicationUrls = publications.map((post:any) => `
   <url>
     <loc>${baseUrl}/publications/${post.slug}</loc>
-    <lastmod>${post.publishedAt ? new Date(post.publishedAt).toISOString() : ""}</lastmod>
+    ${post.publishedAt ? `<lastmod>${new Date(post.publishedAt).toISOString()}</lastmod>` : ""}
     <priority>0.8</priority>
   </url>
 `).join("");
