@@ -25,13 +25,13 @@ export async function GET() {
   }
   `);
 
-  const blogUrls = blogs.map((post:any) => `
-    <url>
-      <loc>${baseUrl}/${post.slug}</loc>
-      <lastmod>${post.publishedAt}</lastmod>
-      <priority>0.8</priority>
-    </url>
-  `).join("");
+const blogUrls = blogs.map((post:any) => `
+  <url>
+    <loc>${baseUrl}/${post.slug}</loc>
+    <lastmod>${post.publishedAt ? new Date(post.publishedAt).toISOString() : ""}</lastmod>
+    <priority>0.8</priority>
+  </url>
+`).join("");
 
   // PUBLICATIONS
   const publications = await client.fetch(`
@@ -41,13 +41,13 @@ export async function GET() {
   }
   `);
 
-  const publicationUrls = publications.map((post:any) => `
-    <url>
-      <loc>${baseUrl}/publications/${post.slug}</loc>
-      <lastmod>${post.publishedAt}</lastmod>
-      <priority>0.8</priority>
-    </url>
-  `).join("");
+const publicationUrls = publications.map((post:any) => `
+  <url>
+    <loc>${baseUrl}/publications/${post.slug}</loc>
+    <lastmod>${post.publishedAt ? new Date(post.publishedAt).toISOString() : ""}</lastmod>
+    <priority>0.8</priority>
+  </url>
+`).join("");
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
