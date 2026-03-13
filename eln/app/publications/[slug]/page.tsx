@@ -273,7 +273,7 @@ const formURL = `https://form.jotform.com/${formId}?select_publication=${encodeU
                 <button
                   className="download-btn"
                   style={{ width: "max-content", padding: "4px 16px" }}
-                    onClick={() => router.push(`/publication/${post.slug.current}`)}
+                    onClick={() => router.push(`/publications/${post.slug.current}`)}
                 >
                   {post.category === "whitePaper"
                     ? "Read White Paper"
@@ -310,7 +310,7 @@ const formURL = `https://form.jotform.com/${formId}?select_publication=${encodeU
                 <button
                   className="download-btn"
                   style={{ width: "max-content", padding: "4px 16px" }}
-                    onClick={() => router.push(`/publication/${post.slug.current}`)}
+                    onClick={() => router.push(`/publications/${post.slug.current}`)}
                 >
                   {post.category === "whitePaper"
                     ? "Read White Paper"

@@ -58,7 +58,6 @@ export default function BannerCard(props: BannerCardProps) {
                     : ""}
             </p>
 
-
             <div className="tag-btn-mt">
                 {props.usernameTags?.map((tag, idx) => {
                     // Cycle through the colors
@@ -81,7 +80,7 @@ export default function BannerCard(props: BannerCardProps) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="posted-date d-inline-block"
-                        style={{ textDecoration: 'none' }}
+                        style={{ textDecoration: 'none'}}
                     >
                         <span className="author-name px-2" style={{ color: '#1163EA', fontWeight: '600' }}>
                             {props.author}
