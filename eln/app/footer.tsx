@@ -78,8 +78,8 @@ const Footer = () => {
                   </ul>
                    <h3 className="f-title f_600 t_color f_size_15 mb_20 mt-3">pricing</h3>
                   <ul className="list-unstyled f_list">
-                    <li><Link href="/pricing">General Plans</Link></li>
-                    <li><Link href="/company/academic_plans">Academic Plans</Link></li>
+                    <li><Link href="https://logilabeln.com/pricing/">General Plans</Link></li>
+                    <li><Link href="https://logilabeln.com/pricing/academic_plans/">Academic Plans</Link></li>
                   </ul>
                 </div>
               </div>
