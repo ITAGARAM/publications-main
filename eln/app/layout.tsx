@@ -8,7 +8,7 @@ import "./resposive.css";
 import "./blog.css";
 import BootstrapClient from "@/components/boostrapclient";
 import ClientLoader from "@/components/ClientLoader";
-
+import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 // Local Font
@@ -25,7 +25,6 @@ export const metadata: Metadata = {
   title: "Home - Blogs Agaram Technologies | LIMS | SDMS | ELN",
   description: "",
   metadataBase: new URL("https://publications.agaramtech.com"),
-
   openGraph: {
     title: "Home - Blogs Agaram Technologies | LIMS | SDMS | ELN",
     description:"",
@@ -41,7 +40,7 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
-
+  
   twitter: {
     card: "summary_large_image",
     title: "Home - Blogs Agaram Technologies | LIMS | SDMS | ELN",
@@ -84,6 +83,21 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap"
           rel="stylesheet"
         />
+
+     {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VRNCF5WC3C"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VRNCF5WC3C');
+          `}
+        </Script>
+
       </head>
 
       <body className={`${inter.className} ${myFont1.variable}`}>

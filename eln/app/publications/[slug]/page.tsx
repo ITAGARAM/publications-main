@@ -70,10 +70,7 @@ const formURL = `https://form.jotform.com/${formId}?select_publication=${encodeU
   jotformValue
 )}&pdfUrl=${encodeURIComponent(pdfUrl)}`;
 
-
-
     const [publicationData, setPublicationData] = useState<any[]>([])
-
     useEffect(() => {
         if (typeof window !== "undefined") {
             const $ = require("jquery");
