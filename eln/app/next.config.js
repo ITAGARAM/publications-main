@@ -17,14 +17,14 @@ const nextConfig = {
 
   async redirects() {
     return [
-      // homepage → new blog page
+      // publications homepage
       {
         source: '/',
         destination: 'https://www.agaramtech.com/blog',
         permanent: true,
       },
 
-      // old blog posts → new PHP blog URLs
+      // publications blog posts
       {
         source: '/:slug',
         destination: 'https://www.agaramtech.com/blog/:slug',
