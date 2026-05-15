@@ -15,12 +15,12 @@ const nextConfig = {
         return [
             {
                 source: '/',
-                destination: 'https://www.agaramtech.com/blog',
+                destination: 'https://www.agaramtech.com/blog/',
                 permanent: true,
             },
             {
                 source: '/:slug/',
-                destination: 'https://www.agaramtech.com/blog/:slug',
+                destination: 'https://www.agaramtech.com/blog/:slug/',
                 permanent: true,
             },
         ];
