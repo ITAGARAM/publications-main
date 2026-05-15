@@ -17,10 +17,18 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // homepage → new blog page
       {
         source: '/',
-        destination: '/blog',
-        permanent: false, // set to true for SEO (301)
+        destination: 'https://www.agaramtech.com/blog',
+        permanent: true,
+      },
+
+      // old blog posts → new PHP blog URLs
+      {
+        source: '/:slug',
+        destination: 'https://www.agaramtech.com/blog/:slug',
+        permanent: true,
       },
     ];
   },

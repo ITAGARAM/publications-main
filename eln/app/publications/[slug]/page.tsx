@@ -158,16 +158,16 @@ const formURL = `https://form.jotform.com/${formId}?select_publication=${encodeU
                 />
                 <div className="container position-relative">
                   <button
-  className="back-arrow-btn back-arrow-btn-body"
-  style={{ zIndex: 8 }}
-  onClick={() => {
-    if (window.history.length > 1) {
-      router.back();
-    } else {
-      router.push("/publications");
-    }
-  }}
->
+                      className="back-arrow-btn back-arrow-btn-body"
+                      style={{ zIndex: 8 }}
+                      onClick={() => {
+                        if (window.history.length > 1) {
+                          router.back();
+                        } else {
+                          router.push("/publications");
+                        }
+                      }}
+                    >
                         <Image src={back_arrow} alt="Back" width={20} height={20} />
                     </button>
 
