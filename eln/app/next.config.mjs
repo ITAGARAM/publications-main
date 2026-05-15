@@ -1,15 +1,30 @@
-/**@type {import('next').NextConfig} */
-const nextConfig ={
-    // output:'export',
-    // basePath:'/elnwebsitenext',
-    trailingSlash:true,
-    images:{
-        unoptimized:true,
+/** @type {import('next').NextConfig} */
+
+const nextConfig = {
+    trailingSlash: true,
+
+    images: {
+        unoptimized: true,
     },
-    
+
     eslint: {
-        ignoreDuringBuilds: true, //Ignores ESLint errors during the build process
+        ignoreDuringBuilds: true,
+    },
+
+    async redirects() {
+        return [
+            {
+                source: '/',
+                destination: 'https://www.agaramtech.com/blog',
+                permanent: true,
+            },
+            {
+                source: '/:slug/',
+                destination: 'https://www.agaramtech.com/blog/:slug',
+                permanent: true,
+            },
+        ];
     },
 };
-export default nextConfig;
 
+export default nextConfig;
